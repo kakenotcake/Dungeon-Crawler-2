@@ -9,6 +9,7 @@ public class Game {
     private Player player;
     private ArrayList<Box> boxes;
     private ArrayList<Enemy> enemies;
+    private Inventory inventory;
 
     public Game() {
         room = new Room();
@@ -69,7 +70,8 @@ public class Game {
 
     // code for when the player tries to drop an item
     private void drop() {
-        if (checkForBox() == null) {
+	    inventory.drop();
+       /* if (checkForBox() == null) {
             Item dropped = player.getInventory().drop();
             if (dropped != null) {
                 boxes.add(new Box(player.getRow(), player.getCol(), dropped));
@@ -78,7 +80,7 @@ public class Game {
         } else {
             setStatus("You cannot drop something on an existing item...");
             Terminal.pause(1.25);
-        }
+        }*/
     }
 
     // handle the key which was read - return false if we quit the game
