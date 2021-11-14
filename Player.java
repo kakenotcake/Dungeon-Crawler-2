@@ -1,71 +1,52 @@
-//PLayer class which gets/sets the health, strenght, name and defense of the player.  Also attacks the enemy and prints the player stats.
+// Player.java
 
-public class Player {
-	private int health;
-        private	int strength;
-	private String name;
-	private int defense;
-	
-	
-//constructor taking in health, strenght, name, and defense stats
-	public Player(int health, int strength, String name, int defense)
-	{
-		this.health = health;
-		this.strength = strength;
-		this.name = name;
-		this.defense = defense;
-	}
-//get health
-	public int getHealth()
-	{
-		return this.health;
+import ansi_terminal.*;
 
-	}
-//set health
-	public void setHealth(int h)
-	{
-		this.health = h;
-	}
-//get strenght
-	public int getStrength()
-	{
-		return this.strength;
-	}
-	//set strenght
-	public void setStrength(int strength)
-	{
-		this.strength = strength;
-	}
-//get name
-	public String getName()
-	{
-		return this.name;
-	}//get defense
-	public int getDefense()
-	{
-		return this.defense;
-	}//set defense
-	public void setDefense(int defense)
-	{
-		this.defense = defense;
-	}
-//attack the enemy
+public class Player extends Character {
+    private Inventory items;
 
-	public void attack(Item weapon, Enemy enemy)
-	{
-		int playerDamage = weapon.getStrength();
-		System.out.print("Player attacked enemy with " + playerDamage + " points of damage!\n\r");
-		System.out.print("Enemy health was: " + enemy.getHealth() + "\n\r");
-		enemy.setHealth(enemy.getHealth()-playerDamage);
-		System.out.print("Enemy health now: " + enemy.getHealth() + "\n\r");
-	//	int enemyAfterAttack = (enemy.getHealth() - playerDamage);
+    public Player(Position start) {
+        // our starting details
+        super(start.getRow(), start.getCol(), '@', Color.CYAN, 50);
 
+        // we can carry 100 pounds of items
+        items = new Inventory(100);
 
-	}//print stats
-	public String toString()
-	{
-		System.out.print("Health | Strength | Name | Defense\n\r");
-		return health + " " +  strength + " " + name + " " + defense;
-	}
+        // give them some basic stuff to start with
+        // TODO make up your own starting equipment!
+        items.addAndEquip(new Item(ItemType.Weapon, "Iron Dagger", 5, 12, 7));
+        items.addAndEquip(new Item(ItemType.Armor, "Leather Armor", 15, 20, 3));
+    }
+
+    @Override
+    public int getDamage() {
+        Item weapon = items.getEquippedWeapon();
+        if (weapon != null) {
+            return weapon.getStrength();
+        } else {
+            // if we have no weapon, our fists are pretty weak...
+            return 1;
+        }
+    }
+
+    @Override
+    public String getName() {
+        return "Player";
+    }
+
+    @Override
+    public int getProtection() {
+        Item armor = items.getEquippedArmor();
+        if (armor != null) {
+            return armor.getStrength();
+        } else {
+            // without armor, we have no protection
+            return 0;
+        }
+    }
+
+    public Inventory getInventory() {
+        return items;
+    }
 }
 
