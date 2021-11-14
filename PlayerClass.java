@@ -6,5 +6,6 @@ public enum PlayerClass {
 	Bard,
 	Paladin,
 	Assassin,
-	Archer
+	Archer,
+	None
 }

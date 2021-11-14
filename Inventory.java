@@ -169,6 +169,17 @@ public class Inventory
 			System.out.print("Your inventory is empty.\n\r");
 		}
 	}
+	public void equipStarterWeapon(Item weapon)
+	{
+		equippedWeapon = weapon;
+		System.out.print("Starter weapon " + weapon + " has been equipped.\n\r");
+	}
+	public void equipStarterArmor(Item armor)
+	{
+		equippedArmor = armor;
+		System.out.print("Starter armor " + armor + " has been equipped.\n\r");
+	}
+
 	public void equipArmor() //method to equip armor
 	{
 		if (inventory.size() != 0) //if inventory is not empty
