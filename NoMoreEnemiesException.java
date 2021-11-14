@@ -1,3 +1,3 @@
-public class NoMoreEnemies extends Exception{
+class NoMoreEnemies extends Exception{
 }
 
