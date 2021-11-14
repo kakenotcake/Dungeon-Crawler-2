@@ -1,2 +1,2 @@
-public class NoMorePlayersException extends Exception{
+class NoMorePlayersException extends Exception{
 }
