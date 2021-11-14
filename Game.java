@@ -3,6 +3,7 @@
 
 import java.util.ArrayList;
 import ansi_terminal.*;
+import java.util.Scanner;
 
 public class Game {
     private Room room;
@@ -11,11 +12,33 @@ public class Game {
     private ArrayList<Enemy> enemies;
     private Inventory inventory;
 
-    public Game() {
-        room = new Room();
+    public Game() 
+    {  
+	room = new Room();
         player = new Player(room.getPlayerStart());
         boxes = room.getBoxes();
         enemies = room.getEnemies();
+
+	String name = Terminal.getLine("What is your name adventurer? ");
+	player.setName(name);
+	System.out.print("\n\r");
+	System.out.print("What is your class?\n\n\r");
+	System.out.print("1. Mage\n\r2. Warrior\n\r3. Archer\n\r4. Assasin\n\n\r");
+	System.out.print("Enter the number: ");
+	Scanner input = new Scanner(System.in);
+	int num = input.nextInt();
+	if (num < 1 || num > 4)
+	{
+		System.out.print("Invalid input.\n\r");
+	}
+	else
+	{
+		player.setPlayerType(num);
+	}
+	System.out.print("\n\r");
+	player.setStarterWeapon();
+	player.setStarterArmor();
+	Terminal.pause(1.5);
     }
 
     // prints a help menu to the left of the map
@@ -70,8 +93,8 @@ public class Game {
 
     // code for when the player tries to drop an item
     private void drop() {
-	    inventory.drop();
-       /* if (checkForBox() == null) {
+	/*    inventory.drop();
+          if (checkForBox() == null) {
             Item dropped = player.getInventory().drop();
             if (dropped != null) {
                 boxes.add(new Box(player.getRow(), player.getCol(), dropped));

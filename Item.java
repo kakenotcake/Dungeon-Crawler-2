@@ -8,8 +8,9 @@ public class Item {
         private int weight;
         private int value;
         private int strength;
+	private PlayerType playerType;
 
-        public Item(ItemType type, String name, int weight, int value, int strength)
+        public Item(ItemType type, String name, int weight, int value, int strength, PlayerType playerType)
 
         {
                 this.type = type;
@@ -17,8 +18,17 @@ public class Item {
                 this.weight = weight;
                 this.value = value;
                 this.strength = strength;
+		this.playerType = playerType;
 
         }
+	public Item(ItemType type, String name, int weight, int value, int strength)
+	{
+		this.type = type;
+		this.name =name;
+		this.weight = weight;
+		this.value = value;
+		this.strength = strength;
+	}
 
         /**
          * A getter. This method returns the weight of the Item being referred to.
@@ -55,6 +65,10 @@ public class Item {
 	public int getStrength()
 	{
 		return this.strength;
+	}
+	public PlayerType getPlayerType()
+	{
+		return this.playerType;
 	}
 
         /**
