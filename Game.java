@@ -23,11 +23,11 @@ public class Game {
 	player.setName(name);
 	System.out.print("\n\r");
 	System.out.print("What is your class?\n\n\r");
-	System.out.print("1. Mage\n\r2. Warrior\n\r3. Archer\n\r4. Assasin\n\n\r");
+	System.out.print("1. Mage\n\r2. Bard\n\r3. Paladin\n\r4. Assasin\n\r5. Archer\n\n\r");
 	System.out.print("Enter the number: ");
 	Scanner input = new Scanner(System.in);
 	int num = input.nextInt();
-	if (num < 1 || num > 4)
+	if (num < 1 || num > 5)
 	{
 		System.out.print("Invalid input.\n\r");
 	}

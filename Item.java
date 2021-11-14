@@ -8,9 +8,9 @@ public class Item {
         private int weight;
         private int value;
         private int strength;
-	private PlayerType playerType;
+	private PlayerClass playerClass;
 
-        public Item(ItemType type, String name, int weight, int value, int strength, PlayerType playerType)
+        public Item(ItemType type, String name, int weight, int value, int strength, PlayerClass playerClass)
 
         {
                 this.type = type;
@@ -18,7 +18,7 @@ public class Item {
                 this.weight = weight;
                 this.value = value;
                 this.strength = strength;
-		this.playerType = playerType;
+		this.playerClass = playerClass;
 
         }
 	public Item(ItemType type, String name, int weight, int value, int strength)
@@ -66,9 +66,9 @@ public class Item {
 	{
 		return this.strength;
 	}
-	public PlayerType getPlayerType()
+	public PlayerClass getPlayerClass()
 	{
-		return this.playerType;
+		return this.playerClass;
 	}
 
         /**
@@ -76,7 +76,7 @@ public class Item {
          */
         public String toString()
         {
-                return this.name + " " + this.weight + " " + this.value + " " + this.strength;
+                return this.name + " " + this.weight + " " + this.value + " " + this.strength + " " + this.playerClass;
 
         }
 }

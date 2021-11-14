@@ -4,7 +4,7 @@ import ansi_terminal.*;
 
 public class Player extends Character {
     private Inventory inventory;
-    private PlayerType playerType;
+    private PlayerClass playerClass;
     private String name;
 
     public Player(Position start) {
@@ -54,24 +54,29 @@ public class Player extends Character {
     {
 	    if (num==1)
 	    {
-		    this.playerType = PlayerType.Mage;
+		    this.playerClass = PlayerClass.Mage;
 	    }
-	    else if (num==2)
+	    else if(num == 2)
 	    {
-		    this.playerType = PlayerType.Warrior;
+		    this.playerClass = PlayerClass.Bard;
 	    }
-	    else if(num==3)
+	    else if(num == 3)
 	    {
-		    this.playerType = PlayerType.Archer;
+		    this.playerClass = PlayerClass.Paladin;
+	    }
+	    else if(num==4)
+	    {
+		    this.playerClass = PlayerClass.Assassin;
 	    }
 	    else
 	    {
-		    this.playerType = PlayerType.Assasin;
+		    this.playerClass = PlayerClass.Archer;
 	    }
+
     }
-    public PlayerType getPlayerType()
+    public PlayerClass getPlayerClass()
     {
-	    return playerType;
+	    return playerClass;
     }
     public void setStarterWeapon()
     {
@@ -80,7 +85,7 @@ public class Player extends Character {
 	    while (stop==false) 
 	    {
 		    weapon = ItemGenerator.generate();
-		    if ((weapon.getType().equals(ItemType.Weapon)) && (weapon.getPlayerType().equals(playerType)))
+		    if ((weapon.getType().equals(ItemType.Weapon)) && (weapon.getPlayerClass().equals(playerClass)))
 		    {
 			    stop = true;
 		    }
@@ -96,7 +101,7 @@ public class Player extends Character {
 	    while (stop==false)
 	    {
 		    armor = ItemGenerator.generate();
-		    if ((armor.getType().equals(ItemType.Armor)) && (armor.getPlayerType().equals(playerType)))
+		    if ((armor.getType().equals(ItemType.Armor)) && (armor.getPlayerClass().equals(playerClass)))
 		    {
 			    stop = true;
 		    }
