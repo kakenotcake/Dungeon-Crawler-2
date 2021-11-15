@@ -134,6 +134,12 @@ public class Game {
                 player.getInventory().equipArmor();
                 redrawMapAndHelp();
                 break;
+            
+	    case s: 
+		player.printStats();
+		Terminal.pause(2);
+		redrawMapAndHelp();		
+		break;
 
 
             // handle movement

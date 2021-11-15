@@ -110,6 +110,15 @@ public class Player extends Character {
 	    inventory.add(armor);
 	    inventory.equipStarterArmor(armor);
     }
+    public void printStats()
+    {
+	    System.out.print("Player's health: " + getHealth() + "\n\r");
+	    System.out.print("Player's damage: " + getDamage() + "\n\r");
+	    System.out.print("Player's protection: " + getProtection() + "\n\r");
+	    System.out.print("Player's class: " + getPlayerClass() + "\n\r");
+	    System.out.print("Equipped weapon: " + inventory.getEquippedWeapon() + "\n\r");
+	    System.out.print("Equipped armor: " + inventory.getEquippedArmor() + "\n\r");
+    }
 }
 	
 				    
