@@ -22,6 +22,10 @@ public class Game {
 	String name = Terminal.getLine("What is your name adventurer? ");
 	player.setName(name);
 	System.out.print("\n\r");
+	setClass();
+    }
+    public void setClass()
+    {
 	System.out.print("What is your class?\n\n\r");
 	System.out.print("1. Mage\n\r2. Bard\n\r3. Paladin\n\r4. Assasin\n\r5. Archer\n\n\r");
 	System.out.print("Enter the number: ");
@@ -29,7 +33,8 @@ public class Game {
 	int num = input.nextInt();
 	if (num < 1 || num > 5)
 	{
-		System.out.print("Invalid input.\n\r");
+		System.out.print("\nInvalid input.\n\r");
+		setClass();
 	}
 	else
 	{
@@ -51,7 +56,8 @@ public class Game {
                          "List items: l",
                          "Equip weapon: w",
                          "Equip armor: a",
-			 "View states: s",
+			 "View stats: s",
+			 "Use aid: u",
                          "Quit: q"
         };
         Terminal.setForeground(Color.GREEN);
@@ -118,6 +124,7 @@ public class Game {
 
             case l:
                 player.getInventory().print();
+		Terminal.pause(2);
                 redrawMapAndHelp();
                 break;
 
@@ -127,13 +134,27 @@ public class Game {
 
             case w:
                 player.getInventory().equipWeapon();
+		Terminal.pause(2);
                 redrawMapAndHelp();
                 break;
 
             case a:
                 player.getInventory().equipArmor();
+		Terminal.pause(2);
                 redrawMapAndHelp();
                 break;
+            
+	    case s: 
+		player.printStats();
+		Terminal.pause(2);
+		redrawMapAndHelp();		
+		break;
+
+            case u:
+		System.out.print("Player to use aid\n\r");
+		Terminal.pause(2);
+		redrawMapAndHelp();
+		break;
 
 
             // handle movement

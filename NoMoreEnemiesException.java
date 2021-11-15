@@ -1,3 +1,3 @@
-class NoMoreEnemies extends Exception{
+class NoMoreEnemiesException extends Exception{
 }
 

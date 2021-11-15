@@ -9,7 +9,7 @@ public class EnemySystem{
 
     //hydration constructor to save information of Enemies
     EnemySystem(String fileName)throws Exception {
-        this.enemies=new ArrayList<Enemy>();
+/*        this.enemies=new ArrayList<Enemy>();
         Scanner stdin = new Scanner(new FileReader(fileName));
         this.EnemyHealth=stdin.nextInt();
         //this.EnemyPosition=s.nextLine();
@@ -23,7 +23,7 @@ public class EnemySystem{
         }catch (NoMoreEnemiesException e){
 
         }
-	s.nextLine();
+	s.nextLine(); */
 
 
     }
