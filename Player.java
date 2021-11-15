@@ -12,7 +12,7 @@ public class Player extends Character {
         super(start.getRow(), start.getCol(), '@', Color.CYAN, 50);
 
         // we can carry 100 pounds of items
-        inventory = new Inventory(100);
+        inventory = new Inventory(200);
        	
     }
 
