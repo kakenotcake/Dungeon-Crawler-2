@@ -12,7 +12,7 @@ public class EnemySystem{
         this.enemies=new ArrayList<Enemy>();
         Scanner stdin = new Scanner(new FileReader(fileName));
         this.EnemyHealth=stdin.nextInt();
-	this.EnemyPosition=s.nextLine();
+        //this.EnemyPosition=s.nextLine();
         try{
             while(true){
                 Enemy a=new Enemy(stdin);
