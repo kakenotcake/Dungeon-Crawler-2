@@ -51,6 +51,7 @@ public class Game {
                          "List items: l",
                          "Equip weapon: w",
                          "Equip armor: a",
+			 "View states: s",
                          "Quit: q"
         };
         Terminal.setForeground(Color.GREEN);
@@ -93,9 +94,11 @@ public class Game {
 
     // code for when the player tries to drop an item
     private void drop() {
-	/*    inventory.drop();
-          if (checkForBox() == null) {
-            Item dropped = player.getInventory().drop();
+          player.getInventory().drop();
+          System.out.print("I am in the drop method in Game class.\n\r");
+	  Box thing = checkForBox();
+          if (thing == null) {
+            Item dropped = player.getInventory().getDropped();
             if (dropped != null) {
                 boxes.add(new Box(player.getRow(), player.getCol(), dropped));
             }
@@ -103,7 +106,7 @@ public class Game {
         } else {
             setStatus("You cannot drop something on an existing item...");
             Terminal.pause(1.25);
-        }*/
+        }
     }
 
     // handle the key which was read - return false if we quit the game
@@ -131,6 +134,7 @@ public class Game {
                 player.getInventory().equipArmor();
                 redrawMapAndHelp();
                 break;
+
 
             // handle movement
             case LEFT: player.move(0, -1, room);
