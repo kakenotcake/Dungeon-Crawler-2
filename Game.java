@@ -51,7 +51,7 @@ public class Game {
                          "List items: l",
                          "Equip weapon: w",
                          "Equip armor: a",
-			 "View states: s",
+			 "View stats: s",
                          "Quit: q"
         };
         Terminal.setForeground(Color.GREEN);
@@ -118,6 +118,7 @@ public class Game {
 
             case l:
                 player.getInventory().print();
+		Terminal.pause(2);
                 redrawMapAndHelp();
                 break;
 
@@ -127,11 +128,13 @@ public class Game {
 
             case w:
                 player.getInventory().equipWeapon();
+		Terminal.pause(2);
                 redrawMapAndHelp();
                 break;
 
             case a:
                 player.getInventory().equipArmor();
+		Terminal.pause(2);
                 redrawMapAndHelp();
                 break;
             
