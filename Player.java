@@ -4,10 +4,13 @@ import ansi_terminal.*;
 
 public class Player extends Character {
     private Inventory items;
+    private PlayerClass classType;
 
-    public Player(Position start) {
+    public Player(Position start, PlayerClass classType) {
         // our starting details
         super(start.getRow(), start.getCol(), '@', Color.CYAN, 50);
+
+	this.classType = classType;
 
         // we can carry 100 pounds of items
         items = new Inventory(100);
@@ -17,6 +20,18 @@ public class Player extends Character {
         items.addAndEquip(new Item(ItemType.Weapon, "Iron Dagger", 5, 12, 7));
         items.addAndEquip(new Item(ItemType.Armor, "Leather Armor", 15, 20, 3));
     }
+
+    public PlayerClass getPlayerClass()
+    {
+	    return this.classType;
+    }
+
+
+    public void setPlayerClass(PlayerClass x)
+    {
+	    this.classType = x;
+    }
+
 
     @Override
     public int getDamage() {
