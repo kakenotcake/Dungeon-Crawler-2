@@ -1,0 +1,3 @@
+class NoMoreEnemies extends Exception{
+}
+

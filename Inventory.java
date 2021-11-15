@@ -10,6 +10,7 @@ public class Inventory
 	private Item equippedArmor;
 	private int totalWeight = 0;
 	private Player player;
+	private Item dropped;
 
 	Scanner input = new Scanner(System.in);
 
@@ -55,6 +56,7 @@ public class Inventory
 	}
 	public void drop() //method to drop items from inventory
 	{
+		System.out.print("I am in the drop method in inventory class.\n\r");
 		if (inventory.size() != 0)
 		{
 			System.out.print("Which item would you like to drop? Enter the item number: \n\r");
@@ -66,6 +68,7 @@ public class Inventory
 				if (!inventory.get(selection-1).equals(equippedWeapon) && !inventory.get(selection-1).equals(equippedArmor)) //if item is not an equipped item proceed as is
 				{
 					totalWeight  = totalWeight - inventory.get(selection-1).getWeight(); //subtract items weight from total weight
+					dropped = inventory.get(selection-1); //asign to dropped item
 					inventory.remove(selection-1); //remove item from arraylist
 					System.out.print("Item " + selection + " has been removed.\n\r");
 					System.out.print("The total weight is now: " + totalWeight()+"\n\r");
@@ -91,11 +94,11 @@ public class Inventory
 								armor.add(inventory.get(i));
 							}
 						}
-						System.out.print("weaponse size: " + weapons.size() + "\n\r");
-						System.out.print("armor size: " + armor.size() + "\n\r");
+
 						if (weapons.size() >=  2 && inventory.get(selection-1).getType()==ItemType.Weapon) //removes weapon and equipped weapon is set to null
 						{
 							totalWeight = totalWeight - inventory.get(selection-1).getWeight();
+							dropped = inventory.get(selection-1);
 							inventory.remove(selection-1);
 							System.out.print("Item " + selection + " has been removed and un-equipped.\n\r");
 							System.out.print("The total weight is now: " + totalWeight() + "\n\r");
@@ -104,6 +107,7 @@ public class Inventory
 						else if (armor.size() >=  2 && inventory.get(selection-1).getType()==ItemType.Armor)//removes armor and equipped armor variable is set to null
 						{
 							totalWeight = totalWeight - inventory.get(selection-1).getWeight();
+							dropped = inventory.get(selection-1);
 							inventory.remove(selection-1);
 							System.out.print("Item " + selection + " has been removed and un-equipped.\n\r");
 							System.out.print("The total weight is now: " + totalWeight()+"\n\r");
@@ -132,6 +136,10 @@ public class Inventory
 		{
 			System.out.print("Your inventory is empty.\n\r");
 		}
+	}
+	public Item getDropped()
+	{
+		return dropped;
 	}
 	public void equipWeapon() //method to assign weapon to equipped weapon variable
 	{
@@ -169,6 +177,17 @@ public class Inventory
 			System.out.print("Your inventory is empty.\n\r");
 		}
 	}
+	public void equipStarterWeapon(Item weapon)
+	{
+		equippedWeapon = weapon;
+		System.out.print("Starter weapon " + weapon + " has been equipped.\n\r");
+	}
+	public void equipStarterArmor(Item armor)
+	{
+		equippedArmor = armor;
+		System.out.print("Starter armor " + armor + " has been equipped.\n\r");
+	}
+
 	public void equipArmor() //method to equip armor
 	{
 		if (inventory.size() != 0) //if inventory is not empty

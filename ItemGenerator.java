@@ -14,25 +14,25 @@ public class ItemGenerator {
 
                 ArrayList<Item> reserves = new ArrayList<Item>();
 
-                Item masterSword = new Item(ItemType.Weapon, "Master Sword", 30, 780, 40);
+                Item masterSword = new Item(ItemType.Weapon, "Master Sword", 30, 780, 40, PlayerClass.Paladin);
                 reserves.add(masterSword);
-                Item skywardHarp = new Item(ItemType.Weapon, "Skyward Harp", 20, 500, 26);
+                Item skywardHarp = new Item(ItemType.Weapon, "Skyward Harp", 20, 500, 26, PlayerClass.Bard);
                 reserves.add(skywardHarp);
-                Item fish = new Item(ItemType.Weapon, "Mighty Fish Lord", 45, 29, 32);
+                Item fish = new Item(ItemType.Weapon, "Mighty Fish Lord", 45, 29, 32, PlayerClass.Archer);
                 reserves.add(fish);
-		Item wabbajack = new Item(ItemType.Weapon, "Wabbajack", 17, 350, 28);
+		Item wabbajack = new Item(ItemType.Weapon, "Wabbajack", 17, 350, 28, PlayerClass.Mage);
 		reserves.add(wabbajack);
-		Item darts = new Item(ItemType.Weapon, "Poison Darts", 9, 64, 16);
+		Item darts = new Item(ItemType.Weapon, "Poison Darts", 9, 64, 16, PlayerClass.Assassin);
 		reserves.add(darts);
-                Item hylianShield = new Item(ItemType.Armor, "Hylian Shield", 50, 380, 0);
+                Item hylianShield = new Item(ItemType.Armor, "Hylian Shield", 50, 380, 0, PlayerClass.Archer);
                 reserves.add(hylianShield);
-                Item prayer = new Item(ItemType.Armor, "Holy Prayer", 33, 777, 0);
+                Item prayer = new Item(ItemType.Armor, "Holy Prayer", 33, 777, 0, PlayerClass.Mage);
                 reserves.add(prayer);
-                Item guardian = new Item(ItemType.Armor, "Guardian Graves", 42, 185, 0);
+                Item guardian = new Item(ItemType.Armor, "Guardian Graves", 42, 185, 0, PlayerClass.Paladin);
                 reserves.add(guardian);
-		Item royalGarb = new Item(ItemType.Armor, "Royal Guard's Cloak", 22, 140, 0);
+		Item royalGarb = new Item(ItemType.Armor, "Royal Guard's Cloak", 22, 140, 0, PlayerClass.Assassin);
 		reserves.add(royalGarb);
-		Item slippers = new Item(ItemType.Armor, "Rubber Slippers", 16, 72, 0);
+		Item slippers = new Item(ItemType.Armor, "Rubber Slippers", 16, 72, 0, PlayerClass.Bard);
 		reserves.add(slippers);
                 Item star = new Item(ItemType.Other, "Star Fragment", 32, 650, 0);
                 reserves.add(star);

@@ -3,6 +3,7 @@
 
 import java.util.ArrayList;
 import ansi_terminal.*;
+import java.util.Scanner;
 
 public class Game {
     private Room room;
@@ -11,11 +12,33 @@ public class Game {
     private ArrayList<Enemy> enemies;
     private Inventory inventory;
 
-    public Game() {
-        room = new Room();
+    public Game() 
+    {  
+	room = new Room();
         player = new Player(room.getPlayerStart());
         boxes = room.getBoxes();
         enemies = room.getEnemies();
+
+	String name = Terminal.getLine("What is your name adventurer? ");
+	player.setName(name);
+	System.out.print("\n\r");
+	System.out.print("What is your class?\n\n\r");
+	System.out.print("1. Mage\n\r2. Bard\n\r3. Paladin\n\r4. Assasin\n\r5. Archer\n\n\r");
+	System.out.print("Enter the number: ");
+	Scanner input = new Scanner(System.in);
+	int num = input.nextInt();
+	if (num < 1 || num > 5)
+	{
+		System.out.print("Invalid input.\n\r");
+	}
+	else
+	{
+		player.setPlayerType(num);
+	}
+	System.out.print("\n\r");
+	player.setStarterWeapon();
+	player.setStarterArmor();
+	Terminal.pause(1.5);
     }
 
     // prints a help menu to the left of the map
@@ -28,6 +51,7 @@ public class Game {
                          "List items: l",
                          "Equip weapon: w",
                          "Equip armor: a",
+			 "View states: s",
                          "Quit: q"
         };
         Terminal.setForeground(Color.GREEN);
@@ -70,9 +94,11 @@ public class Game {
 
     // code for when the player tries to drop an item
     private void drop() {
-	    inventory.drop();
-       /* if (checkForBox() == null) {
-            Item dropped = player.getInventory().drop();
+          player.getInventory().drop();
+          System.out.print("I am in the drop method in Game class.\n\r");
+	  Box thing = checkForBox();
+          if (thing == null) {
+            Item dropped = player.getInventory().getDropped();
             if (dropped != null) {
                 boxes.add(new Box(player.getRow(), player.getCol(), dropped));
             }
@@ -80,7 +106,7 @@ public class Game {
         } else {
             setStatus("You cannot drop something on an existing item...");
             Terminal.pause(1.25);
-        }*/
+        }
     }
 
     // handle the key which was read - return false if we quit the game
@@ -108,6 +134,7 @@ public class Game {
                 player.getInventory().equipArmor();
                 redrawMapAndHelp();
                 break;
+
 
             // handle movement
             case LEFT: player.move(0, -1, room);

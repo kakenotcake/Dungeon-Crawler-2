@@ -3,8 +3,10 @@
 import ansi_terminal.*;
 
 public class Player extends Character {
-    private Inventory items;
-    private PlayerClass classType;
+
+    private Inventory inventory;
+    private PlayerClass playerClass;
+    private String name;
 
     public Player(Position start, PlayerClass classType) {
         // our starting details
@@ -13,12 +15,8 @@ public class Player extends Character {
 	this.classType = classType;
 
         // we can carry 100 pounds of items
-        items = new Inventory(100);
-
-        // give them some basic stuff to start with
-        // TODO make up your own starting equipment!
-        items.addAndEquip(new Item(ItemType.Weapon, "Iron Dagger", 5, 12, 7));
-        items.addAndEquip(new Item(ItemType.Armor, "Leather Armor", 15, 20, 3));
+        inventory = new Inventory(200);
+       	
     }
 
     public PlayerClass getPlayerClass()
@@ -35,7 +33,7 @@ public class Player extends Character {
 
     @Override
     public int getDamage() {
-        Item weapon = items.getEquippedWeapon();
+        Item weapon = inventory.getEquippedWeapon();
         if (weapon != null) {
             return weapon.getStrength();
         } else {
@@ -48,10 +46,14 @@ public class Player extends Character {
     public String getName() {
         return "Player";
     }
+    public void setName(String name)
+    {
+	    this.name = name;
+    }
 
     @Override
     public int getProtection() {
-        Item armor = items.getEquippedArmor();
+        Item armor = inventory.getEquippedArmor();
         if (armor != null) {
             return armor.getStrength();
         } else {
@@ -61,7 +63,68 @@ public class Player extends Character {
     }
 
     public Inventory getInventory() {
-        return items;
+        return inventory;
+    }
+    public void setPlayerType(int num)
+    {
+	    if (num==1)
+	    {
+		    this.playerClass = PlayerClass.Mage;
+	    }
+	    else if(num == 2)
+	    {
+		    this.playerClass = PlayerClass.Bard;
+	    }
+	    else if(num == 3)
+	    {
+		    this.playerClass = PlayerClass.Paladin;
+	    }
+	    else if(num==4)
+	    {
+		    this.playerClass = PlayerClass.Assassin;
+	    }
+	    else
+	    {
+		    this.playerClass = PlayerClass.Archer;
+	    }
+
+    }
+    public PlayerClass getPlayerClass()
+    {
+	    return playerClass;
+    }
+    public void setStarterWeapon()
+    {
+	    Item weapon = null;
+	    boolean stop = false;
+	    while (stop==false) 
+	    {
+		    weapon = ItemGenerator.generate();
+		    if ((weapon.getType().equals(ItemType.Weapon)) && (weapon.getPlayerClass().equals(playerClass)))
+		    {
+			    stop = true;
+		    }
+	    }
+	    System.out.print("Your starting weapon is: " + weapon + "\n\r");
+	    inventory.add(weapon);
+	    inventory.equipStarterWeapon(weapon);
+    }
+    public void setStarterArmor()
+    {
+	    Item armor = null;
+	    boolean stop = false;
+	    while (stop==false)
+	    {
+		    armor = ItemGenerator.generate();
+		    if ((armor.getType().equals(ItemType.Armor)) && (armor.getPlayerClass().equals(playerClass)))
+		    {
+			    stop = true;
+		    }
+	    }
+	    System.out.print("Your starting armor is: " + armor + "\n\r");
+	    inventory.add(armor);
+	    inventory.equipStarterArmor(armor);
     }
 }
-
+	
+				    

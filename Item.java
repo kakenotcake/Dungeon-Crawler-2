@@ -8,8 +8,9 @@ public class Item {
         private int weight;
         private int value;
         private int strength;
+	private PlayerClass playerClass;
 
-        public Item(ItemType type, String name, int weight, int value, int strength)
+        public Item(ItemType type, String name, int weight, int value, int strength, PlayerClass playerClass)
 
         {
                 this.type = type;
@@ -17,8 +18,17 @@ public class Item {
                 this.weight = weight;
                 this.value = value;
                 this.strength = strength;
+		this.playerClass = playerClass;
 
         }
+	public Item(ItemType type, String name, int weight, int value, int strength)
+	{
+		this.type = type;
+		this.name =name;
+		this.weight = weight;
+		this.value = value;
+		this.strength = strength;
+	}
 
         /**
          * A getter. This method returns the weight of the Item being referred to.
@@ -56,13 +66,17 @@ public class Item {
 	{
 		return this.strength;
 	}
+	public PlayerClass getPlayerClass()
+	{
+		return this.playerClass;
+	}
 
         /**
          * The toString() method for Item objects. This method is responsible for returning all of the parameters of an Item object in a legible way.
          */
         public String toString()
         {
-                return this.name + " " + this.weight + " " + this.value + " " + this.strength;
+                return this.name + " " + this.weight + " " + this.value + " " + this.strength + " " + this.playerClass;
 
         }
 }
