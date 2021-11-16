@@ -16,7 +16,7 @@ public class EnemySystem{
         //this.EnemyPosition=s.nextLine();
         while(true){
            // Enemy a = new Enemy(stdin);
-            enemies.add(a);
+          //  enemies.add(a);
         }
 
 

@@ -8,26 +8,12 @@ public class Player extends Character {
     private PlayerClass playerClass;
     private String name;
 
-    public Player(Position start, PlayerClass classType) {
+    public Player(Position start) {
         // our starting details
         super(start.getRow(), start.getCol(), '@', Color.CYAN, 50);
-
-	this.classType = classType;
-
         // we can carry 100 pounds of items
         inventory = new Inventory(200);
        	
-    }
-
-    public PlayerClass getPlayerClass()
-    {
-	    return this.classType;
-    }
-
-
-    public void setPlayerClass(PlayerClass x)
-    {
-	    this.classType = x;
     }
 
 
