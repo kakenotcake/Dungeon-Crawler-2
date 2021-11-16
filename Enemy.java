@@ -17,17 +17,12 @@ public class Enemy extends Character {
         this.damage = damage;
         this.protection = protection;
         this.battleActive = false;
-        rng = new Random();
-    }
-    public Enemy(String name, int row, int col, int hp, int damage, int protection,Scanner s) {
-        super(row, col, '*', Color.RED, hp);
-        this.name = name;
-        this.damage = damage;
-        this.protection = protection;
-        this.battleActive = false;
-        rng = new Random();
+        rng = new Random();  
     }
 
+    public Enemy(Scanner S){
+    
+    }
     @Override
     public int getDamage() {
         return damage;
