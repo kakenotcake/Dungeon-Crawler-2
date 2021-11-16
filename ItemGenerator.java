@@ -34,15 +34,15 @@ public class ItemGenerator {
 		reserves.add(royalGarb);
 		Item slippers = new Item(ItemType.Armor, "Rubber Slippers", 16, 72, 8, PlayerClass.Bard);
 		reserves.add(slippers);
-                Item star = new Item(ItemType.Other, "Star Fragment", 32, 650, 0);
+                Item star = new Item(ItemType.Other, "Star Fragment", 32, 650, 5);
                 reserves.add(star);
-                Item pie = new Item(ItemType.Other, "Apple Pie", 2, 18, 0);
+                Item pie = new Item(ItemType.Other, "Apple Pie", 2, 18, 4);
                 reserves.add(pie);
-                Item bees = new Item(ItemType.Other, "Peculiar Beehive", 8, 43, 80);
+                Item bees = new Item(ItemType.Other, "Peculiar Beehive", 8, 43, 3);
                 reserves.add(bees);
-		Item cane = new Item(ItemType.Other, "Crow's Head Cane", 12, 55, 0);
+		Item cane = new Item(ItemType.Other, "Crow's Head Cane", 12, 55, 2);
 		reserves.add(cane);
-		Item ocarina = new Item(ItemType.Other, "Royal Ocarina", 6, 120, 0);
+		Item ocarina = new Item(ItemType.Other, "Royal Ocarina", 6, 120, 1);
 		reserves.add(ocarina);
 
                 Collections.shuffle(reserves);

@@ -6,7 +6,7 @@ import ansi_terminal.*;
 
 public abstract class Character extends Entity {
     // the characters health points
-    private int hp;
+    protected int hp;
 
     public Character(int row, int col, char display, Color color, int hp) {
         super(row, col, display, color);
@@ -17,6 +17,7 @@ public abstract class Character extends Entity {
     public int getHealth() {
         return hp;
     }
+    public abstract void setHealth(int hp);
     public abstract int getDamage();
     public abstract int getProtection();
     public abstract String getName();

@@ -58,6 +58,11 @@ public class Player extends Character {
             return 0;
         }
     }
+    @Override
+    public void setHealth(int extraHp)
+    {
+	    this.hp = extraHp + this.hp;
+    }
 
     public Inventory getInventory() {
         return inventory;
@@ -131,6 +136,16 @@ public class Player extends Character {
 	    System.out.print("Equipped weapon: " + inventory.getEquippedWeapon() + "\n\r");
 	    System.out.print("Equipped armor: " + inventory.getEquippedArmor() + "\n\r");
     }
+    public void useAid()
+    {
+	    Item aid = inventory.getAid();
+	    System.out.print("Strength from aid is: " + aid.getStrength() + "\n\r");
+	    setHealth(aid.getStrength());
+	    System.out.print("Player's health increased to " + getHealth() + "\n\r");
+	    inventory.removeUsedAid(aid);
+
+    }
+
 }
 	
 				    

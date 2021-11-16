@@ -58,7 +58,10 @@ public class Enemy extends Character {
     public String getName() {
         return name;
     }
-
+    @Override
+    public void setHealth(int extraHp)
+    {
+    }
     public void setBattleActive() {
         battleActive = true;
     }
