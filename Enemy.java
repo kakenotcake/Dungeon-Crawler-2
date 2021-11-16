@@ -18,6 +18,8 @@ public class Enemy extends Character {
         this.battleActive = false;
         rng = new Random();
     }
+    public Enemy(Scanner stdin) {
+    }
 
     @Override
     public int getDamage() {
