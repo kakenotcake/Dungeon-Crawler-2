@@ -15,7 +15,7 @@ public class Room {
 
     public Room() {
         // this initializes the room to one specific space
-        rows = 30;
+        rows = 29;
         cols = 60;
 
         // the actual room geometry
