@@ -3,6 +3,7 @@
 import java.util.Random;
 import ansi_terminal.*;
 import java.util.Scanner;
+import java.io.PrintWriter;
 
 public class Enemy extends Character {
     private String name;
@@ -19,11 +20,11 @@ public class Enemy extends Character {
         this.battleActive = false;
         rng = new Random();  
     }
-/*
-    public Enemy(Scanner S){
+    void save(PrintWriter o){
+    
     
     }
-*/
+
     @Override
     public int getDamage() {
         return damage;
