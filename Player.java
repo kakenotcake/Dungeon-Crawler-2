@@ -3,10 +3,12 @@
 import ansi_terminal.*;
 
 public class Player extends Character {
-
+import java.io.PrintWriter;
     private Inventory inventory;
-    private PlayerClass playerClass;
     private String name;
+    private row;
+    private col;
+
 
     public Player(Position start, PlayerClass classType) {
         // our starting details
@@ -17,6 +19,14 @@ public class Player extends Character {
         // we can carry 100 pounds of items
         inventory = new Inventory(200);
        	
+    }
+    void save(PrintWriter o){
+	    o.println(name);
+	    o.println(row);
+	    o.println(col);
+
+    
+    
     }
 
     public PlayerClass getPlayerClass()
