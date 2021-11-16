@@ -8,7 +8,7 @@ public class EnemySystem{
 
 
     //hydration constructor to save information of Enemies
-    EnemySystem(String fileName)throws Exception {
+    EnemySystem(String fileName,Scanner s)throws Exception {
         this.enemies=new ArrayList<Enemy>();
         Scanner stdin = new Scanner(new FileReader(fileName));
         this.EnemyHealth=stdin.nextInt();
