@@ -1,13 +1,14 @@
 // Player.java
-
+import java.io.PrintWriter;
 import ansi_terminal.*;
 
 public class Player extends Character {
-import java.io.PrintWriter;
+
     private Inventory inventory;
     private String name;
-    private row;
-    private col;
+    private int row;
+    private int col;
+    private PlayerClass playerClass;
 
 
     public Player(Position start) {

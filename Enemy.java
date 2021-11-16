@@ -34,7 +34,7 @@ public class Enemy extends Character {
 	    o.println(col);
     }
     //method that loads up information about the enemy
-    public Enemy(Scanner in){
+/*    public Enemy(Scanner in){
 	    type.nextLine();
 	    health.nextLine();
 	    damage.nextLine();
@@ -42,7 +42,7 @@ public class Enemy extends Character {
 	    row.nextLine();
 	    col.nextLine();
     
-    }
+    }*/
 
     @Override
     public int getDamage() {
