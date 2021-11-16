@@ -70,7 +70,7 @@ public class Room {
 
 
     // finds positions of  new room and prints new rooms
-    //public void enterRoom() {
+    //public String[] enterRoom() {
     //	    for (int row = 0; row < rows, row++) {
     //		    for (int col = 0; col < cols; col++) {
     //			    if (grid[row].charAt(col) == 'r') {
@@ -87,7 +87,9 @@ public class Room {
     // returns a set of item boxes for this map, this is here because it depends on
     // the room geometry for where the boxes make sense to be
     public ArrayList<Box> getBoxes() {
+	    System.out.print("I am in the get boxes method.\n\r");
         ArrayList<Box> boxes = new ArrayList<Box>();
+	System.out.print("initialized boxes arraylist\n\r");
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
                 if (grid[row].charAt(col) == 'i') {
