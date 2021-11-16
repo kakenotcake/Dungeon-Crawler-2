@@ -13,13 +13,13 @@ public class EnemyGenerator {
         int value=rng.nextInt(3);
         switch (value){
             case 0:
-                enemy=new Enemy("Ogre", row, col, 100, 110, 3);
+                enemy=new Enemy("Ogre", row, col, 50, 30, 3);
                 break;
             case 1:
-                enemy=new Enemy("Skeleton", row, col, 100, 90, 1);
+                enemy=new Enemy("Skeleton", row, col, 50, 20, 1);
                 break;
             case 2:
-                enemy=new Enemy("Goblin", row, col, 100, 60, 2);
+                enemy=new Enemy("Goblin", row, col, 50, 25, 2);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + value);

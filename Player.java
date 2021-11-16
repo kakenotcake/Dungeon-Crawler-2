@@ -3,18 +3,33 @@
 import ansi_terminal.*;
 
 public class Player extends Character {
+
     private Inventory inventory;
     private PlayerClass playerClass;
     private String name;
 
-    public Player(Position start) {
+    public Player(Position start, PlayerClass classType) {
         // our starting details
         super(start.getRow(), start.getCol(), '@', Color.CYAN, 50);
+
+	this.classType = classType;
 
         // we can carry 100 pounds of items
         inventory = new Inventory(200);
        	
     }
+
+    public PlayerClass getPlayerClass()
+    {
+	    return this.classType;
+    }
+
+
+    public void setPlayerClass(PlayerClass x)
+    {
+	    this.classType = x;
+    }
+
 
     @Override
     public int getDamage() {
@@ -109,6 +124,15 @@ public class Player extends Character {
 	    System.out.print("Your starting armor is: " + armor + "\n\r");
 	    inventory.add(armor);
 	    inventory.equipStarterArmor(armor);
+    }
+    public void printStats()
+    {
+	    System.out.print("Player's health: " + getHealth() + "\n\r");
+	    System.out.print("Player's damage: " + getDamage() + "\n\r");
+	    System.out.print("Player's protection: " + getProtection() + "\n\r");
+	    System.out.print("Player's class: " + getPlayerClass() + "\n\r");
+	    System.out.print("Equipped weapon: " + inventory.getEquippedWeapon() + "\n\r");
+	    System.out.print("Equipped armor: " + inventory.getEquippedArmor() + "\n\r");
     }
 }
 	
