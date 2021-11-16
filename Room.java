@@ -70,7 +70,7 @@ public class Room {
 
 
     // finds positions of  new room and prints new rooms
-    //public void enterRoom() {
+    //public String[] enterRoom() {
     //	    for (int row = 0; row < rows, row++) {
     //		    for (int col = 0; col < cols; col++) {
     //			    if (grid[row].charAt(col) == 'r') {
