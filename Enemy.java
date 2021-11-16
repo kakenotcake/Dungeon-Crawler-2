@@ -11,6 +11,10 @@ public class Enemy extends Character {
     private int protection;
     private static Random rng;
     private boolean battleActive;
+    private int health;
+    private String type;
+    private int row;
+    private int col;
 
     public Enemy(String name, int row, int col, int hp, int damage, int protection) {
         super(row, col, '*', Color.RED, hp);
@@ -20,8 +24,23 @@ public class Enemy extends Character {
         this.battleActive = false;
         rng = new Random();  
     }
+    //method that saves information about the enemy
     void save(PrintWriter o){
-    
+	    o.println(type);
+	    o.println(health);
+	    o.println(damage);
+	    o.println(protection);
+	    o.println(row);
+	    o.println(col);
+    }
+    //method that loads up information about the enemy
+    public Enemy(Scanner in){
+	    type.nextLine();
+	    health.nextLine();
+	    damage.nextLine();
+	    protection.nextLine();
+	    row.nextLine();
+	    col.nextLine();
     
     }
 
