@@ -56,7 +56,6 @@ public class Inventory
 	}
 	public void drop() //method to drop items from inventory
 	{
-		System.out.print("I am in the drop method in inventory class.\n\r");
 		if (inventory.size() != 0)
 		{
 			System.out.print("Which item would you like to drop? Enter the item number: \n\r");
@@ -232,6 +231,39 @@ public class Inventory
 	{
 		return equippedArmor;
 	}
+	public Item getAid()
+	{
+		ArrayList<Item> aid = new ArrayList<Item>();
+		for (int i = 0; i < inventory.size(); i++)
+		{
+			if (inventory.get(i).getType().equals(ItemType.Other))
+			{
+				aid.add(inventory.get(i));
+			}
+		}
+		if (aid.size() != 0)
+		{
+			System.out.print("Which item would you like to use?\n\r");
+			int count = 0;
+			for (int i = 0; i < aid.size(); i++)
+			{
+				count++;
+				System.out.print(count + ". " + aid.get(i) + "\n\r");
+			}
+			int answer = input.nextInt();
+			return aid.get(answer-1);
+		}
+		else
+		{
+			System.out.print("Sorry, you do not have aid in your inventory. Try picking up an item\n\r");
+		}
+		return null;
+	}
+	public void removeUsedAid(Item usedAid)
+	{
+		inventory.remove(usedAid);
+	}
+
 }
 				
 

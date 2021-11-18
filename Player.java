@@ -1,4 +1,8 @@
 // Player.java
+<<<<<<< HEAD
+=======
+import java.io.PrintWriter;
+>>>>>>> 70df2c2deb3cc5ef7b9ef9dba1439cd85d2573a8
 import ansi_terminal.*;
 import java.io.PrintWriter;
 
@@ -9,35 +13,12 @@ public class Player extends Character {
     private int col;
 
 
-    public Player(Position start, PlayerClass classType) {
+    public Player(Position start) {
         // our starting details
         super(start.getRow(), start.getCol(), '@', Color.CYAN, 50);
-
-	this.classType = classType;
-
         // we can carry 100 pounds of items
         inventory = new Inventory(200);
        	
-    }
-   /* void save(PrintWriter o){
-	    o.println(name);
-	    o.println(row);
-	    o.println(col);
-
-    
-    
-    }
-    */
-
-    public PlayerClass getPlayerClass()
-    {
-	    return this.classType;
-    }
-
-
-    public void setPlayerClass(PlayerClass x)
-    {
-	    this.classType = x;
     }
 
 
@@ -70,6 +51,11 @@ public class Player extends Character {
             // without armor, we have no protection
             return 0;
         }
+    }
+    @Override
+    public void setHealth(int extraHp)
+    {
+	    this.hp = extraHp + this.hp;
     }
 
     public Inventory getInventory() {
@@ -144,6 +130,16 @@ public class Player extends Character {
 	    System.out.print("Equipped weapon: " + inventory.getEquippedWeapon() + "\n\r");
 	    System.out.print("Equipped armor: " + inventory.getEquippedArmor() + "\n\r");
     }
+    public void useAid()
+    {
+	    Item aid = inventory.getAid();
+	    System.out.print("Strength from aid is: " + aid.getStrength() + "\n\r");
+	    setHealth(aid.getStrength());
+	    System.out.print("Player's health increased to " + getHealth() + "\n\r");
+	    inventory.removeUsedAid(aid);
+
+    }
+
 }
 	
 				    

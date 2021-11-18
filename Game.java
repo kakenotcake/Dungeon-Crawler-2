@@ -151,7 +151,7 @@ public class Game {
 		break;
 
             case u:
-		System.out.print("Player to use aid\n\r");
+		player.useAid();
 		Terminal.pause(2);
 		redrawMapAndHelp();
 		break;

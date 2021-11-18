@@ -24,31 +24,9 @@ public class Enemy extends Character {
         this.battleActive = false;
         rng = new Random();  
     }
-    // method that saves information about the enemy
-
-    // void save(PrintWriter o){
-	   // o.println(type);
-	   // o.println(health);
-	   // o.println(damage);
-	   // o.println(protection);
-	   // o.println(row);
-	   // o.println(col);
-    }
+    // method that saves information
     
 
-    
-    
-    //method that loads up information about the enemy
-   /* public Enemy(Scanner in){
-	    type.nextLine();
-	    health.nextLine();
-	    damage.nextLine();
-	    protection.nextLine();
-	    row.nextLine();
-	    col.nextLine();
-    
-    }
-     */
 
     @Override
     public int getDamage() {
@@ -64,7 +42,10 @@ public class Enemy extends Character {
     public String getName() {
         return name;
     }
-
+    @Override
+    public void setHealth(int extraHp)
+    {
+    }
     public void setBattleActive() {
         battleActive = true;
     }
