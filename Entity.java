@@ -40,13 +40,16 @@ public class Entity {
     void save(PrintWriter o){
 	    o.println(position.getRow());
 	    o.println(position.getCol());
+	    o.println(display);
 
     }
     public Entity(Scanner in){
+	    in.nextLine();
 	    int row=position.getRow();
 	    int col=position.getCol();
 	    row=in.nextInt();
 	    col=in.nextInt();
+	    display=in.nextLine();
 	   
 
     }
