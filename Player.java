@@ -137,6 +137,13 @@ public class Player extends Character {
 	    inventory.removeUsedAid(aid);
 
     }
+    @Override
+    void save(PrintWriter p){
+	    super.save(p);
+	    p.println(name);
+	    p.println(getPlayerClass());
+	    p.println(getInventory());
+    }
 
 }
 	
