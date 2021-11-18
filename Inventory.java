@@ -251,6 +251,9 @@ public class Inventory
 				System.out.print(count + ". " + aid.get(i) + "\n\r");
 			}
 			int answer = input.nextInt();
+
+			if (aid.get(answer-1).getName() == "Apple Pie") {
+				System.out.print("You take a bite of the Apple Pie. The warm cinnamon warms your spirit. You feel invigorated.\n\r");
 			return aid.get(answer-1);
 		}
 		else
