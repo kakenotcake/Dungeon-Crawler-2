@@ -1,7 +1,7 @@
 // Player.java
 import java.io.PrintWriter;
 import ansi_terminal.*;
-import java.io.PrintWriter;
+import java.util.Scanner;
 
 public class Player extends Character {
     private Inventory inventory;
@@ -139,12 +139,14 @@ public class Player extends Character {
     @Override
     void save(PrintWriter p){
 	    super.save(p);
+	    p.println("Player");
 	    p.println(name);
 	    p.println(getPlayerClass());
 	    p.println(getInventory());
     }
     public Player(Scanner in){
 	    super(in);
+	    in.nextLine();
 	    String type=getPlayerClass();
 	    Inventory storage=getInventory();
 	    name=in.nextLine();
