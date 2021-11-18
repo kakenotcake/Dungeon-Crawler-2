@@ -38,15 +38,19 @@ public class Entity {
         return position.getCol();
     }
     void save(PrintWriter o){
+	    o.print("Entity");
 	    o.println(position.getRow());
 	    o.println(position.getCol());
+	    o.println(display);
 
     }
     public Entity(Scanner in){
+	    in.nextLine();
 	    int row=position.getRow();
 	    int col=position.getCol();
 	    row=in.nextInt();
 	    col=in.nextInt();
+	    display=in.next().charAt(0);
 	   
 
     }
