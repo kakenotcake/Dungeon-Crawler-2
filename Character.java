@@ -54,8 +54,14 @@ public abstract class Character extends Entity {
         }
     }
     //save method goes here
-    void save(PrintWriter o){
-    
+    @Override
+    void save(PrintWriter s){
+	    super.save(s);
+	    s.println(getHealth());
+    }
+    public Character(Scanner in){
+	    super(in);
+	    hp=in.nextInt();
     }
     
 
