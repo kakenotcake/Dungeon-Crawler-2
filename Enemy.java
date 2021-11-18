@@ -53,13 +53,11 @@ public class Enemy extends Character {
     void save(PrintWriter q){
 	    super.save(q);
 	    q.println(name);
-	    q.println(type);
 	    q.println(protection);    
     }
     public Enemy(Scanner in){
 	   super(in);
 	   name=in.nextLine();
-	   type=in.nextLine();
 	   protection=in.nextInt();
     
     }
