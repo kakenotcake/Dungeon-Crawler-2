@@ -1,8 +1,9 @@
 // Character.java
 
 import java.util.ArrayList;
-
+import java.io.PrintWriter;
 import ansi_terminal.*;
+import java.util.Scanner;
 
 public abstract class Character extends Entity {
     // the characters health points
@@ -52,6 +53,11 @@ public abstract class Character extends Entity {
             return true;
         }
     }
+    //save method goes here
+    void save(PrintWriter o){
+    
+    }
+    
 
     // this method performs one round of battle between two characters
     // return false if the player has died aas a result
