@@ -143,6 +143,14 @@ public class Player extends Character {
 	    p.println(getPlayerClass());
 	    p.println(getInventory());
     }
+    public Player(Scanner in){
+	    super(in);
+	    String type=getPlayerClass();
+	    Inventory storage=getInventory();
+	    name=in.nextLine();
+	    type=in.nextLine();
+	    storage=in.nextLine();
+    }
 
 }
 	
