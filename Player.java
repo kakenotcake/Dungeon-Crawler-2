@@ -1,8 +1,6 @@
 // Player.java
-<<<<<<< HEAD
 =======
 import java.io.PrintWriter;
->>>>>>> 70df2c2deb3cc5ef7b9ef9dba1439cd85d2573a8
 import ansi_terminal.*;
 import java.io.PrintWriter;
 
