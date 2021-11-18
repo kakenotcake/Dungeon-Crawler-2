@@ -1,24 +1,46 @@
 import java.io.*;
+import java.util.ArrayList;
 public class World {
-	private String[] roomOne;
-        private String[] roomTwo;
-        private String[] roomThree;
+	private ArrayList<String> roomOne;
+        private ArrayList<String> roomTwo;
+        private ArrayList<String> roomThree;
 
-        public World(String[] roomOne, String[] roomTwo, String[] roomThree)
+        public World()
 	{
-		this.roomOne = roomOne;
-		this.roomTwo = roomTwo;
-		this.roomThree = roomThree;
+		roomOne = new ArrayList<String>();
+		roomTwo = new ArrayList<String>();
+		roomThree = new ArrayList<String>();
 	}
 
-	public void printNewRoom(String fileName) throws Exception
+	public void printRoomOne() throws Exception
 	{
+		String fileName = "Room1.txt";
+
 		BufferedReader br = new BufferedReader(new FileReader(fileName));
 		String line;
 		while ((line = br.readLine()) != null) {
-			System.out.println(line);
+			roomOne.add(line);
 		}
 
+		for (int i = 0; i < roomOne.size(); i++) {
+			System.out.println(roomOne.get(i));
+		}
+
+	}
+
+	public void printRoomTwo() throws Exception
+	{
+		String fileName = "Room2.txt";
+
+		BufferedReader br = new BufferedReader(new FileReader(fileName));
+		String line;
+		while ((line = br.readLine()) != null) {
+			roomTwo.add(line);
+		}
+
+		for (int i = 0; i < roomTwo.size(); i++) {
+			System.out.println(roomTwo.get(i));
+		}
 	}
 }
 

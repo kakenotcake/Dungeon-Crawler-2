@@ -70,19 +70,22 @@ public class Room {
 
 
     // finds positions of  new room and prints new rooms
-    //public String[] enterRoom() {
-    //	    for (int row = 0; row < rows, row++) {
-    //		    for (int col = 0; col < cols; col++) {
-    //			    if (grid[row].charAt(col) == 'r') {
-    //				    //ask user if they want to enter room
-    //				    //if so, print the new room from txt file
-    //				    //depending on user's position, the correct room will be printed
-    //			    }
-    //		    }
-    //	    }
-    //
-    //	    return null;
-    //}
+    public void enterRoom() {
+	    String list = null;
+   	    for (int row = 0; row < rows; row++) {
+    		    for (int col = 0; col < cols; col++) {
+    			    if (grid[row].charAt(col) == 'r') {
+    				    //ask user if they want to enter room
+    				    //if so, print the new room from txt file
+    				    //depending on user's position, the correct room will be printed
+				    printNewRoom("Room1.txt");
+				    
+   			    }
+    		    }
+    	    }
+    
+    	    //return null;
+    }
 
     // returns a set of item boxes for this map, this is here because it depends on
     // the room geometry for where the boxes make sense to be
