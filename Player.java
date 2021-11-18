@@ -5,8 +5,8 @@ import java.io.PrintWriter;
 public class Player extends Character {
     private Inventory inventory;
     private String name;
-    private row;
-    private col;
+    private int row;
+    private int col;
 
 
     public Player(Position start, PlayerClass classType) {
@@ -19,7 +19,7 @@ public class Player extends Character {
         inventory = new Inventory(200);
        	
     }
-    void save(PrintWriter o){
+   /* void save(PrintWriter o){
 	    o.println(name);
 	    o.println(row);
 	    o.println(col);
@@ -27,6 +27,7 @@ public class Player extends Character {
     
     
     }
+    */
 
     public PlayerClass getPlayerClass()
     {
