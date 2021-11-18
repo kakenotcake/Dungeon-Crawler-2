@@ -71,16 +71,14 @@ public class Room {
 
     // finds positions of  new room and prints new rooms
     public void enterRoom() {
-	    String list = null;
+	    World room = new World();
    	    for (int row = 0; row < rows; row++) {
     		    for (int col = 0; col < cols; col++) {
     			    if (grid[row].charAt(col) == 'r') {
-    				    //ask user if they want to enter room
-    				    //if so, print the new room from txt file
-    				    //depending on user's position, the correct room will be printed
-				    printNewRoom("Room1.txt");
+    				    room.printRoomOne();
 				    
    			    }
+
     		    }
     	    }
     

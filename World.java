@@ -23,7 +23,7 @@ public class World {
 		}
 
 		for (int i = 0; i < roomOne.size(); i++) {
-			System.out.println(roomOne.get(i));
+			System.out.print(roomOne.get(i) + "\n\r");
 		}
 
 	}
@@ -39,7 +39,7 @@ public class World {
 		}
 
 		for (int i = 0; i < roomTwo.size(); i++) {
-			System.out.println(roomTwo.get(i));
+			System.out.print(roomTwo.get(i) + "\n\r");
 		}
 	}
 }

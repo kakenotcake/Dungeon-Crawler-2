@@ -40,8 +40,8 @@ public class ItemGenerator {
                 reserves.add(pie);
                 Item bees = new Item(ItemType.Other, "Peculiar Beehive", 8, 43, 3);
                 reserves.add(bees);
-		Item cane = new Item(ItemType.Other, "Crow's Head Cane", 12, 55, 2);
-		reserves.add(cane);
+		Item walnut = new Item(ItemType.Other, "Inconspicuous Walnut", 12, 55, 2);
+		reserves.add(walnut);
 		Item ocarina = new Item(ItemType.Other, "Royal Ocarina", 6, 120, 1);
 		reserves.add(ocarina);
 

@@ -251,6 +251,14 @@ public class Inventory
 				System.out.print(count + ". " + aid.get(i) + "\n\r");
 			}
 			int answer = input.nextInt();
+
+			if (aid.get(answer-1).getName().equals("Apple Pie")) {
+				System.out.print("You take a bite of the Apple Pie. The sweet taste of cinnamon warms your spirit. You feel invigorated.\n\r");
+			} else if (aid.get(answer-1).getName().equals("Royal Ocarina")) {
+				System.out.print("You play a sweet, energetic  melody on the Royal Ocarina. A youthful vigor fills your veins.\n\r");
+			} else if (aid.get(answer-1).getName().equals("Inconspicuous Walnut")) {
+				System.out.print("You pop the walnut in your mouth, then spit it back out as the walnut dissolves into a thick powder. It tastes like how a firework looks. You feel alert\n\r");
+			}
 			return aid.get(answer-1);
 		}
 		else
