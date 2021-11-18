@@ -2,6 +2,8 @@
 // represents a pickup-able item
 
 import ansi_terminal.*;
+import java.util.Scanner;
+import java.io.PrintWriter;
 
 public class Box extends Entity {
     // the Item that is in the box
@@ -11,7 +13,23 @@ public class Box extends Entity {
     public Box(int row, int col, Item item) {
         super(row, col, 'i', Color.MAGENTA);
         this.item = item;
+    }//
+    @Override
+    void save(PrintWriter x){
+	    super.save(x);
+	    x.println("Box");
+	    x.println(getItem());
     }
+    public Box(Scanner in){
+	    super(in);
+	    in.nextLine();
+	    Item I=getItem();
+	    I=in.nextLine();
+    }
+
+
+
+
 
     public Item getItem() {
         return item;
