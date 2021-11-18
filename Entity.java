@@ -37,7 +37,7 @@ public class Entity {
     public int getCol() {
         return position.getCol();
     }
-    void save(printWriter o){
+    void save(PrintWriter o){
 	    o.println(getPosition);
     }
     public Entity(Scanner in){
