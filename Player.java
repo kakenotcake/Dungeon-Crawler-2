@@ -1,9 +1,8 @@
 // Player.java
-
 import ansi_terminal.*;
+import java.io.PrintWriter;
 
 public class Player extends Character {
-import java.io.PrintWriter;
     private Inventory inventory;
     private String name;
     private row;
