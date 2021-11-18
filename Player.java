@@ -147,11 +147,11 @@ public class Player extends Character {
     public Player(Scanner in){
 	    super(in);
 	    in.nextLine();
-	    String type=getPlayerClass();
-	    Inventory storage=getInventory();
+	   // String type=getPlayerClass().valueOf();
+	   // Inventory storage=getInventory();
 	    name=in.nextLine();
-	    type=in.nextLine();
-	    storage=in.nextLine();
+	   // type=in.nextLine();
+	   // storage=in.nextLine();
     }
 
 }
