@@ -23,6 +23,7 @@ public class Game {
 	player.setName(name);
 	System.out.print("\n\r");
 	setClass();
+	player.setCommentary();
     }
     public void setClass()
     {
@@ -101,8 +102,7 @@ public class Game {
 
     // code for when the player tries to drop an item
     private void drop() {
-          player.getInventory().drop();
-          System.out.print("I am in the drop method in Game class.\n\r");
+          player.getInventory().drop();;
 	  Box thing = checkForBox();
           if (thing == null) {
             Item dropped = player.getInventory().getDropped();
@@ -135,6 +135,7 @@ public class Game {
 
             case w:
                 player.getInventory().equipWeapon();
+		player.setCommentary();
 		Terminal.pause(2);
                 redrawMapAndHelp();
                 break;

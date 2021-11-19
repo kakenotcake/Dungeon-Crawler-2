@@ -50,10 +50,12 @@ public abstract class Character extends Entity {
         // print the info on this
         Terminal.warpCursor(room.getRows(), 0);
         if (other.hp > 0) {
+	    System.out.print(getCommentary() + "\n\r");
             System.out.print(getName() + " does " + damageDone + " damage to " + other.getName()
                 + ", leaving " + other.hp + " health.\n\r");
             return false;
         } else {
+	    System.out.print(getCommentary() + "\n\r");
             System.out.print(getName() + " does " + damageDone + " damage to " + other.getName()
                 + ", killing them.\n\r");
             return true;

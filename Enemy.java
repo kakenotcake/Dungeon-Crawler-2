@@ -22,7 +22,6 @@ public class Enemy extends Character {
         this.damage = damage;
         this.protection = protection;
         this.battleActive = false;
-	this.commentary = commentary;
         rng = new Random();  
     }
     // method that saves information

@@ -9,7 +9,6 @@ public class Player extends Character {
     private int row;
     private int col;
     private PlayerClass playerClass;
-    private String commentary;
 
 
     public Player(Position start, String commentary) {

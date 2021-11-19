@@ -164,6 +164,7 @@ public class Inventory
 				{
 					equippedWeapon = weapons.get(selection-1); //assign equipped weapon
 					System.out.print("You have equipped " + equippedWeapon + "\n\r");
+				
 				}
 			}
 			else //no weapons in inventory
