@@ -25,6 +25,8 @@ public class Box extends Entity {
 	    in.nextLine();
 	   // Item I=getItem();
 	   // I=in.nextLine();
+	    String i = getItem().toString();
+	    i=in.nextLine();
     }
 
 

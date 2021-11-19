@@ -8,15 +8,21 @@ import java.util.Scanner;
 public abstract class Character extends Entity {
     // the characters health points
     protected int hp;
+    protected String commentary;
 
-    public Character(int row, int col, char display, Color color, int hp) {
+    public Character(int row, int col, char display, Color color, int hp, String commentary) {
         super(row, col, display, color);
         this.hp = hp;
+	this.commentary = commentary;
     }
 
     // get the hp, damage, protection and name of character
     public int getHealth() {
         return hp;
+    }
+    public String getCommentary()
+    {
+	    return commentary;
     }
     public abstract void setHealth(int hp);
     public abstract int getDamage();
@@ -44,10 +50,12 @@ public abstract class Character extends Entity {
         // print the info on this
         Terminal.warpCursor(room.getRows(), 0);
         if (other.hp > 0) {
+	    System.out.print(getCommentary() + "\n\r");
             System.out.print(getName() + " does " + damageDone + " damage to " + other.getName()
                 + ", leaving " + other.hp + " health.\n\r");
             return false;
         } else {
+	    System.out.print(getCommentary() + "\n\r");
             System.out.print(getName() + " does " + damageDone + " damage to " + other.getName()
                 + ", killing them.\n\r");
             return true;
@@ -84,7 +92,8 @@ public abstract class Character extends Entity {
         }
 
         // now take damage from them
-        if (other.dealDamage(this, room)) {
+        if (other.dealDamage(this, room))
+	{
             return false;
         }
         System.out.printf("Press any key to return...\n\r");

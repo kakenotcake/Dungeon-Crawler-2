@@ -15,7 +15,7 @@ public class Game {
     public Game() 
     {  
 	room = new Room();
-        player = new Player(room.getPlayerStart());
+        player = new Player(room.getPlayerStart(), "");
         boxes = room.getBoxes();
         enemies = room.getEnemies();
 
@@ -23,6 +23,7 @@ public class Game {
 	player.setName(name);
 	System.out.print("\n\r");
 	setClass();
+	player.setCommentary();
     }
     public void setClass()
     {
@@ -56,9 +57,10 @@ public class Game {
                          "List items: l",
                          "Equip weapon: w",
                          "Equip armor: a",
-			 "View stats: s",
+			 "View stats: v",
 			 "Use aid: u",
-                         "Quit: q"
+                         "Quit: q",
+			 "Save: s"
         };
         Terminal.setForeground(Color.GREEN);
         for (int row = 0; row < cmds.length; row++) {
@@ -100,8 +102,7 @@ public class Game {
 
     // code for when the player tries to drop an item
     private void drop() {
-          player.getInventory().drop();
-          System.out.print("I am in the drop method in Game class.\n\r");
+          player.getInventory().drop();;
 	  Box thing = checkForBox();
           if (thing == null) {
             Item dropped = player.getInventory().getDropped();
@@ -134,6 +135,7 @@ public class Game {
 
             case w:
                 player.getInventory().equipWeapon();
+		player.setCommentary();
 		Terminal.pause(2);
                 redrawMapAndHelp();
                 break;
@@ -144,7 +146,7 @@ public class Game {
                 redrawMapAndHelp();
                 break;
             
-	    case s: 
+	    case v: 
 		player.printStats();
 		Terminal.pause(2);
 		redrawMapAndHelp();		
@@ -155,6 +157,10 @@ public class Game {
 		Terminal.pause(2);
 		redrawMapAndHelp();
 		break;
+
+	    case s: 
+	    	System.out.print("Option to save.\n\r");
+	    	break;
 
 
             // handle movement
