@@ -14,20 +14,26 @@ public class World {
 
 	public void printRoomOne() throws Exception
 	{
+		try
+		{
 
-		String fileName = "Room1.txt";
+			String fileName = "Room1.txt";
 
-		BufferedReader br = new BufferedReader(new FileReader(fileName));
-		String line;
-		while ((line = br.readLine()) != null) {
-			roomOne.add(line);
+			BufferedReader br = new BufferedReader(new FileReader(fileName));
+			String line;
+			while ((line = br.readLine()) != null) {
+				roomOne.add(line);
+			}
+
+			for (int i = 0; i < roomOne.size(); i++) {
+				System.out.print(roomOne.get(i) + "\n\r");
+			}
+
+		} catch (Exception e) {
+		
+			e.printStackTrace();
 		}
-
-		for (int i = 0; i < roomOne.size(); i++) {
-			System.out.print(roomOne.get(i) + "\n\r");
-		}
-
-	}
+	}	
 
 	public void printRoomTwo() throws Exception
 	{

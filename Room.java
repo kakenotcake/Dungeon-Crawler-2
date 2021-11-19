@@ -77,7 +77,13 @@ public class Room {
     		    for (int col = 0; col < cols; col++) {
     			    if (grid[row].charAt(col) == 'r') {
 				   Terminal.clear();
-    				   world.printRoomOne();
+				   try {
+					   
+    				   	world.printRoomOne();
+				   } catch (Exception e)
+				   {
+					   e.printStackTrace();
+				   }
 				   room.getPlayerStart();
 				   room.getBoxes();
 				   room.getEnemies();
