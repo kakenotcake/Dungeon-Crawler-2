@@ -52,11 +52,13 @@ public class Enemy extends Character {
     @Override
     void save(PrintWriter q){
 	    super.save(q);
+	    q.println("Enemy");
 	    q.println(name);
 	    q.println(protection);    
     }
     public Enemy(Scanner in){
 	   super(in);
+	   in.nextLine();
 	   name=in.nextLine();
 	   protection=in.nextInt();
     

@@ -2,6 +2,7 @@
 import java.io.PrintWriter;
 import ansi_terminal.*;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Player extends Character {
     private Inventory inventory;
@@ -147,9 +148,13 @@ public class Player extends Character {
     public Player(Scanner in){
 	    super(in);
 	    in.nextLine();
+	    String PlayerClass=getPlayerClass().toString();
 	   // String type=getPlayerClass().valueOf();
 	   // Inventory storage=getInventory();
 	    name=in.nextLine();
+	    PlayerClass=in.nextLine();
+	    
+
 	   // type=in.nextLine();
 	   // storage=in.nextLine();
     }
