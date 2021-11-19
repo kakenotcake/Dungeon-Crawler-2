@@ -23,8 +23,6 @@ public class Box extends Entity {
     public Box(Scanner in){
 	    super(in);
 	    in.nextLine();
-	   // Item I=getItem();
-	   // I=in.nextLine();
 	    String i = getItem().toString();
 	    i=in.nextLine();
     }
