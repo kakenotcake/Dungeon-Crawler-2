@@ -9,6 +9,7 @@ public class Item {
         private int value;
         private int strength;
 	private PlayerClass playerClass;
+	private String commentary;
 
         public Item(ItemType type, String name, int weight, int value, int strength, PlayerClass playerClass)
 
@@ -21,6 +22,16 @@ public class Item {
 		this.playerClass = playerClass;
 
         }
+	public Item (ItemType type, String name, int weight, int value, int strength, PlayerClass playerClass, String commentary)
+	{
+		this.type = type;
+		this.name = name;
+		this.weight = weight;
+		this.value = value;
+		this.strength = strength;
+		this.playerClass = playerClass;
+		this.commentary = commentary;
+	}
 	public Item(ItemType type, String name, int weight, int value, int strength)
 	{
 		this.type = type;
@@ -69,6 +80,10 @@ public class Item {
 	public PlayerClass getPlayerClass()
 	{
 		return this.playerClass;
+	}
+	public String getCommentary()
+	{
+		return this.commentary;
 	}
 
         /**

@@ -8,11 +8,13 @@ public class Player extends Character {
     private String name;
     private int row;
     private int col;
+    private PlayerClass playerClass;
+    private String commentary;
 
 
-    public Player(Position start) {
+    public Player(Position start, String commentary) {
         // our starting details
-        super(start.getRow(), start.getCol(), '@', Color.CYAN, 50);
+        super(start.getRow(), start.getCol(), '@', Color.CYAN, 50, commentary);
         // we can carry 100 pounds of items
         inventory = new Inventory(200);
        	
@@ -32,7 +34,7 @@ public class Player extends Character {
 
     @Override
     public String getName() {
-        return "Player";
+        return name;
     }
     public void setName(String name)
     {
@@ -54,7 +56,10 @@ public class Player extends Character {
     {
 	    this.hp = extraHp + this.hp;
     }
-
+    public void setCommentary()
+    {
+	    this.commentary = inventory.getEquippedWeapon().getCommentary();
+    }
     public Inventory getInventory() {
         return inventory;
     }
@@ -120,6 +125,7 @@ public class Player extends Character {
     }
     public void printStats()
     {
+	    System.out.print(name+"\n\r");
 	    System.out.print("Player's health: " + getHealth() + "\n\r");
 	    System.out.print("Player's damage: " + getDamage() + "\n\r");
 	    System.out.print("Player's protection: " + getProtection() + "\n\r");
@@ -147,11 +153,11 @@ public class Player extends Character {
     public Player(Scanner in){
 	    super(in);
 	    in.nextLine();
-	    String type=getPlayerClass();
+	    String type=getPlayerClass().name();
 	    Inventory storage=getInventory();
 	    name=in.nextLine();
-	    type=in.nextLine();
-	    storage=in.nextLine();
+	    type=in.next();
+//	    storage=in.nextLine();
     }
 
 }

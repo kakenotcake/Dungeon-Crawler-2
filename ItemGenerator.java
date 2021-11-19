@@ -14,15 +14,15 @@ public class ItemGenerator {
 
                 ArrayList<Item> reserves = new ArrayList<Item>();
 
-                Item masterSword = new Item(ItemType.Weapon, "Master Sword", 30, 780, 40, PlayerClass.Paladin);
+                Item masterSword = new Item(ItemType.Weapon, "Master Sword", 30, 780, 40, PlayerClass.Paladin, "You swing your mighty master sword and strike the enemy!");
                 reserves.add(masterSword);
-                Item skywardHarp = new Item(ItemType.Weapon, "Skyward Harp", 20, 500, 26, PlayerClass.Bard);
+                Item skywardHarp = new Item(ItemType.Weapon, "Skyward Harp", 20, 500, 26, PlayerClass.Bard, "You use your Skyward Harp to play a beautiful song, bringing your enemy to tears.");
                 reserves.add(skywardHarp);
-                Item fish = new Item(ItemType.Weapon, "Mighty Fish Lord", 45, 29, 32, PlayerClass.Archer);
+                Item fish = new Item(ItemType.Weapon, "Mighty Fish Lord", 45, 29, 32, PlayerClass.Archer, "You aim your Mighty Fish Lord at the enemy and hit it with a big ole' seabass.");
                 reserves.add(fish);
-		Item wabbajack = new Item(ItemType.Weapon, "Wabbajack", 17, 350, 28, PlayerClass.Mage);
+		Item wabbajack = new Item(ItemType.Weapon, "Wabbajack", 17, 350, 28, PlayerClass.Mage, "You point your Wabbajack at your enemy and turn them into a sweet roll (yum).");
 		reserves.add(wabbajack);
-		Item darts = new Item(ItemType.Weapon, "Poison Darts", 9, 64, 16, PlayerClass.Assassin);
+		Item darts = new Item(ItemType.Weapon, "Poison Darts", 9, 64, 16, PlayerClass.Assassin, "Perfect shot! Your poison dart hits the enemy right in the eye!");
 		reserves.add(darts);
                 Item hylianShield = new Item(ItemType.Armor, "Hylian Shield", 50, 380, 10, PlayerClass.Archer);
                 reserves.add(hylianShield);

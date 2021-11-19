@@ -15,7 +15,7 @@ public class Game {
     public Game() 
     {  
 	room = new Room();
-        player = new Player(room.getPlayerStart());
+        player = new Player(room.getPlayerStart(), "");
         boxes = room.getBoxes();
         enemies = room.getEnemies();
 
@@ -56,9 +56,10 @@ public class Game {
                          "List items: l",
                          "Equip weapon: w",
                          "Equip armor: a",
-			 "View stats: s",
+			 "View stats: v",
 			 "Use aid: u",
-                         "Quit: q"
+                         "Quit: q",
+			 "Save: s"
         };
         Terminal.setForeground(Color.GREEN);
         for (int row = 0; row < cmds.length; row++) {
@@ -144,7 +145,7 @@ public class Game {
                 redrawMapAndHelp();
                 break;
             
-	    case s: 
+	    case v: 
 		player.printStats();
 		Terminal.pause(2);
 		redrawMapAndHelp();		
@@ -155,6 +156,10 @@ public class Game {
 		Terminal.pause(2);
 		redrawMapAndHelp();
 		break;
+
+	    case s: 
+	    	System.out.print("Option to save.\n\r");
+	    	break;
 
 
             // handle movement

@@ -16,12 +16,13 @@ public class Enemy extends Character {
     private int row;
     private int col;
 
-    public Enemy(String name, int row, int col, int hp, int damage, int protection) {
-        super(row, col, '*', Color.RED, hp);
+    public Enemy(String name, int row, int col, int hp, int damage, int protection, String commentary) {
+        super(row, col, '*', Color.RED, hp, commentary);
         this.name = name;
         this.damage = damage;
         this.protection = protection;
         this.battleActive = false;
+	this.commentary = commentary;
         rng = new Random();  
     }
     // method that saves information
