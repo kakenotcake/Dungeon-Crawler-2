@@ -14,6 +14,7 @@ public class World {
 
 	public void printRoomOne() throws Exception
 	{
+
 		String fileName = "Room1.txt";
 
 		BufferedReader br = new BufferedReader(new FileReader(fileName));

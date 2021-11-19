@@ -71,18 +71,22 @@ public class Room {
 
     // finds positions of  new room and prints new rooms
     public void enterRoom() {
-	    World room = new World();
+	    World world = new World();
+	    Room room = new Room();
    	    for (int row = 0; row < rows; row++) {
     		    for (int col = 0; col < cols; col++) {
     			    if (grid[row].charAt(col) == 'r') {
-    				   // room.printRoomOne();
+				   Terminal.clear();
+    				   world.printRoomOne();
+				   room.getPlayerStart();
+				   room.getBoxes();
+				   room.getEnemies();
 				    
    			    }
 
     		    }
     	    }
     
-    	    //return null;
     }
 
     // returns a set of item boxes for this map, this is here because it depends on
