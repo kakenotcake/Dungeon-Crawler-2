@@ -12,7 +12,6 @@ public class Enemy extends Character {
     private static Random rng;
     private boolean battleActive;
     private int health;
-    private String type;
     private int row;
     private int col;
 

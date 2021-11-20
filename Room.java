@@ -4,6 +4,7 @@
 
 import java.util.ArrayList;
 import ansi_terminal.*;
+import java.io.*;
 
 public class Room {
     // the grid holds the room geometry
@@ -13,46 +14,28 @@ public class Room {
     private int rows;
     private int cols;
 
-    public Room() {
+    public Room(int rows, int cols, String fileName) {
         // this initializes the room to one specific space
-        rows = 29;
-        cols = 60;
+        this.rows = rows;
+        this.cols = cols;
 
         // the actual room geometry
         // the i cells refer to where an item should be placed at
-        grid  = new String[] {
-		"##################                                          ",
-		"##              ##                                          ",	
-                "##   @          ##                                          ",
-		"##   i          ##                                          ",
-		"##              ##          ################                ",
-		"##              ##############            ##                ",
-		"##       *                             i  ##                ",
-		"##                       *                ##                ",
-		"##############################            ##                ",
-		"                            #######  #######                ",
-		"                                 ##  ##                     ",
-		"                       ############  #######################",
-		"                       ##                                 ##",
-	        "                       ##                                 ##",
-	        "                       ##                                 ##",
-	        "    #####################                  *               r",
-	        "    ##                                                    ##",
-	        "    ##  #################    i                            ##",
-                "    ##  ##             ##                                 ##",	
-		"    ##  ##             #################   #################",
-		"    ##  ##                            ##   ##               ",
-		"    ##  ##                            ##   ##               ",
-		"    ##  ################         #######   #######          ",
-		"    r                 ##         ##             ##          ",
-	        "    ##       *        ##         ##   i  i  i   ##          ",
-	        "    ####################         ##             ##          ",
-                "                                 ########r########          ",
-                "                                                            ",
-		"                                                            "
 
-    
-	};
+	grid = new String[rows];
+		try {
+                        BufferedReader br = new BufferedReader(new FileReader(fileName));
+                        String line;
+			int count=0;
+                        while ((line = br.readLine()) != null) {
+				String newLine = line.trim();
+				newLine = newLine.substring(1,newLine.length()-2);
+                                grid[count++] = newLine;
+                        }
+ 	      } catch (Exception e) {
+
+                        e.printStackTrace();
+              }
     }
 
     // returns the player's strting location in this room
@@ -68,22 +51,6 @@ public class Room {
         return null;
     }
 
-
-    // finds positions of  new room and prints new rooms
-    public void enterRoom() {
-	    World room = new World();
-   	    for (int row = 0; row < rows; row++) {
-    		    for (int col = 0; col < cols; col++) {
-    			    if (grid[row].charAt(col) == 'r') {
-    				   // room.printRoomOne();
-				    
-   			    }
-
-    		    }
-    	    }
-    
-    	    //return null;
-    }
 
     // returns a set of item boxes for this map, this is here because it depends on
     // the room geometry for where the boxes make sense to be

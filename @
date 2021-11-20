@@ -1,12 +1,15 @@
+import ansi_terminal.*;
 import java.io.*;
 import java.util.ArrayList;
-public class World {
+public class World extends Entity {
 	private ArrayList<String> roomOne;
         private ArrayList<String> roomTwo;
         private ArrayList<String> roomThree;
 
-        public World()
+        public World(int row, int col, char display, Color color)
 	{
+		super(row, col, 'r', Color.MAGENTA);
+
 		roomOne = new ArrayList<String>();
 		roomTwo = new ArrayList<String>();
 		roomThree = new ArrayList<String>();
@@ -14,19 +17,26 @@ public class World {
 
 	public void printRoomOne() throws Exception
 	{
-		String fileName = "Room1.txt";
+		try
+		{
 
-		BufferedReader br = new BufferedReader(new FileReader(fileName));
-		String line;
-		while ((line = br.readLine()) != null) {
-			roomOne.add(line);
+			String fileName = "Room1.txt";
+
+			BufferedReader br = new BufferedReader(new FileReader(fileName));
+			String line;
+			while ((line = br.readLine()) != null) {
+				roomOne.add(line);
+			}
+
+			for (int i = 0; i < roomOne.size(); i++) {
+				System.out.print(roomOne.get(i) + "\n\r");
+			}
+
+		} catch (Exception e) {
+		
+			e.printStackTrace();
 		}
-
-		for (int i = 0; i < roomOne.size(); i++) {
-			System.out.print(roomOne.get(i) + "\n\r");
-		}
-
-	}
+	}	
 
 	public void printRoomTwo() throws Exception
 	{
