@@ -21,39 +21,7 @@ public class Room {
 
         // the actual room geometry
         // the i cells refer to where an item should be placed at
-/*
-        grid  = new String[] {
-		"##################                                          ",
-		"##              ##                                          ",	
-                "##   @          ##                                          ",
-		"##   i          ##                                          ",
-		"##              ##          ################                ",
-		"##              ##############            ##                ",
-		"##       *                             i  ##                ",
-		"##                       *                ##                ",
-		"##############################            ##                ",
-		"                            #######  #######                ",
-		"                                 ##  ##                     ",
-		"                       ############  #######################",
-		"                       ##                                 ##",
-	        "                       ##                                 ##",
-	        "                       ##                                 ##",
-	        "    #####################                  *               r",
-	        "    ##                                                    ##",
-	        "    ##  #################    i                            ##",
-                "    ##  ##             ##                                 ##",	
-		"    ##  ##             #################   #################",
-		"    ##  ##                            ##   ##               ",
-		"    ##  ##                            ##   ##               ",
-		"    ##  ################         #######   #######          ",
-		"    r                 ##         ##             ##          ",
-	        "    ##       *        ##         ##   i  i  i   ##          ",
-	        "    ####################         ##             ##          ",
-                "                                 ########r########          ",
-                "                                                            ",
-		"                                                            "
-	};
-*/
+
 	grid = new String[rows];
 		try {
                         BufferedReader br = new BufferedReader(new FileReader(fileName));
@@ -67,7 +35,7 @@ public class Room {
  	      } catch (Exception e) {
 
                         e.printStackTrace();
-                }
+              }
     }
 
     // returns the player's strting location in this room
