@@ -21,9 +21,9 @@ public class Game {
         player = new Player(rooms.get(currentRoom).getPlayerStart(), "");
         boxes = rooms.get(currentRoom).getBoxes();
         enemies = rooms.get(currentRoom).getEnemies();
-//	rooms.add(new Room(15,36,"Room1.txt"));
-//	rooms.add(new Room(15,50,"Room2.txt"));
-//	rooms.add(new Room(15,37,"Room3.txt"));
+ 	rooms.add(new Room(15,36,"Room1.txt"));
+	rooms.add(new Room(15,50,"Room2.txt"));
+	rooms.add(new Room(15,37,"Room3.txt"));
 
 	String name = Terminal.getLine("What is your name adventurer? ");
 	player.setName(name);
@@ -168,6 +168,11 @@ public class Game {
 	    	System.out.print("Option to save.\n\r");
 	    	break;
 
+	
+
+
+
+
 
             // handle movement
             case LEFT: player.move(0, -1, rooms.get(currentRoom));
@@ -206,6 +211,10 @@ public class Game {
 
         return null;
     }
+
+    
+
+
 
     // check for battles and return false if player has died
     private boolean checkBattles() {
