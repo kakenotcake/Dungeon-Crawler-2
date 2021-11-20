@@ -164,7 +164,8 @@ public class Game {
 		redrawMapAndHelp();
 		break;
 
-	    case s: 
+	    case s:
+	       //save method	
 	    	System.out.print("Option to save.\n\r");
 	    	break;
 
