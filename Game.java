@@ -6,18 +6,24 @@ import ansi_terminal.*;
 import java.util.Scanner;
 
 public class Game {
-    private Room room;
+    private ArrayList<Room> rooms;
     private Player player;
     private ArrayList<Box> boxes;
     private ArrayList<Enemy> enemies;
     private Inventory inventory;
+    private int currentRoom;
 
     public Game() 
     {  
-	room = new Room();
-        player = new Player(room.getPlayerStart(), "");
-        boxes = room.getBoxes();
-        enemies = room.getEnemies();
+	rooms = new ArrayList<Room>();
+	rooms.add(new Room(30,60,"World.txt"));
+	currentRoom = 0;
+        player = new Player(rooms.get(currentRoom).getPlayerStart(), "");
+        boxes = rooms.get(currentRoom).getBoxes();
+        enemies = rooms.get(currentRoom).getEnemies();
+//	rooms.add(new Room(15,50,"Room1.txt"));
+//	rooms.add(new Room(15,50,"Room2.txt"));
+//	rooms.add(new Room(15,50,"Room3.txt"));
 
 	String name = Terminal.getLine("What is your name adventurer? ");
 	player.setName(name);
@@ -64,7 +70,7 @@ public class Game {
         };
         Terminal.setForeground(Color.GREEN);
         for (int row = 0; row < cmds.length; row++) {
-            Terminal.warpCursor(row + 1, room.getCols());
+            Terminal.warpCursor(row + 1, rooms.get(currentRoom).getCols());
             System.out.print(cmds[row]);
         }
         Terminal.reset();
@@ -73,13 +79,13 @@ public class Game {
     // right under the map we keep a line for status messages
     private void setStatus(String mesg) {
         // clear anything old first
-        Terminal.warpCursor(room.getRows(), 0);
+        Terminal.warpCursor(rooms.get(currentRoom).getRows(), 0);
         for (int i = 0; i < 100; i++) {
             System.out.print(" ");
         }
 
         // then print the message
-        Terminal.warpCursor(room.getRows(), 0);
+        Terminal.warpCursor(rooms.get(currentRoom).getRows(), 0);
         System.out.print(mesg);
     }
 
@@ -164,13 +170,13 @@ public class Game {
 
 
             // handle movement
-            case LEFT: player.move(0, -1, room);
+            case LEFT: player.move(0, -1, rooms.get(currentRoom));
                 break;
-            case RIGHT: player.move(0, 1, room);
+            case RIGHT: player.move(0, 1, rooms.get(currentRoom));
                 break;
-            case UP: player.move(-1, 0, room);
+            case UP: player.move(-1, 0, rooms.get(currentRoom));
                 break;
-            case DOWN: player.move(1, 0, room);
+            case DOWN: player.move(1, 0, rooms.get(currentRoom));
                 break;
 
             // and finally the quit command
@@ -184,7 +190,7 @@ public class Game {
     // this is called when we need to redraw the room and help menu
     // this happens after going into a menu like for choosing items
     private void redrawMapAndHelp() {
-        room.draw();
+        rooms.get(currentRoom).draw();
         showHelp();
     }
 
@@ -216,7 +222,7 @@ public class Game {
         // now do the battle
         if (opponent != null) {
             opponent.setBattleActive();
-            return player.fight(opponent, room, enemies);
+            return player.fight(opponent, rooms.get(currentRoom), enemies);
         }
 
         return true;
@@ -238,7 +244,7 @@ public class Game {
             player.draw();
 
             // read a key from the user
-            Terminal.warpCursor(room.getRows() + 1, 0);
+            Terminal.warpCursor(rooms.get(currentRoom).getRows() + 1, 0);
             Key key = Terminal.getKey();
             playing = handleKey(key);
 
@@ -247,7 +253,7 @@ public class Game {
 
             // move the enemies
             for (Enemy enemy : enemies) {
-                enemy.walk(room);
+                enemy.walk(rooms.get(currentRoom));
             }
 
             // check for battles

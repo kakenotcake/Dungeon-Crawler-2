@@ -1,12 +1,15 @@
+import ansi_terminal.*;
 import java.io.*;
 import java.util.ArrayList;
-public class World {
+public class World extends Entity {
 	private ArrayList<String> roomOne;
         private ArrayList<String> roomTwo;
         private ArrayList<String> roomThree;
 
-        public World()
+        public World(int row, int col, char display, Color color)
 	{
+		super(row, col, 'r', Color.MAGENTA);
+
 		roomOne = new ArrayList<String>();
 		roomTwo = new ArrayList<String>();
 		roomThree = new ArrayList<String>();

@@ -13,7 +13,7 @@ public class Box extends Entity {
     public Box(int row, int col, Item item) {
         super(row, col, 'i', Color.MAGENTA);
         this.item = item;
-    }//
+    }
     @Override
     void save(PrintWriter x){
 	    super.save(x);
