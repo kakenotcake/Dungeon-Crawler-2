@@ -168,7 +168,7 @@ public class Game {
 
 	    case s:
 	       //save method	
-	    	System.out.print("Option to save.\n\r");
+	    /*	System.out.print("Option to save.\n\r");
 		File file = new File("save.txt");
 		PrintWriter pw = null;
 
@@ -183,7 +183,9 @@ public class Game {
 		} catch (FileNotFoundException e)
 		{
 			e.printStackTrace();
-		}
+		} */
+
+		saveGame();
 
 	    	break;
 	    case l:
@@ -215,6 +217,28 @@ public class Game {
 
         return true;
     }
+    private void saveGame() 
+    {
+	    File file = new File("save.txt");
+	    PrintWriter pw = null;
+
+	    try {
+		    pw = new PrintWriter(file);
+		    player.save(pw);
+		    for (int i = 0; i < enemies.size(); i++)
+		    {
+			    enemies.get(i).save(pw);
+		    }
+		    pw.close();
+	    }
+	    catch (FileNotFoundException e)
+	    {
+		    e.printStackTrace();
+	    }
+    }
+
+
+
    /* void loadGame()throws FileNotFoundException {
 	    ArrayList<Enemy>enemies=new ArrayList<>();//arraylist holding enemies
 	    Scanner in=new Scanner(System.in);

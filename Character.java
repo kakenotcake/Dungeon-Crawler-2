@@ -65,7 +65,6 @@ public abstract class Character extends Entity {
     @Override
     void save(PrintWriter s){
 	    super.save(s);
-	    s.println("Character");
 	    s.println(getHealth());
     }
     public Character(Scanner in){

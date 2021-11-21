@@ -38,7 +38,6 @@ public class Entity {
         return position.getCol();
     }
     void save(PrintWriter o){
-	    o.print("Entity");
 	    o.println(position.getRow());
 	    o.println(position.getCol());
 	    o.println(display);

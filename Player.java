@@ -145,10 +145,12 @@ public class Player extends Character {
     }
     @Override
     void save(PrintWriter p){
+	    p.println("Player");
 	    super.save(p);
 	    p.println(name);
 	    p.println(getPlayerClass());
-	    p.println(getInventory());
+	    p.println(getProtection());
+	   // p.println(getInventory());
     }
     public Player(Scanner in){
 	    super(in);

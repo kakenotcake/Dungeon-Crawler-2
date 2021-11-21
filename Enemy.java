@@ -50,8 +50,8 @@ public class Enemy extends Character {
     }
     @Override
     void save(PrintWriter q){
+	    q.println("Enemy");
 	    super.save(q);
-	   // q.println("Enemy");
 	    q.println(name);
 	    q.println(protection);    
     }
