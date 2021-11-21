@@ -11,7 +11,6 @@ public class Game {
     private Player player;
     private ArrayList<Box> boxes;
     private ArrayList<Enemy> enemies;
-    private Inventory inventory;
     private int currentRoom;
 
     public Game() 
@@ -61,13 +60,14 @@ public class Game {
                          "Move: Arrow Keys",
                          "Pickup an item: p",
                          "Drop an item: d",
-                         "List items: l",
+                         "List items: i",
                          "Equip weapon: w",
                          "Equip armor: a",
 			 "View stats: v",
 			 "Use aid: u",
                          "Quit: q",
-			 "Save: s"
+			 "Save: s",
+			 "Load: l"
         };
         Terminal.setForeground(Color.GREEN);
         for (int row = 0; row < cmds.length; row++) {
@@ -130,7 +130,7 @@ public class Game {
                 pickup();
                 break;
 
-            case l:
+            case i:
                 player.getInventory().print();
 		Terminal.pause(2);
                 redrawMapAndHelp();
@@ -176,15 +176,9 @@ public class Game {
 			System.out.println("File was not found");
 		}
 	    	break;
-	    case lo:
+	    case l:
 		//loading method
 		break;
-
-	
-
-
-
-
 
             // handle movement
             case LEFT: player.move(0, -1, rooms.get(currentRoom));
