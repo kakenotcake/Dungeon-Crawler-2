@@ -6,6 +6,7 @@ import ansi_terminal.*;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.File;
+import java.io.PrintWriter;
 public class Game {
     private ArrayList<Room> rooms;
     private Player player;
@@ -168,17 +169,33 @@ public class Game {
 	    case s:
 	       //save method	
 	    	System.out.print("Option to save.\n\r");
+		File file = new File("save.txt");
+		PrintWriter pw = null;
+
+		try {
+			pw = new PrintWriter(file);
+			player.save(pw);
+			for (int i = 0; i < enemies.size(); i++)
+			{
+				enemies.get(i).save(pw);
+			}
+			pw.close();
+		} catch (FileNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+
 	    	break;
 	    case l:
 		//loading method
 		System.out.print("Option to save.\n\r");
-                try{
+          /*      try{
 			loadGame();
 
 
                 }catch(FileNotFoundException r){
                         System.out.println("File was not found");
-                }
+                }*/
 		break;
 
             // handle movement
@@ -198,7 +215,7 @@ public class Game {
 
         return true;
     }
-    void loadGame()throws FileNotFoundException {
+   /* void loadGame()throws FileNotFoundException {
 	    ArrayList<Enemy>enemies=new ArrayList<>();//arraylist holding enemies
 	    Scanner in=new Scanner(System.in);
 	    File F;//file for Player information
@@ -233,7 +250,7 @@ public class Game {
 	    Box t=new Box(in);
 
 	    in.close();//closing the file
-    }
+    }*/
 
     // this is called when we need to redraw the room and help menu
     // this happens after going into a menu like for choosing items

@@ -1,8 +1,9 @@
 // Player.java
-import java.io.PrintWriter;
+//import java.io.PrintWriter;
 import ansi_terminal.*;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.io.*;
 
 public class Player extends Character {
     private Inventory inventory;
@@ -145,7 +146,6 @@ public class Player extends Character {
     @Override
     void save(PrintWriter p){
 	    super.save(p);
-	    p.println("Player");
 	    p.println(name);
 	    p.println(getPlayerClass());
 	    p.println(getInventory());
