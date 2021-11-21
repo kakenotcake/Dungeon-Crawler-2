@@ -193,12 +193,12 @@ public class Game {
 
         return true;
     }
-    void saveGame(){
+    void saveGame()throws FileNotFoundException {
 	    ArrayList<Enemy>enemies=new ArrayList<>();//arraylist holding enemies
 	    File F;//file for Player information
 	    try{
 		    F=new File("Player.txt");
-	   }catch (FileNotFoundException e){
+	   }catch(FileNotFoundException e){
             System.out.println("File was not found");
             return;
            }
@@ -217,12 +217,17 @@ public class Game {
 	    Enemy f=new Enemy(in);
 	    enemies.add(f);
 
+	    File H;//file for Inventory information
+	    try{
+		    H=new File("Inventory.txt");
+	    }catch(FileNotFoundException w){
+		    System.out.println("File was not found");
+		    return;
+	    }
+	    in=new Scanner(H);
+	    Box t=new Box(in);
 
-
-
-
-    
-    
+	    in.close();//closing the file
     }
 
     // this is called when we need to redraw the room and help menu
