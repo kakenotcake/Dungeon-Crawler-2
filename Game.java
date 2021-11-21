@@ -4,7 +4,8 @@
 import java.util.ArrayList;
 import ansi_terminal.*;
 import java.util.Scanner;
-
+import java.io.FileNotFoundException;
+import java.io.File;
 public class Game {
     private ArrayList<Room> rooms;
     private Player player;
@@ -191,6 +192,37 @@ public class Game {
         }
 
         return true;
+    }
+    void saveGame(){
+	    ArrayList<Enemy>enemies=new ArrayList<>();//arraylist holding enemies
+	    File F;//file for Player information
+	    try{
+		    F=new File("Player.txt");
+	   }catch (FileNotFoundException e){
+            System.out.println("File was not found");
+            return;
+           }
+	    Scanner in=new Scanner(F);
+	    Player e=new Player(in);
+
+	    //file for inventory information
+	    File G;
+	    try{
+		    G=new File("Enemy.txt");
+	    }catch(FileNotFoundException r){
+		    System.out.println("File was not found");
+		    return;
+	    }
+	    in=new Scanner(G);
+	    Enemy f=new Enemy(in);
+	    enemies.add(f);
+
+
+
+
+
+    
+    
     }
 
     // this is called when we need to redraw the room and help menu
