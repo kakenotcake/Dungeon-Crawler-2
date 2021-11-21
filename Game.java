@@ -168,16 +168,17 @@ public class Game {
 	    case s:
 	       //save method	
 	    	System.out.print("Option to save.\n\r");
-		try{
-			saveGame();
-		
-		
-		}catch(FileNotFoundException r){
-			System.out.println("File was not found");
-		}
 	    	break;
 	    case lo:
 		//loading method
+		System.out.print("Option to save.\n\r");
+                try{
+			loadGame();
+
+
+                }catch(FileNotFoundException r){
+                        System.out.println("File was not found");
+                }
 		break;
 
 	
@@ -203,7 +204,7 @@ public class Game {
 
         return true;
     }
-    void saveGame()throws FileNotFoundException {
+    void loadGame()throws FileNotFoundException {
 	    ArrayList<Enemy>enemies=new ArrayList<>();//arraylist holding enemies
 	    Scanner in=new Scanner(System.in);
 	    File F;//file for Player information
