@@ -16,20 +16,12 @@ public class ItemGenerator {
 
                 Item masterSword = new Item(ItemType.Weapon, "Master Sword", 30, 780, 40, PlayerClass.Paladin, "You swing your mighty master sword and strike the enemy!");
                 reserves.add(masterSword);
-                
                 Item fish = new Item(ItemType.Weapon, "Mighty Fish Lord", 45, 29, 32, PlayerClass.Archer, "You aim your Mighty Fish Lord at the enemy and hit it with a big ole' seabass.");
                 reserves.add(fish);
-		Item wabbajack = new Item(ItemType.Weapon, "Wabbajack", 17, 350, 28, PlayerClass.Mage, "You point your Wabbajack at your enemy and turn them into a sweet roll (yum).");
-		reserves.add(wabbajack);
-		
                 Item hylianShield = new Item(ItemType.Armor, "Hylian Shield", 50, 380, 10, PlayerClass.Archer);
                 reserves.add(hylianShield);
-                Item prayer = new Item(ItemType.Armor, "Holy Prayer", 33, 777, 12, PlayerClass.Mage);
-                reserves.add(prayer);
-                
 		Item royalGarb = new Item(ItemType.Armor, "Royal Guard's Cloak", 22, 140, 11, PlayerClass.Assassin);
 		reserves.add(royalGarb);
-		
                 Item star = new Item(ItemType.Other, "Star Fragment", 32, 650, 5);
                 reserves.add(star);
                 Item pie = new Item(ItemType.Other, "Apple Pie", 2, 18, 4);
@@ -62,6 +54,14 @@ public class ItemGenerator {
 		classItems.add(sacredBlade);
 		Item guardian = new Item(ItemType.Armor, "Guardian Graves", 42, 185, 10, PlayerClass.Paladin);
                 classItems.add(guardian);
+		Item wabbajack = new Item(ItemType.Weapon, "Wabbajack", 17, 350, 28, PlayerClass.Mage, "You point your Wabbajack at your enemy and turn them into a sweet roll (yum).");
+                classItems.add(wabbajack);
+		Item prayer = new Item(ItemType.Armor, "Holy Prayer", 33, 777, 12, PlayerClass.Mage);
+                classItems.add(prayer);
+		Item bow = new Item(ItemType.Weapon, "Great Eagle Bow", 24, 148, 32, PlayerClass.Archer, "Your aim does not falter. A deadly sharp arrow strikes your enemy with a mighty impact.");
+		classItems.add(bow);
+		Item bracers = new Item(ItemType.Armor, "Steel bracers", 14, 65, 20, PlayerClass.Archer);
+		classItems.add(bracers);
 
 		Collections.shuffle(classItems);
 		return classItems.get(0);

@@ -311,14 +311,13 @@ public class Game {
         return null;
     }
 
-  //  private void checkRoom() {
-//	    Position x = new Position(17,34);
-//	    Position playerLocation = player.getPosition();
-//	    if (playerLocation.isAdjacent(x)) {
+//  private void checkRoom() {
+//	    Position x = new Position(17,34)
+//		    Position playerLocation = player.getPosition();
+  //  if (playerLoication.isAdjacent(x)) {
 //		    currentRoom = 1;
-//		    redrawMapAndHelp();
-//	    }
-    //}
+////		    redrawMapAndHelp();
+////   }
 
 
 
