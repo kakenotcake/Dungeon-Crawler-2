@@ -44,12 +44,21 @@ public class Entity {
 
     }
     public Entity(Scanner in){
+	    System.out.print("I am in the entity constructor.\n\r");
+	    int row = in.nextInt();
+	    int col = in.nextInt();
 	    in.nextLine();
+	    String hold = in.nextLine();
+	    display = hold.charAt(0);
+	    setPosition(row, col);
+	    System.out.print(getRow() + "\n\r" + getCol() + "\n\r" + display + "\n\r");
+
+	   /* in.nextLine();
 	    int row=position.getRow();
 	    int col=position.getCol();
 	    row=in.nextInt();
 	    col=in.nextInt();
-	    display=in.next().charAt(0);
+	    display=in.next().charAt(0);*/
 	   
 
     }

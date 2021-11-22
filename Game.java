@@ -13,6 +13,7 @@ public class Game {
     private ArrayList<Box> boxes;
     private ArrayList<Enemy> enemies;
     private int currentRoom;
+    private File file;
 
     public Game() 
     {  
@@ -190,14 +191,14 @@ public class Game {
 	    	break;
 	    case l:
 		//loading method
-		System.out.print("Option to save.\n\r");
-          /*      try{
+		System.out.print("Option to load.\n\r");
+                try{
 			loadGame();
 
 
                 }catch(FileNotFoundException r){
                         System.out.println("File was not found");
-                }*/
+                }
 		break;
 
             // handle movement
@@ -219,7 +220,7 @@ public class Game {
     }
     private void saveGame() 
     {
-	    File file = new File("save.txt");
+	    file = new File("save.txt");
 	    PrintWriter pw = null;
 
 	    try {
@@ -235,6 +236,19 @@ public class Game {
 	    {
 		    e.printStackTrace();
 	    }
+    }
+    void loadGame() throws FileNotFoundException
+    {
+	    System.out.print("I am in the loadGame method\n\r");
+	    Scanner in = new Scanner(file);
+	    while (in.hasNextLine())
+	    {
+	    	if (in.nextLine().equals("Player"))
+	    	{
+			Player player = new Player(in);
+
+	    	}
+	    }	
     }
 
 

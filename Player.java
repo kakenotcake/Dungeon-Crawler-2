@@ -149,20 +149,49 @@ public class Player extends Character {
 	    super.save(p);
 	    p.println(name);
 	    p.println(getPlayerClass());
-	    p.println(getProtection());
+	    //p.println(getProtection());
 	   // p.println(getInventory());
     }
     public Player(Scanner in){
+	   // System.out.print("I am in the player constructor\n\r");
 	    super(in);
-	    in.nextLine();
+	    String name = in.nextLine();
+	    setName(name);
+	    String pc = in.nextLine();
+	    if (pc.equals("Mage"))
+	    {
+		    setPlayerType(1);
+	    }
+	    else if(pc.equals("Bard"))
+	    {
+		    setPlayerType(2);
+	    }
+	    else if(pc.equals("Paladin"))
+	    {
+		    setPlayerType(3);
+	    }
+	    else if(pc.equals("Archer"))
+	    {
+		    setPlayerType(4);
+	    }
+	    else
+	    {
+		    System.out.print("Error\n\r");
+	    }
+	    System.out.print("In the playaer constructor\n\r");
+	    System.out.print(name + "\n\r" + pc + "\n\r");
+    }
+}
+
+
+
+	   /* in.nextLine();
 	    String type=getPlayerClass().name();
 	    String storage=getInventory().toString();
 	    name=in.nextLine();
 	    type=in.nextLine();
-	    storage=in.nextLine();
+	    storage=in.nextLine();*/
 	    
-    }
 
-}
 	
 				    

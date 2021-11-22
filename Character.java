@@ -29,6 +29,11 @@ public abstract class Character extends Entity {
     public abstract int getProtection();
     public abstract String getName();
 
+    public void setHealth(int hp, int t)
+    {
+	    this.hp = hp;
+    }
+
     // do damage to another player, returns if they died
     private boolean dealDamage(Character other, Room room) {
         // this character does damage to the other character
@@ -68,9 +73,12 @@ public abstract class Character extends Entity {
 	    s.println(getHealth());
     }
     public Character(Scanner in){
+	   // System.out.print("I am in the character constructor\n\r");
 	    super(in);
+	    setHealth(in.nextInt(), 0);
 	    in.nextLine();
-	    hp=in.nextInt();
+	    System.out.print("In the character constructor\n\r");
+	    System.out.print(getHealth() + "\n\r");
     }
     
 
