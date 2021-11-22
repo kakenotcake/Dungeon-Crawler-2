@@ -72,13 +72,16 @@ public abstract class Character extends Entity {
 	    super.save(s);
 	    s.println(getHealth());
     }
-    public Character(Scanner in){
+    public void loadGame(Scanner in){
 	   // System.out.print("I am in the character constructor\n\r");
-	    super(in);
+	    //super(in);
+	    super.loadGame(in);
 	    setHealth(in.nextInt(), 0);
 	    in.nextLine();
 	    System.out.print("In the character constructor\n\r");
+	    setHealth(4, 0);
 	    System.out.print(getHealth() + "\n\r");
+	   // setHealth(4, 0);
     }
     
 

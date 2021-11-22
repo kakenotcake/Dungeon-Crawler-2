@@ -43,7 +43,7 @@ public class Entity {
 	    o.println(display);
 
     }
-    public Entity(Scanner in){
+    public void loadGame(Scanner in){
 	    System.out.print("I am in the entity constructor.\n\r");
 	    int row = in.nextInt();
 	    int col = in.nextInt();

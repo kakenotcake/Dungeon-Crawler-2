@@ -55,8 +55,8 @@ public class Enemy extends Character {
 	    q.println(name);
 	    q.println(protection);    
     }
-    public Enemy(Scanner in){
-	   super(in);
+    public void loadGame(Scanner in){
+	   super.loadGame(in);
 	   in.nextLine();
 	   name=in.nextLine();
 	   protection=in.nextInt();

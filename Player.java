@@ -152,9 +152,11 @@ public class Player extends Character {
 	    //p.println(getProtection());
 	   // p.println(getInventory());
     }
-    public Player(Scanner in){
+    public void loadGame(Scanner in){
 	   // System.out.print("I am in the player constructor\n\r");
-	    super(in);
+	  //  Character tempNewChar  = super(in);
+	  //  super(in);
+	    super.loadGame(in);
 	    String name = in.nextLine();
 	    setName(name);
 	    String pc = in.nextLine();
@@ -176,8 +178,10 @@ public class Player extends Character {
 	    }
 	    else
 	    {
-		    System.out.print("Error\n\r");
+		    System.out.print("Error\n\r"); 
 	    }
+	  //  super.setHealth(tempNewChar.GetHealth(),0);
+
 	    System.out.print("In the playaer constructor\n\r");
 	    System.out.print(name + "\n\r" + pc + "\n\r");
     }

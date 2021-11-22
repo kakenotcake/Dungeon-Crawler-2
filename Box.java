@@ -20,8 +20,8 @@ public class Box extends Entity {
 	    x.println("Box");
 	    x.println(getItem());
     }
-    public Box(Scanner in){
-	    super(in);
+    public void loadGame(Scanner in){
+	    super.loadGame(in);
 	    in.nextLine();
 	    String i = getItem().toString();
 	    i=in.nextLine();

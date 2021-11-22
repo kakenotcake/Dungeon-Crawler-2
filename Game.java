@@ -245,7 +245,7 @@ public class Game {
 	    {
 	    	if (in.nextLine().equals("Player"))
 	    	{
-			Player player = new Player(in);
+			player.loadGame(in);
 
 	    	}
 	    }	
