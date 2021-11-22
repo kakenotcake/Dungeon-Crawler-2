@@ -79,7 +79,7 @@ public abstract class Character extends Entity {
 	    setHealth(in.nextInt(), 0);
 	    in.nextLine();
 	    System.out.print("In the character constructor\n\r");
-	    setHealth(4, 0);
+	    //setHealth(4, 0);
 	    System.out.print(getHealth() + "\n\r");
 	   // setHealth(4, 0);
     }

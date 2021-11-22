@@ -32,6 +32,7 @@ public class Game {
 	System.out.print("\n\r");
 	setClass();
 	player.setCommentary();
+	file = new File("save.txt");
     }
     public void setClass()
     {
@@ -220,7 +221,7 @@ public class Game {
     }
     private void saveGame() 
     {
-	    file = new File("save.txt");
+	    //file = new File("save.txt");
 	    PrintWriter pw = null;
 
 	    try {
