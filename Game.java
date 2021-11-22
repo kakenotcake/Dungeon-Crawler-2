@@ -311,14 +311,6 @@ public class Game {
         return null;
     }
 
-//  private void checkRoom() {
-//	    Position x = new Position(17,34)
-//		    Position playerLocation = player.getPosition();
-  //  if (playerLoication.isAdjacent(x)) {
-//		    currentRoom = 1;
-////		    redrawMapAndHelp();
-////   }
-
 
 
     // check for battles and return false if player has died
@@ -342,9 +334,28 @@ public class Game {
         return true;
     }
 
+    private boolean checkRoom() {
+	    Position playerLocation = player.getPosition();
+	    //Position x = new Position(17, 34);
+	    Entity x = new Entity(6, 9, 'x', Color.MAGENTA);
+
+        	   if (playerLocation.isAdjacent(x.getPosition())) {
+		    currentRoom = 1;
+		    redrawMapAndHelp();
+		    player = new Player(rooms.get(currentRoom).getPlayerStart(), "");
+		    boxes = rooms.get(currentRoom).getBoxes();
+		    enemies = rooms.get(currentRoom).getEnemies();
+		    
+		    return true;
+	   } else {
+		    return false;
+	    }
+    }
+
     public void run() {
         // draw these for the first time now
         redrawMapAndHelp();
+	checkRoom();
 
         boolean playing = true;
         while (playing) {
