@@ -98,7 +98,7 @@ public class Player extends Character {
 	    boolean stop = false;
 	    while (stop==false) 
 	    {
-		    weapon = ItemGenerator.generate();
+		    weapon = ItemGenerator.generatePlayerSpecificItem();
 		    if ((weapon.getType().equals(ItemType.Weapon)) && (weapon.getPlayerClass().equals(playerClass)))
 		    {
 			    stop = true;
@@ -114,7 +114,7 @@ public class Player extends Character {
 	    boolean stop = false;
 	    while (stop==false)
 	    {
-		    armor = ItemGenerator.generate();
+		    armor = ItemGenerator.generatePlayerSpecificItem();
 		    if ((armor.getType().equals(ItemType.Armor)) && (armor.getPlayerClass().equals(playerClass)))
 		    {
 			    stop = true;

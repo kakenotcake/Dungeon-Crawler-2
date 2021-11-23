@@ -16,24 +16,12 @@ public class ItemGenerator {
 
                 Item masterSword = new Item(ItemType.Weapon, "Master Sword", 30, 780, 40, PlayerClass.Paladin, "You swing your mighty master sword and strike the enemy!");
                 reserves.add(masterSword);
-                Item skywardHarp = new Item(ItemType.Weapon, "Skyward Harp", 20, 500, 26, PlayerClass.Bard, "You use your Skyward Harp to play a beautiful song, bringing your enemy to tears.");
-                reserves.add(skywardHarp);
                 Item fish = new Item(ItemType.Weapon, "Mighty Fish Lord", 45, 29, 32, PlayerClass.Archer, "You aim your Mighty Fish Lord at the enemy and hit it with a big ole' seabass.");
                 reserves.add(fish);
-		Item wabbajack = new Item(ItemType.Weapon, "Wabbajack", 17, 350, 28, PlayerClass.Mage, "You point your Wabbajack at your enemy and turn them into a sweet roll (yum).");
-		reserves.add(wabbajack);
-		Item darts = new Item(ItemType.Weapon, "Poison Darts", 9, 64, 16, PlayerClass.Assassin, "Perfect shot! Your poison dart hits the enemy right in the eye!");
-		reserves.add(darts);
                 Item hylianShield = new Item(ItemType.Armor, "Hylian Shield", 50, 380, 10, PlayerClass.Archer);
                 reserves.add(hylianShield);
-                Item prayer = new Item(ItemType.Armor, "Holy Prayer", 33, 777, 12, PlayerClass.Mage);
-                reserves.add(prayer);
-                Item guardian = new Item(ItemType.Armor, "Guardian Graves", 42, 185, 10, PlayerClass.Paladin);
-                reserves.add(guardian);
 		Item royalGarb = new Item(ItemType.Armor, "Royal Guard's Cloak", 22, 140, 11, PlayerClass.Assassin);
 		reserves.add(royalGarb);
-		Item slippers = new Item(ItemType.Armor, "Rubber Slippers", 16, 72, 8, PlayerClass.Bard);
-		reserves.add(slippers);
                 Item star = new Item(ItemType.Other, "Star Fragment", 32, 650, 5);
                 reserves.add(star);
                 Item pie = new Item(ItemType.Other, "Apple Pie", 2, 18, 4);
@@ -49,5 +37,35 @@ public class ItemGenerator {
                 return reserves.get(0);
 
         }
+
+	public static Item generatePlayerSpecificItem() {
+
+		ArrayList<Item> classItems = new ArrayList<Item>();
+
+		Item skywardHarp = new Item(ItemType.Weapon, "Skyward Harp", 20, 500, 26, PlayerClass.Bard, "You use your Skyward Harp to play a beautiful song, bringing your enemy to tears.");
+                classItems.add(skywardHarp);
+		Item coat = new Item(ItemType.Armor, "Virtuoso's Trench Coat", 36, 90, 18, PlayerClass.Bard);
+		classItems.add(coat);
+		Item darts = new Item(ItemType.Weapon, "Poison Darts", 9, 64, 16, PlayerClass.Assassin, "Perfect shot! Your poison dart hits the enemy right in the eye!");
+                classItems.add(darts);
+		Item slippers = new Item(ItemType.Armor, "Rubber Slippers", 16, 72, 8, PlayerClass.Assassin);
+                classItems.add(slippers);
+		Item sacredBlade = new Item(ItemType.Weapon, "Goddess Blade", 22, 320, 30, PlayerClass.Paladin, "The Goddess Blade strikes true! A heavenly ray of light sears your enemy where they stand.");
+		classItems.add(sacredBlade);
+		Item guardian = new Item(ItemType.Armor, "Guardian Graves", 42, 185, 10, PlayerClass.Paladin);
+                classItems.add(guardian);
+		Item wabbajack = new Item(ItemType.Weapon, "Wabbajack", 17, 350, 28, PlayerClass.Mage, "You point your Wabbajack at your enemy and turn them into a sweet roll (yum).");
+                classItems.add(wabbajack);
+		Item prayer = new Item(ItemType.Armor, "Holy Prayer", 33, 777, 12, PlayerClass.Mage);
+                classItems.add(prayer);
+		Item bow = new Item(ItemType.Weapon, "Great Eagle Bow", 24, 148, 32, PlayerClass.Archer, "Your aim does not falter. A deadly sharp arrow strikes your enemy with a mighty impact.");
+		classItems.add(bow);
+		Item bracers = new Item(ItemType.Armor, "Steel bracers", 14, 65, 20, PlayerClass.Archer);
+		classItems.add(bracers);
+
+		Collections.shuffle(classItems);
+		return classItems.get(0);
+	}
+
 }
 
