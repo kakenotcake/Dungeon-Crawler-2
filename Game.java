@@ -206,6 +206,8 @@ public class Game {
 	    PrintWriter pw = null;
 	    try {
 		    pw = new PrintWriter(file);
+		    pw.println("room");
+		    pw.println(currentRoom);
 		    player.save(pw);
 		    pw.println(enemies.size());
 		    for (int i = 0; i < enemies.size(); i++)
@@ -243,6 +245,11 @@ public class Game {
 	    Scanner in = new Scanner(file);
 	    while (in.hasNextLine())
 	    {
+		if (in.nextLine().equals("room"));
+		{
+			currentRoom = in.nextInt();
+			in.nextLine();
+		}
 	    	if (in.nextLine().equals("Player"))
 	    	{
 			player.loadGame(in);

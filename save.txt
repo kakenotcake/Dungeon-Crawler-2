@@ -1,23 +1,48 @@
+room
+1
 Player
 7
-17
+4
 @
-50
-null
-null
+29
+Kate
+Mage
 0
 
-1
-Other
-Apple Pie
-2
+3
+Weapon
+Wabbajack
+17
+350
+28
+Mage
+Armor
+Holy Prayer
+33
+777
+12
+Mage
+Armor
+Hylian Shield
+50
+380
+10
+Archer
+
+6
+5
 18
-4
-null
+i
+Box
+Armor
+Royal Guard's Cloak
+22
+140
+11
+Assassin
 
 5
-5
-18
+23
 i
 Box
 Armor
@@ -27,37 +52,37 @@ Hylian Shield
 10
 Archer
 
-5
-23
+7
+18
 i
 Box
-Other
-Peculiar Beehive
-8
-43
-3
-null
+Weapon
+Mighty Fish Lord
+45
+29
+32
+Archer
 
 7
 23
 i
 Box
-Weapon
-Master Sword
-30
-780
-40
-Paladin
+Other
+Inconspicuous Walnut
+12
+55
+2
+null
 
 9
 18
 i
 Box
 Other
-Royal Ocarina
-6
-120
-1
+Star Fragment
+32
+650
+5
 null
 
 9
@@ -65,10 +90,10 @@ null
 i
 Box
 Other
-Peculiar Beehive
-8
-43
-3
+Apple Pie
+2
+18
+4
 null
 
 stop
