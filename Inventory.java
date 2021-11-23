@@ -274,6 +274,24 @@ public class Inventory
 	{
 		inventory.remove(usedAid);
 	}
+	public String toString()
+	{
+		String inv = "";
+		for (int i = 0; i < inventory.size(); i++)
+		{
+			inv = inv + inventory.get(i).toStringForSave();
+		}
+		return inv;
+	}
+	public int getSize()
+	{
+		return inventory.size();
+	}
+	public void setInventory(ArrayList<Item> inv)
+	{
+		inventory = inv;
+	}
+
 
 }
 				

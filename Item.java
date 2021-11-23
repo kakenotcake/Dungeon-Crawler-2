@@ -89,9 +89,13 @@ public class Item {
         /**
          * The toString() method for Item objects. This method is responsible for returning all of the parameters of an Item object in a legible way.
          */
-        public String toString()
+	public String toString()
+	{
+		return this.type + " " + this.name + " " + this.weight + " " +  this.value + " " + this.strength + " " + this.playerClass;
+	}
+        public String toStringForSave()
         {
-                return this.name + " " + this.weight + " " + this.value + " " + this.strength + " " + this.playerClass;
+                return this.type + "\n" + this.name + "\n" + this.weight + "\n" + this.value + "\n" + this.strength + "\n" + this.playerClass + "\n";
 
         }
 }
