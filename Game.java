@@ -170,26 +170,7 @@ public class Game {
 		break;
 
 	    case s:
-	       //save method	
-	    /*	System.out.print("Option to save.\n\r");
-		File file = new File("save.txt");
-		PrintWriter pw = null;
-
-		try {
-			pw = new PrintWriter(file);
-			player.save(pw);
-			for (int i = 0; i < enemies.size(); i++)
-			{
-				enemies.get(i).save(pw);
-			}
-			pw.close();
-		} catch (FileNotFoundException e)
-		{
-			e.printStackTrace();
-		} */
-
 		saveGame();
-
 	    	break;
 	    case l:
 		//loading method
@@ -222,11 +203,7 @@ public class Game {
     }
     private void saveGame() 
     {
-	    //file = new File("save.txt");
 	    PrintWriter pw = null;
-	    //ArrayList<Item> tempInventory = new ArrayList<Item>();
-	   // tempInventory = player.getInventory();
-
 	    try {
 		    pw = new PrintWriter(file);
 		    player.save(pw);
@@ -240,6 +217,8 @@ public class Game {
 		    pw.println(player.getInventory().toString());
 		    pw.println("stop");
 		    pw.close();
+		    System.out.print("Game saved successfully.\n\r");
+		    Terminal.pause(1.5);
 	    }
 	    catch (FileNotFoundException e)
 	    {
@@ -248,7 +227,8 @@ public class Game {
     }
     void loadGame() throws FileNotFoundException
     {
-	    System.out.print("I am in the loadGame method\n\r");
+	    System.out.print("Loading your previous save...\n\r");
+	    Terminal.pause(1.5);
 	    ArrayList<Enemy> tempEnemies = new ArrayList<Enemy>();
 	    ArrayList<Item> tempInventory = new ArrayList<Item>();
 	    ItemType itemType;
