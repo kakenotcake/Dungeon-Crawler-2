@@ -451,8 +451,22 @@ public class Game {
                     boxes = rooms.get(currentRoom).getBoxes();
                     enemies = rooms.get(currentRoom).getEnemies();
 		    return true;
-		    } 
-	     return false;
+            } else if (x == 3) {
+		   currentRoom = 3;
+		   redrawMapAndHelp();
+		   player = new Player(rooms.get(currentRoom).getPlayerStart(), "");
+                   boxes = rooms.get(currentRoom).getBoxes();
+                   enemies = rooms.get(currentRoom).getEnemies();
+		   return true;
+	    } else if (x == 4) {
+		    currentRoom = 0;
+		    redrawMapAndHelp();
+		    player = new Player(rooms.get(currentRoom).getPlayerStart(), "");
+                    boxes = rooms.get(currentRoom).getBoxes();
+                    enemies = rooms.get(currentRoom).getEnemies();
+		    return true;
+	    }
+	    return false;
 	   
 	  
     }

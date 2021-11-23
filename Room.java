@@ -123,9 +123,10 @@ public class Room {
 		    return 2;
 	    } else if (grid[row].charAt(col) == 'z') {
 		    return 3;
-	    } //else if (grid[row].charAt(col) == 'w') {
+	    } else if (grid[row].charAt(col) == 'w') {
+		    return 4;
+	    }
 		    return 0;
-	    //}
     }
     //}
 }
