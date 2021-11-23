@@ -1,0 +1,36 @@
+Player
+6
+11
+@
+36
+sa
+Bard
+3
+Enemy
+8
+26
+*
+50
+Goblin
+2
+25
+Goblin tied your shoe laces together making you to trip!                        
+Enemy
+15
+43
+*
+50
+Hell Hound
+3
+25
+Hell Hound takes a bite of your arm!                                      
+Enemy
+25
+14
+*
+50
+Hell Hound
+3
+25
+Hell Hound takes a bite of your arm!                                      
+test

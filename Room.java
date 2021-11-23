@@ -112,6 +112,10 @@ public class Room {
     public boolean canGo(int row, int col) {
         return grid[row].charAt(col) != '#';
     }
+
+    public boolean canEnterRoom(int row, int col) {
+	    return grid[row].charAt(col) == 'x';
+    }
 }
 
 
