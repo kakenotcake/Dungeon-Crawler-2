@@ -441,26 +441,39 @@ public class Game {
     }
 
     private boolean checkRoom() {
-	    if (rooms.get(currentRoom).canEnterRoom(player.getRow(), player.getCol()) == true) {
+	    
+	    int x = 0;
+	    x = rooms.get(currentRoom).enterRoom(player.getRow(), player.getCol());
+
+
+	    if (x == 1) { 
 		    currentRoom = 1;
 		    redrawMapAndHelp();
 		    player = new Player(rooms.get(currentRoom).getPlayerStart(), "");
 		    boxes = rooms.get(currentRoom).getBoxes();
 		    enemies = rooms.get(currentRoom).getEnemies();
 		    return true;
-	    }
-	      else  {
-		    return false;
-	   }
+	    } else if (x == 2) {
+		    currentRoom = 2;
+		    redrawMapAndHelp();
+		    player = new Player(rooms.get(currentRoom).getPlayerStart(), "");
+                    boxes = rooms.get(currentRoom).getBoxes();
+                    enemies = rooms.get(currentRoom).getEnemies();
+		    return true;
+		    } 
+	     return false;
+	   
+	  
     }
 
     public void run() {
         // draw these for the first time now
         redrawMapAndHelp();
-	checkRoom();
 
         boolean playing = true;
         while (playing) {
+
+	    
             // draw the entities
             for (Box box : boxes) {
                 box.draw();
@@ -494,6 +507,7 @@ public class Game {
             if (thingHere != null) {
                 setStatus("Here you find: " + thingHere.getItem().getName());
             }
+	    checkRoom();
         }
     }
 }
