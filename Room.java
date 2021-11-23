@@ -113,9 +113,7 @@ public class Room {
         return grid[row].charAt(col) != '#';
     }
 
-    public boolean canEnterRoom(int row, int col) {
-	    return grid[row].charAt(col) == 'x';
-    }
+    
     public int enterRoom(int row, int col) {
 	    if (grid[row].charAt(col) == 'x') {
 		    return 1;
