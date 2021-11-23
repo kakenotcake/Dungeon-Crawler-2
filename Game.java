@@ -441,27 +441,17 @@ public class Game {
     }
 
     private boolean checkRoom() {
-	    //Position playerLocation = player.getPosition();
-	    //Position x = new Position(17, 34);
-	    // Entity x = new Entity(17, 34, 'x', Color.MAGENTA);
-	    //if (rooms.get(currentRoom)[player.getRow()].charAt(player.getCol()) == 'x') {
-	    //while (canEnterRoom(player.getRow(), player.getCol())){ //== true) {
-            //if (player.getRow() == 17 && player.getCol() == 34) {
-	    //if (playerLocation.equals(player.getPlayerStart())) {
-	    int playerRow = player.getRow();
-            int playerCol = player.getCol();
-	    //if (grid[playerRow].charAt(playerCol) == 'x') {
-             
+	    if (rooms.get(currentRoom).canEnterRoom(player.getRow(), player.getCol()) == true) {
 		    currentRoom = 1;
 		    redrawMapAndHelp();
 		    player = new Player(rooms.get(currentRoom).getPlayerStart(), "");
 		    boxes = rooms.get(currentRoom).getBoxes();
 		    enemies = rooms.get(currentRoom).getEnemies();
 		    return true;
-	    //}
-	     // else  {
-		   // return false;
-	   //}
+	    }
+	      else  {
+		    return false;
+	   }
     }
 
     public void run() {
