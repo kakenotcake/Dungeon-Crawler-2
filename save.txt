@@ -1,23 +1,14 @@
 Player
-6
-11
-@
-36
-sa
-Bard
-3
-Enemy
 8
-26
-*
-50
-Goblin
+36
+@
+11
+Kate
+Paladin
 2
-25
-Goblin tied your shoe laces together making you to trip!                        
 Enemy
-15
-43
+25
+38
 *
 50
 Hell Hound
@@ -25,12 +16,78 @@ Hell Hound
 25
 Hell Hound takes a bite of your arm!                                      
 Enemy
-25
-14
+24
+20
 *
 50
 Hell Hound
 3
 25
 Hell Hound takes a bite of your arm!                                      
-test
+
+3
+Weapon
+Goddess Blade
+22
+320
+30
+Paladin
+Armor
+Guardian Graves
+42
+185
+10
+Paladin
+Armor
+Hylian Shield
+50
+380
+10
+Archer
+
+4
+18
+29
+i
+Box
+Other
+Apple Pie
+2
+18
+4
+null
+
+25
+38
+i
+Box
+Other
+Inconspicuous Walnut
+12
+55
+2
+null
+
+25
+41
+i
+Box
+Other
+Inconspicuous Walnut
+12
+55
+2
+null
+
+25
+44
+i
+Box
+Other
+Royal Ocarina
+6
+120
+1
+null
+
+stop
