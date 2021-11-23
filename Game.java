@@ -14,6 +14,7 @@ public class Game {
     private ArrayList<Enemy> enemies;
     private int currentRoom;
     private File file;
+    private Enemy enemy;
 
     public Game() 
     {  
@@ -36,7 +37,7 @@ public class Game {
     }
     public void setClass()
     {
-	System.out.print("What is your class?\n\n\r");
+	System.out.print("What is your class??\n\n\r");
 	System.out.print("1. Mage\n\r2. Bard\n\r3. Paladin\n\r4. Assasin\n\r5. Archer\n\n\r");
 	System.out.print("Enter the number: ");
 	Scanner input = new Scanner(System.in);
@@ -227,10 +228,12 @@ public class Game {
 	    try {
 		    pw = new PrintWriter(file);
 		    player.save(pw);
+		    pw.println(enemies.size());
 		    for (int i = 0; i < enemies.size(); i++)
 		    {
 			    enemies.get(i).save(pw);
 		    }
+		    pw.println("test");
 		    pw.close();
 	    }
 	    catch (FileNotFoundException e)
@@ -241,6 +244,7 @@ public class Game {
     void loadGame() throws FileNotFoundException
     {
 	    System.out.print("I am in the loadGame method\n\r");
+	    ArrayList<Enemy> tempEnemies = new ArrayList<Enemy>();
 	    Scanner in = new Scanner(file);
 	    while (in.hasNextLine())
 	    {
@@ -249,7 +253,46 @@ public class Game {
 			player.loadGame(in);
 
 	    	}
-	    }	
+		int enemyCount = in.nextInt();
+		System.out.print("Enemy count is: " + enemyCount + "\n\r");
+		in.nextLine();
+		if (in.nextLine().equals("Enemy"))
+		{
+			System.out.print("IN the loop\n\r");
+			for (int i = 0; i < enemyCount; i++)
+			{
+				System.out.print("IN the for loop\n\r");
+				int row = in.nextInt();
+				int col = in.nextInt();
+				in.nextLine();
+				in.nextLine();
+				int hp = in.nextInt();
+				in.nextLine();
+				String name = in.nextLine();
+				int protection = in.nextInt();
+				int damage = in.nextInt();
+				in.nextLine();
+				String commentary = in.nextLine();
+				in.nextLine();
+				tempEnemies.add(new Enemy(name, row, col, hp, damage, protection, commentary));
+			}
+
+		
+		}
+	/*	else if (in.nextLine().equals("Enemy"))
+		{
+			System.out.print("I am in the else if for enemy\n\r");
+			//enemy,loadGame(in);
+		}
+		else
+		{
+			System.out.print("else\n\r");
+		}*/
+
+	    }
+	    enemies = tempEnemies;
+	    System.out.print("out of the loop\n\r");
+	    run();
     }
 
 

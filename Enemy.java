@@ -53,7 +53,9 @@ public class Enemy extends Character {
 	    q.println("Enemy");
 	    super.save(q);
 	    q.println(name);
-	    q.println(protection);    
+	    q.println(protection);   
+	    q.println(damage); 
+	    q.println(commentary);
     }
     public void loadGame(Scanner in){
 	   super.loadGame(in);
