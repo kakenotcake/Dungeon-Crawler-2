@@ -224,6 +224,8 @@ public class Game {
     {
 	    //file = new File("save.txt");
 	    PrintWriter pw = null;
+	    //ArrayList<Item> tempInventory = new ArrayList<Item>();
+	   // tempInventory = player.getInventory();
 
 	    try {
 		    pw = new PrintWriter(file);
@@ -233,7 +235,10 @@ public class Game {
 		    {
 			    enemies.get(i).save(pw);
 		    }
-		    pw.println("test");
+		    pw.println();
+		    pw.println(player.getInventory().getSize());
+		    pw.println(player.getInventory().toString());
+		    pw.println("stop");
 		    pw.close();
 	    }
 	    catch (FileNotFoundException e)
@@ -245,6 +250,9 @@ public class Game {
     {
 	    System.out.print("I am in the loadGame method\n\r");
 	    ArrayList<Enemy> tempEnemies = new ArrayList<Enemy>();
+	    ArrayList<Item> tempInventory = new ArrayList<Item>();
+	    ItemType itemType;
+	    PlayerClass playerClass;
 	    Scanner in = new Scanner(file);
 	    while (in.hasNextLine())
 	    {
@@ -261,7 +269,6 @@ public class Game {
 			System.out.print("IN the loop\n\r");
 			for (int i = 0; i < enemyCount; i++)
 			{
-				System.out.print("IN the for loop\n\r");
 				int row = in.nextInt();
 				int col = in.nextInt();
 				in.nextLine();
@@ -276,9 +283,64 @@ public class Game {
 				in.nextLine();
 				tempEnemies.add(new Enemy(name, row, col, hp, damage, protection, commentary));
 			}
-
-		
 		}
+		int numItems = in.nextInt();
+		in.nextLine();
+		for (int i = 0; i < numItems; i++)
+		{
+			System.out.print("In the items for loop\n\r");
+			String type = in.nextLine();
+			System.out.print("item type is: " + type + "\n\r");
+			if (type.equals("Weapon"))
+			{
+				itemType = ItemType.Weapon;
+			}
+			else if (type.equals("Armor"))
+			{
+				itemType = ItemType.Armor;
+			}
+			else
+			{
+				itemType = ItemType.Other;
+			}
+			System.out.print("item type is: " + itemType + "\n\r");
+			String name = in.nextLine();
+			int weight = in.nextInt();
+			int value = in.nextInt();
+			int strength = in.nextInt();
+			in.nextLine();
+			String pclass = in.nextLine();
+			if (pclass.equals("Mage"))
+			{
+				playerClass = PlayerClass.Mage;
+			}
+			else if(pclass.equals("Bard"))
+			{
+				playerClass = PlayerClass.Bard;
+			}
+			else if(pclass.equals("Paladin"))
+			{
+				playerClass = PlayerClass.Paladin;
+			}
+			else if(pclass.equals("Assassin"))
+			{
+				playerClass = PlayerClass.Assassin;
+			}
+			else if (pclass.equals("Archer"))
+			{
+				playerClass = PlayerClass.Archer;
+			}
+			else
+			{
+				playerClass = PlayerClass.None;
+			}
+			System.out.print("player class is: " + pclass + "\n\r");
+			tempInventory.add(new Item(itemType, name, weight, value, strength, playerClass));
+			System.out.print("made it to the bottom of the loop\n\r");
+		}
+		System.out.print("next line after items loop is: " + in.nextLine() + "\n\r");
+		in.nextLine();
+
 	/*	else if (in.nextLine().equals("Enemy"))
 		{
 			System.out.print("I am in the else if for enemy\n\r");
@@ -291,6 +353,7 @@ public class Game {
 
 	    }
 	    enemies = tempEnemies;
+	    player.getInventory().setInventory(tempInventory);
 	    System.out.print("out of the loop\n\r");
 	    run();
     }
