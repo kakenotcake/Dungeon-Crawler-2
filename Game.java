@@ -113,7 +113,8 @@ public class Game {
 
     // code for when the player tries to drop an item
     private void drop() {
-          player.getInventory().drop();;
+          player.getInventory().drop();
+	  Terminal.pause(1.25);
 	  Box thing = checkForBox();
           if (thing == null) {
             Item dropped = player.getInventory().getDropped();
