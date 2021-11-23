@@ -1,23 +1,14 @@
 Player
-2
-5
+3
+10
 @
 50
 Kate
-Mage
+Paladin
 4
 Enemy
-7
-9
-*
-50
-Ogre
-3
-30
-Ogre clubbed you in the head!                                                     
-Enemy
 8
-25
+9
 *
 50
 Skeleton
@@ -25,36 +16,107 @@ Skeleton
 20
 Skeleton poked you really hard with its boney finger!                         
 Enemy
-16
+7
+25
+*
+50
+Hell Hound
+3
+25
+Hell Hound takes a bite of your arm!                                      
+Enemy
+17
 43
 *
 50
-Mechanical Spider
-2
+Skeleton
+1
 20
-Mechanical Spider hits you with its poisonous silk!                
+Skeleton poked you really hard with its boney finger!                         
 Enemy
-25
-13
+24
+11
 *
 50
-Goblin
-2
-25
-Goblin tied your shoe laces together making you to trip!                        
-
-2
-Weapon
-Wabbajack
-17
-350
+Skeleton Horseman
+4
 28
-Mage
+Skeleton Horseman charges toward you full speed!                   
+
+3
+Weapon
+Goddess Blade
+22
+320
+30
+Paladin
 Armor
-Holy Prayer
-33
-777
+Guardian Graves
+42
+185
+10
+Paladin
+Other
+Royal Ocarina
+6
+120
+1
+null
+
+5
+7
+39
+i
+Box
+Other
+Peculiar Beehive
+8
+43
+3
+null
+
+18
+29
+i
+Box
+Weapon
+Mighty Fish Lord
+45
+29
+32
+Archer
+
+25
+38
+i
+Box
+Other
+Inconspicuous Walnut
 12
-Mage
+55
+2
+null
+
+25
+41
+i
+Box
+Other
+Royal Ocarina
+6
+120
+1
+null
+
+25
+44
+i
+Box
+Other
+Inconspicuous Walnut
+12
+55
+2
+null
 
 stop

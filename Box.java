@@ -18,7 +18,7 @@ public class Box extends Entity {
     void save(PrintWriter x){
 	    super.save(x);
 	    x.println("Box");
-	    x.println(getItem());
+	    x.println(getItem().toStringForSave());
     }
     public void loadGame(Scanner in){
 	    super.loadGame(in);

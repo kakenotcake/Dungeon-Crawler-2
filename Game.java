@@ -105,7 +105,7 @@ public class Game {
                 setStatus("You added the " + thing.getItem().getName() + " to your inventory.");
                 boxes.remove(thing);
             } else {
-                setStatus("This is too large for you to add!");
+		    setStatus("This is too large for you to add!");
             }
             Terminal.pause(1.25);
         }
@@ -174,7 +174,6 @@ public class Game {
 	    	break;
 	    case l:
 		//loading method
-		System.out.print("Option to load.\n\r");
                 try{
 			loadGame();
 
@@ -215,6 +214,12 @@ public class Game {
 		    pw.println();
 		    pw.println(player.getInventory().getSize());
 		    pw.println(player.getInventory().toString());
+		    pw.println(boxes.size());
+		    for (int i = 0; i < boxes.size(); i++)
+		    {
+			    boxes.get(i).save(pw);
+
+		    }
 		    pw.println("stop");
 		    pw.close();
 		    System.out.print("Game saved successfully.\n\r");
@@ -233,6 +238,7 @@ public class Game {
 	    ArrayList<Item> tempInventory = new ArrayList<Item>();
 	    ItemType itemType;
 	    PlayerClass playerClass;
+	    ArrayList<Box> tempBoxes = new ArrayList<Box>();
 	    Scanner in = new Scanner(file);
 	    while (in.hasNextLine())
 	    {
@@ -242,11 +248,9 @@ public class Game {
 
 	    	}
 		int enemyCount = in.nextInt();
-		System.out.print("Enemy count is: " + enemyCount + "\n\r");
 		in.nextLine();
 		if (in.nextLine().equals("Enemy"))
 		{
-			System.out.print("IN the loop\n\r");
 			for (int i = 0; i < enemyCount; i++)
 			{
 				int row = in.nextInt();
@@ -318,64 +322,70 @@ public class Game {
 			tempInventory.add(new Item(itemType, name, weight, value, strength, playerClass));
 			System.out.print("made it to the bottom of the loop\n\r");
 		}
-		System.out.print("next line after items loop is: " + in.nextLine() + "\n\r");
+
 		in.nextLine();
-
-	/*	else if (in.nextLine().equals("Enemy"))
+		int itemCount = in.nextInt();
+		for (int i = 0; i < itemCount; i++)
 		{
-			System.out.print("I am in the else if for enemy\n\r");
-			//enemy,loadGame(in);
+			System.out.print("In the items for loop\n\r");
+			int row = in.nextInt();
+			int col = in.nextInt();
+			in.nextLine();
+			in.nextLine();
+			in.nextLine();
+			String type = in.nextLine();
+			if (type.equals("Weapon"))
+			{
+				itemType = ItemType.Weapon;
+			}
+			else if (type.equals("Armor"))
+			{
+				itemType = ItemType.Armor;
+			}
+			else
+			{
+				itemType = ItemType.Other;
+			}
+			String name = in.nextLine();
+			int weight = in.nextInt();
+			int value = in.nextInt();
+			int strength = in.nextInt();
+			in.nextLine();
+			String pclass = in.nextLine();
+			if (pclass.equals("Mage"))
+			{
+				playerClass = PlayerClass.Mage;
+			}
+			else if (pclass.equals("Bard"))
+			{
+				playerClass = PlayerClass.Bard;
+			}
+			else if(pclass.equals("Paladin"))
+			{
+				playerClass = PlayerClass.Paladin;
+			}
+			else if(pclass.equals("Assassin"))
+			{
+				playerClass = PlayerClass.Assassin;
+			}
+			else if(pclass.equals("Archer"))
+			{
+				playerClass = PlayerClass.Archer;
+			}
+			else
+			{
+				playerClass = PlayerClass.None;
+			}
+			tempBoxes.add(new Box(row, col, new Item(itemType, name, weight, value, strength, playerClass)));
 		}
-		else
-		{
-			System.out.print("else\n\r");
-		}*/
-
+		in.nextLine();
+		in.nextLine();
 	    }
 	    enemies = tempEnemies;
 	    player.getInventory().setInventory(tempInventory);
-	    System.out.print("out of the loop\n\r");
+	    boxes = tempBoxes;
 	    run();
     }
-
-
-
-   /* void loadGame()throws FileNotFoundException {
-	    ArrayList<Enemy>enemies=new ArrayList<>();//arraylist holding enemies
-	    Scanner in=new Scanner(System.in);
-	    File F;//file for Player information
-	    try{
-		    F=new File("Player.txt");
-		    in=new Scanner(F);
-	   }catch(FileNotFoundException e){
-            System.out.println("File was not found");
-            return;
-           }
-	    Player e=new Player(in);
-	    //file for inventory information
-	    File G;
-	    try{
-		    G=new File("Enemy.txt");
-		    in=new Scanner(G);
-	    }catch(FileNotFoundException r){
-		    System.out.println("File was not found");
-		    return;
-	    }
-	    Enemy f=new Enemy(in);
-	    enemies.add(f);
-
-	    File H;//file for Inventory information
-	    try{
-		    H=new File("Inventory.txt");
-		    in=new Scanner(H);
-	    }catch(FileNotFoundException w){
-		    System.out.println("File was not found");
-		    return;
-	    }
-	    Box t=new Box(in);
-
-	    in.close();//closing the file
-    }*/
 
     // this is called when we need to redraw the room and help menu
     // this happens after going into a menu like for choosing items

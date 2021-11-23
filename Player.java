@@ -137,10 +137,13 @@ public class Player extends Character {
     public void useAid()
     {
 	    Item aid = inventory.getAid();
-	    System.out.print("Strength from aid is: " + aid.getStrength() + "\n\r");
-	    setHealth(aid.getStrength());
-	    System.out.print("Player's health increased to " + getHealth() + "\n\r");
-	    inventory.removeUsedAid(aid);
+	    if (aid != null)
+	    {
+		    System.out.print("Strength from aid is: " + aid.getStrength() + "\n\r");
+	    	    setHealth(aid.getStrength());
+	    	    System.out.print("Player's health increased to " + getHealth() + "\n\r");
+	            inventory.removeUsedAid(aid);
+	    }
 
     }
     @Override
