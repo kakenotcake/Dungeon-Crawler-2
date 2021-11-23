@@ -1,55 +1,13 @@
 Player
-8
-36
+7
+17
 @
-11
-Kate
-Paladin
-2
-Enemy
-25
-38
-*
 50
-Hell Hound
-3
-25
-Hell Hound takes a bite of your arm!                                      
-Enemy
-24
-20
-*
-50
-Hell Hound
-3
-25
-Hell Hound takes a bite of your arm!                                      
+null
+null
+0
 
-3
-Weapon
-Goddess Blade
-22
-320
-30
-Paladin
-Armor
-Guardian Graves
-42
-185
-10
-Paladin
-Armor
-Hylian Shield
-50
-380
-10
-Archer
-
-4
-18
-29
-i
-Box
+1
 Other
 Apple Pie
 2
@@ -57,30 +15,42 @@ Apple Pie
 4
 null
 
-25
-38
+5
+5
+18
+i
+Box
+Armor
+Hylian Shield
+50
+380
+10
+Archer
+
+5
+23
 i
 Box
 Other
-Inconspicuous Walnut
-12
-55
-2
+Peculiar Beehive
+8
+43
+3
 null
 
-25
-41
+7
+23
 i
 Box
-Other
-Inconspicuous Walnut
-12
-55
-2
-null
+Weapon
+Master Sword
+30
+780
+40
+Paladin
 
-25
-44
+9
+18
 i
 Box
 Other
@@ -88,6 +58,17 @@ Royal Ocarina
 6
 120
 1
+null
+
+9
+23
+i
+Box
+Other
+Peculiar Beehive
+8
+43
+3
 null
 
 stop
