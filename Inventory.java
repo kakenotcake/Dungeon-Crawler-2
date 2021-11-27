@@ -258,7 +258,7 @@ public class Inventory
 			} else if (aid.get(answer-1).getName().equals("Royal Ocarina")) {
 				System.out.print("You play a sweet, energetic  melody on the Royal Ocarina. A youthful vigor fills your veins.\n\r");
 			} else if (aid.get(answer-1).getName().equals("Inconspicuous Walnut")) {
-				System.out.print("You pop the walnut in your mouth, then spit it back out as it dissolves into a thick powder in your mouth. It tastes like how a firework looks. You feel alert\n\r");
+				System.out.print("You pop the walnut in your mouth, then spit it back out as it dissolves into a thick powder in your mouth. It tastes like how a firework looks.\n\r");
 			} else if (aid.get(answer-1).getName().equals("Peculiar Beehive")) {
 				System.out.print("You nibble a piece of honeycomb from the Peculiar Beehive. It has a strangely dry texture to it. The honey leaves a sharp, spicy sensation on your tongue.\n\r");
 			}

@@ -5,6 +5,7 @@
 import java.util.ArrayList;
 import ansi_terminal.*;
 import java.io.*;
+import java.util.Scanner;
 
 public class Room {
     // the grid holds the room geometry
@@ -115,6 +116,7 @@ public class Room {
 
     
     public int enterRoom(int row, int col) {
+	    Scanner input = new Scanner(System.in);
 	    if (grid[row].charAt(col) == 'x') {
 		    return 1;
 	    } else if (grid[row].charAt(col) == 'y') {

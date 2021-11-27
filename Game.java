@@ -440,24 +440,28 @@ public class Game {
     }
 
     private boolean checkRoom() {
-	    
+	    Scanner input = new Scanner(System.in);
 	    int x = 0;
 	    x = rooms.get(currentRoom).enterRoom(player.getRow(), player.getCol());
 
 
-	    if (x == 1) { 
+	    if (x == 1) {
+		    setStatus("Would you like to enter a new room? 1. yes, 2. no\n\r");
+		    int choice = input.nextInt();
+		    if (choice == 1) {
 		    currentRoom = 1;
 		    redrawMapAndHelp();
 		    player.setPosition(rooms.get(currentRoom).getPlayerStart().getRow(), rooms.get(currentRoom).getPlayerStart().getCol());
-		  //  player = new Player(rooms.get(currentRoom).getPlayerStart(), "");
 		    boxes = rooms.get(currentRoom).getBoxes();
 		    enemies = rooms.get(currentRoom).getEnemies();
 		    return true;
+		    } else if (choice == 2) {
+			    return false;
+		    }
 	    } else if (x == 2) {
 		    currentRoom = 2;
 		    redrawMapAndHelp();
 		    player.setPosition(rooms.get(currentRoom).getPlayerStart().getRow(), rooms.get(currentRoom).getPlayerStart().getCol());
-		    //player = new Player(rooms.get(currentRoom).getPlayerStart(), "");
                     boxes = rooms.get(currentRoom).getBoxes();
                     enemies = rooms.get(currentRoom).getEnemies();
 		    return true;
@@ -465,7 +469,6 @@ public class Game {
 		   currentRoom = 3;
 		   redrawMapAndHelp();
 		   player.setPosition(rooms.get(currentRoom).getPlayerStart().getRow(), rooms.get(currentRoom).getPlayerStart().getCol());
-		  // player = new Player(rooms.get(currentRoom).getPlayerStart(), "");
                    boxes = rooms.get(currentRoom).getBoxes();
                    enemies = rooms.get(currentRoom).getEnemies();
 		   return true;
@@ -473,7 +476,6 @@ public class Game {
 		    currentRoom = 0;
 		    redrawMapAndHelp();
 		    player.setPosition(rooms.get(currentRoom).getPlayerStart().getRow(), rooms.get(currentRoom).getPlayerStart().getCol());
-		    //player = new Player(rooms.get(currentRoom).getPlayerStart(), "");
                     boxes = rooms.get(currentRoom).getBoxes();
                     enemies = rooms.get(currentRoom).getEnemies();
 		    return true;
@@ -482,6 +484,7 @@ public class Game {
 	   
 	  
     }
+
 
     public void run() {
         // draw these for the first time now
@@ -524,6 +527,8 @@ public class Game {
             if (thingHere != null) {
                 setStatus("Here you find: " + thingHere.getItem().getName());
             }
+	    
+
 	    checkRoom();
         }
     }
