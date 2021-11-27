@@ -1,59 +1,67 @@
 room
-1
-Player
-7
-4
-@
-29
-Kate
-Mage
 0
-
-3
-Weapon
-Wabbajack
-17
-350
-28
-Mage
-Armor
-Holy Prayer
-33
-777
-12
-Mage
-Armor
-Hylian Shield
+Player
+2
+5
+@
 50
-380
-10
-Archer
+Katge
+Bard
+4
+Enemy
+7
+9
+*
+50
+Skeleton Horseman
+4
+28
+Skeleton Horseman charges toward you full speed!                   
+Enemy
+8
+25
+*
+50
+Ogre
+3
+30
+Ogre clubbed you in the head!                                                     
+Enemy
+16
+43
+*
+50
+Hell Hound
+3
+25
+Hell Hound takes a bite of your arm!                                      
+Enemy
+25
+13
+*
+50
+Skeleton Horseman
+4
+28
+Skeleton Horseman charges toward you full speed!                   
+
+2
+Weapon
+Skyward Harp
+20
+500
+26
+Bard
+Armor
+Virtuoso's Trench Coat
+36
+90
+18
+Bard
 
 6
+3
 5
-18
-i
-Box
-Armor
-Royal Guard's Cloak
-22
-140
-11
-Assassin
-
-5
-23
-i
-Box
-Armor
-Hylian Shield
-50
-380
-10
-Archer
-
-7
-18
 i
 Box
 Weapon
@@ -64,7 +72,51 @@ Mighty Fish Lord
 Archer
 
 7
-23
+39
+i
+Box
+Armor
+Royal Guard's Cloak
+22
+140
+11
+Assassin
+
+18
+29
+i
+Box
+Weapon
+Mighty Fish Lord
+45
+29
+32
+Archer
+
+25
+38
+i
+Box
+Armor
+Hylian Shield
+50
+380
+10
+Archer
+
+25
+41
+i
+Box
+Weapon
+Mighty Fish Lord
+45
+29
+32
+Archer
+
+25
+44
 i
 Box
 Other
@@ -72,28 +124,6 @@ Inconspicuous Walnut
 12
 55
 2
-null
-
-9
-18
-i
-Box
-Other
-Star Fragment
-32
-650
-5
-null
-
-9
-23
-i
-Box
-Other
-Apple Pie
-2
-18
-4
 null
 
 stop

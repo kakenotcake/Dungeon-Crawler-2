@@ -4,6 +4,7 @@ import java.util.Random;
 import ansi_terminal.*;
 import java.util.Scanner;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 public class Enemy extends Character {
     private String name;
@@ -14,6 +15,7 @@ public class Enemy extends Character {
     private int health;
     private int row;
     private int col;
+    //private ArrayList<Enemy> enemies;
 
     public Enemy(String name, int row, int col, int hp, int damage, int protection, String commentary) {
         super(row, col, '*', Color.RED, hp, commentary);
@@ -57,13 +59,35 @@ public class Enemy extends Character {
 	    q.println(damage); 
 	    q.println(commentary);
     }
-    public void loadGame(Scanner in){
-	   super.loadGame(in);
+    /*public void loadGame(Scanner in){
+	    int enemyCount = in.nextInt();
+	    in.nextLine();
+	    in.nextLine();
+	    for (int i = 0; i < enemyCount; i++)
+	    {
+		    int row = in.nextInt();
+		    int col = in.nextInt();
+		    in.nextLine();
+		    in.nextLine();
+		    int hp = in.nextInt();
+		    in.nextLine();
+		    String name = in.nextLine();
+		    int protection = in.nextInt();
+		    in.nextLine();
+		    String commentary = in.nextLine();
+		    in.nextLine();
+		    enemies.add(new Enemy(name, row, col, hp, damage, protection, commentary));
+	    }
+	   /*super.loadGame(in);
 	   in.nextLine();
 	   name=in.nextLine();
 	   protection=in.nextInt();
     
     }
+    public ArrayList<Enemy> getEnemies()
+    {
+	    return enemies;
+    }*/
 
     // randomly move this enemy in the room
     public void walk(Room room) {

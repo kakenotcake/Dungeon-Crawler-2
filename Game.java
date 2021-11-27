@@ -390,6 +390,7 @@ public class Game {
 		in.nextLine();
 	    }
 	    enemies = tempEnemies;
+	   // enemies = enemy.getEnemies();
 	    player.getInventory().setInventory(tempInventory);
 	    boxes = tempBoxes;
 	    run();
