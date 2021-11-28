@@ -172,9 +172,12 @@ public class Game {
 
 	    case s:
 		saveGame();
+		System.out.print("Game saved sucessfully.\n\r");
 	    	break;
 	    case l:
 		//loading method
+		System.out.print("Loading . . .\n\r");
+
                 try{
 			loadGame();
 
@@ -225,7 +228,7 @@ public class Game {
 		    }
 		    pw.println("stop");
 		    pw.close();
-		    System.out.print("Game saved successfully.\n\r");
+		    //System.out.print("Game saved successfully.\n\r");
 		    Terminal.pause(1.5);
 	    }
 	    catch (FileNotFoundException e)
@@ -235,7 +238,7 @@ public class Game {
     }
     void loadGame() throws FileNotFoundException
     {
-	    System.out.print("Loading your previous save...\n\r");
+	    //System.out.print("Loading your previous save...\n\r");
 	    Terminal.pause(1.5);
 	    ArrayList<Enemy> tempEnemies = new ArrayList<Enemy>();
 	    ArrayList<Item> tempInventory = new ArrayList<Item>();
@@ -440,49 +443,71 @@ public class Game {
     }
 
     private boolean checkRoom() {
-	    Scanner input = new Scanner(System.in);
 	    int x = 0;
 	    x = rooms.get(currentRoom).enterRoom(player.getRow(), player.getCol());
 
 
 	    if (x == 1) {
 		    setStatus("Would you like to enter a new room? 1. yes, 2. no\n\r");
-		    int choice = input.nextInt();
-		    if (choice == 1) {
+		    if (askToEnter() == true) {
+		    saveGame();
 		    currentRoom = 1;
 		    redrawMapAndHelp();
 		    player.setPosition(rooms.get(currentRoom).getPlayerStart().getRow(), rooms.get(currentRoom).getPlayerStart().getCol());
 		    boxes = rooms.get(currentRoom).getBoxes();
 		    enemies = rooms.get(currentRoom).getEnemies();
 		    return true;
-		    } else if (choice == 2) {
-			    return false;
 		    }
 	    } else if (x == 2) {
+		    setStatus("You hear a terrible scraping noise from the next room. . .\n\r");
+		    if (askToEnter() == true) {
+		    saveGame();
 		    currentRoom = 2;
 		    redrawMapAndHelp();
 		    player.setPosition(rooms.get(currentRoom).getPlayerStart().getRow(), rooms.get(currentRoom).getPlayerStart().getCol());
                     boxes = rooms.get(currentRoom).getBoxes();
                     enemies = rooms.get(currentRoom).getEnemies();
 		    return true;
+		    }
             } else if (x == 3) {
+		   setStatus("You're getting a bad feeling . . .\n\r");
+		   if (askToEnter() == true) {
+		   saveGame();
 		   currentRoom = 3;
 		   redrawMapAndHelp();
 		   player.setPosition(rooms.get(currentRoom).getPlayerStart().getRow(), rooms.get(currentRoom).getPlayerStart().getCol());
                    boxes = rooms.get(currentRoom).getBoxes();
                    enemies = rooms.get(currentRoom).getEnemies();
 		   return true;
+		   }
 	    } else if (x == 4) {
-		    currentRoom = 0;
-		    redrawMapAndHelp();
-		    player.setPosition(rooms.get(currentRoom).getPlayerStart().getRow(), rooms.get(currentRoom).getPlayerStart().getCol());
-                    boxes = rooms.get(currentRoom).getBoxes();
-                    enemies = rooms.get(currentRoom).getEnemies();
+		    setStatus("Return to the overworld? 1. yes / 2. no\n\r");
+		    if (askToEnter() == true) {
+		    try { 
+			    loadGame(); 
+		    } catch(FileNotFoundException r) {
+                        System.out.println("File was not found");
+		    }
 		    return true;
+	         }
 	    }
 	    return false;
 	   
 	  
+    }
+
+    public boolean askToEnter() {
+	    Scanner input = new Scanner(System.in);
+	    int choice = input.nextInt();
+
+	    if (choice == 1) {
+		    return true;
+	    } else if (choice == 2) {
+		    return false;
+	    } else {
+		    setStatus("Please enter a valid input.\n\r");
+	    }
+	    return false;
     }
 
 
