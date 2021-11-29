@@ -1,101 +1,52 @@
 room
 0
 Player
-16
-58
-@
-33
-sa
-Assassin
-4
-Enemy
-7
-15
-*
-50
-Goblin
-2
-25
-Goblin tied your shoe laces together making you to trip!                        
-Enemy
-8
-19
-*
-50
-Ogre
-3
-30
-Ogre clubbed you in the head!                                                     
-Enemy
 18
-38
+49
+@
+28
+sa
+Mage
+1
+Enemy
+25
+14
 *
-37
+50
 Hell Hound
 3
 25
 Hell Hound takes a bite of your arm!                                      
-Enemy
-24
-6
-*
-50
-Ogre
-3
-30
-Ogre clubbed you in the head!                                                     
 
 4
 Weapon
-Poison Darts
-9
-64
-16
-Assassin
+Wabbajack
+17
+350
+28
+Mage
 Armor
-Rubber Slippers
-16
-72
-8
-Assassin
-Other
-Star Fragment
-32
-650
-5
-null
+Holy Prayer
+33
+777
+12
+Mage
 Weapon
-Master Sword
-30
-780
-40
-Paladin
-
-4
-18
+Mighty Fish Lord
+45
 29
-i
-Box
-Other
-Star Fragment
 32
-650
-5
-null
+Archer
+Armor
+Hylian Shield
+50
+380
+10
+Archer
 
+2
 25
 38
-i
-Box
-Other
-Peculiar Beehive
-8
-43
-3
-null
-
-25
-41
 i
 Box
 Armor
@@ -109,11 +60,11 @@ Assassin
 44
 i
 Box
-Other
-Inconspicuous Walnut
-12
-55
-2
-null
+Weapon
+Mighty Fish Lord
+45
+29
+32
+Archer
 
 stop

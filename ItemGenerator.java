@@ -18,19 +18,23 @@ public class ItemGenerator {
                 reserves.add(masterSword);
                 Item fish = new Item(ItemType.Weapon, "Mighty Fish Lord", 45, 29, 32, PlayerClass.Archer, "You aim your Mighty Fish Lord at the enemy and hit it with a big ole' seabass.");
                 reserves.add(fish);
+		Item spear = new Item(ItemType.Weapon. "Dragonspine Spear", 24, 113, 20, PlayerClass.Assassin, "With a cold grace, you strike the enemy with your Dragonspine Spear.");
+		reserves.add(spear);
+		Item axe = new Item(ItemType.Weapon, "Ebony axe", 28, 200, 37, PlayerClass.Assassin, "You swing your ebony axe and cleave the enemy with a devastating might.");
+		reserves.add(axe);
                 Item hylianShield = new Item(ItemType.Armor, "Hylian Shield", 50, 380, 10, PlayerClass.Archer);
                 reserves.add(hylianShield);
 		Item royalGarb = new Item(ItemType.Armor, "Royal Guard's Cloak", 22, 140, 11, PlayerClass.Assassin);
 		reserves.add(royalGarb);
-                Item star = new Item(ItemType.Other, "Star Fragment", 32, 650, 5);
+                Item star = new Item(ItemType.Other, "Star Fragment", 32, 650, 12);
                 reserves.add(star);
-                Item pie = new Item(ItemType.Other, "Apple Pie", 2, 18, 4);
+                Item pie = new Item(ItemType.Other, "Apple Pie", 2, 18, 8);
                 reserves.add(pie);
-                Item bees = new Item(ItemType.Other, "Peculiar Beehive", 8, 43, 3);
+                Item bees = new Item(ItemType.Other, "Peculiar Beehive", 8, 43, 9);
                 reserves.add(bees);
-		Item walnut = new Item(ItemType.Other, "Inconspicuous Walnut", 12, 55, 2);
+		Item walnut = new Item(ItemType.Other, "Inconspicuous Walnut", 12, 55, 15);
 		reserves.add(walnut);
-		Item ocarina = new Item(ItemType.Other, "Royal Ocarina", 6, 120, 1);
+		Item ocarina = new Item(ItemType.Other, "Royal Ocarina", 6, 120, 13);
 		reserves.add(ocarina);
 
                 Collections.shuffle(reserves);
