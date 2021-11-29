@@ -18,7 +18,7 @@ public class ItemGenerator {
                 reserves.add(masterSword);
                 Item fish = new Item(ItemType.Weapon, "Mighty Fish Lord", 45, 29, 32, PlayerClass.Archer, "You aim your Mighty Fish Lord at the enemy and hit it with a big ole' seabass.");
                 reserves.add(fish);
-		Item spear = new Item(ItemType.Weapon. "Dragonspine Spear", 24, 113, 20, PlayerClass.Assassin, "With a cold grace, you strike the enemy with your Dragonspine Spear.");
+		Item spear = new Item(ItemType.Weapon, "Dragonspine Spear", 24, 113, 20, PlayerClass.Assassin, "With a cold grace, you strike the enemy with your Dragonspine Spear.");
 		reserves.add(spear);
 		Item axe = new Item(ItemType.Weapon, "Ebony axe", 28, 200, 37, PlayerClass.Assassin, "You swing your ebony axe and cleave the enemy with a devastating might.");
 		reserves.add(axe);

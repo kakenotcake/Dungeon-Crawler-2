@@ -14,6 +14,7 @@ public class Game {
     private ArrayList<Enemy> enemies;
     private int currentRoom;
     private File file;
+    private File room1;
     private Enemy enemy;
 
     public Game() 
@@ -34,6 +35,7 @@ public class Game {
 	setClass();
 	player.setCommentary();
 	file = new File("save.txt");
+	room1 =  new File("saveroom1.txt");
     }
     public void setClass()
     {
@@ -398,6 +400,121 @@ public class Game {
 	    boxes = tempBoxes;
 	    run();
     }
+    private void saveRoom()
+    {
+	    PrintWriter pw = null;
+	    try {
+		    pw = new PrintWriter(room1);
+		    pw.println(currentRoom);
+		    pw.println(enemies.size());
+		    for (int i = 0; i < enemies.size(); i++)
+		    {
+			    enemies.get(i).save(pw);
+		    }
+		    pw.println(boxes.size());
+	            for (int i = 0; i < boxes.size(); i++)
+		    {
+			    boxes.get(i).save(pw);
+		    }
+		    pw.println("stop");
+		    pw.close();
+	    }
+	    catch (FileNotFoundException e)
+	    {
+		    e.printStackTrace();
+	    }
+    }
+    private void loadRoom() throws FileNotFoundException
+    {
+	    ArrayList<Enemy> tempEnemies = new ArrayList<Enemy>();
+	    ArrayList<Box> tempBoxes = new ArrayList<Box>();
+	    ItemType itemType;
+	    PlayerClass playerClass;
+	    Scanner in = new Scanner(room1);
+	    while (in.hasNextLine())
+	    {
+		    currentRoom = in.nextInt();
+		    System.out.print("current room is: " + currentRoom + "\n\r");
+		    int enemyCount = in.nextInt();
+		    System.out.print("Enemy count is: " + enemyCount + "\n\r");
+		    in.nextLine();
+		    for (int i = 0; i < enemyCount; i++)
+		    {
+			    System.out.print("I am in the loop\n\r");
+			    in.nextLine();
+			    int row = in.nextInt();
+			    int col = in.nextInt();
+			    in.nextLine();
+			    in.nextLine();
+			    int hp = in.nextInt();
+			    in.nextLine();
+			    String name = in.nextLine();
+			    int protection = in.nextInt();
+			    int damage = in.nextInt();
+			    in.nextLine();
+			    String commentary = in.nextLine();
+			    tempEnemies.add(new Enemy(name, row, col, hp, damage, protection, commentary));
+		    }
+		    int boxCount = in.nextInt();
+		    for (int i = 0; i < boxCount; i++)
+		    {
+			    int row = in.nextInt();
+			    int col = in.nextInt();
+			    in.nextLine();
+			    in.nextLine();
+			    in.nextLine();
+			    String type = in.nextLine();
+			    if (type.equals("Weapon"))
+			    {
+				    itemType = ItemType.Weapon;
+			    }
+			    else if (type.equals("Armor"))
+			    {
+				    itemType = ItemType.Armor;
+			    }
+			    else
+			    {
+				    itemType = ItemType.Other;
+			    }
+			    String name = in.nextLine();
+			    int weight = in.nextInt();
+			    int value = in.nextInt();
+			    int strength = in.nextInt();
+			    in.nextLine();
+			    String pclass = in.nextLine();
+			    if (pclass.equals("Mage"))
+			    {
+				    playerClass = PlayerClass.Mage;
+			    }
+			    else if(pclass.equals("Bard"))
+			    {
+				    playerClass = PlayerClass.Bard;
+			    }
+			    else if(pclass.equals("Paladin"))
+			    {
+				    playerClass = PlayerClass.Paladin;
+			    }
+			    else if(pclass.equals("Assassin"))
+			    {
+				    playerClass = PlayerClass.Assassin;
+			    }
+			    else
+			    {
+				    playerClass = PlayerClass.None;
+			    }
+			    tempBoxes.add(new Box(row, col, new Item(itemType, name, weight, value, strength, playerClass)));
+		    }
+		    in.nextLine();
+		    in.nextLine();
+	    }
+	    enemies = tempEnemies;
+	    boxes = tempBoxes;
+	    run();
+    }
+
+
+  
+
 
     // this is called when we need to redraw the room and help menu
     // this happens after going into a menu like for choosing items
@@ -450,16 +567,17 @@ public class Game {
 	    if (x == 1) {
 		    setStatus("Would you like to enter a new room? 1. yes, 2. no\n\r");
 		    if (askToEnter() == true) {
-		    saveGame();
+	            saveRoom();
+		    //saveGame();
 		    currentRoom = 1;
 		    redrawMapAndHelp();
-		    player.setPosition(rooms.get(currentRoom).getPlayerStart().getRow(), rooms.get(currentRoom).getPlayerStart().getCol());
+		    player.setPosition(rooms.get(currentRoom).getPlayerStart().getRow(), rooms.get(currentRoom).getPlayerStart().getCol()-1);
 		    boxes = rooms.get(currentRoom).getBoxes();
 		    enemies = rooms.get(currentRoom).getEnemies();
 		    return true;
 		    }
 	    } else if (x == 2) {
-		    setStatus("You hear a terrible scraping noise from the next room. . .\n\r");
+		    setStatus("You hear a terrible scraping noise from the next room. . .\n\rWould you like to explore it? 1. yes / 2. no\n\r");
 		    if (askToEnter() == true) {
 		    saveGame();
 		    currentRoom = 2;
@@ -470,7 +588,7 @@ public class Game {
 		    return true;
 		    }
             } else if (x == 3) {
-		   setStatus("You're getting a bad feeling . . .\n\r");
+		   setStatus("You're getting a bad feeling . . .\n\rWould you like to explore it? 1. yes / 2. no\n\r");
 		   if (askToEnter() == true) {
 		   saveGame();
 		   currentRoom = 3;
@@ -484,7 +602,8 @@ public class Game {
 		    setStatus("Return to the overworld? 1. yes / 2. no\n\r");
 		    if (askToEnter() == true) {
 		    try { 
-			    loadGame(); 
+			    loadRoom();
+			   // loadGame(); 
 		    } catch(FileNotFoundException r) {
                         System.out.println("File was not found");
 		    }
@@ -505,7 +624,7 @@ public class Game {
 	    } else if (choice == 2) {
 		    return false;
 	    } else {
-		    setStatus("Please enter a valid input.\n\r");
+		    setStatus("Please enter a valid input.\n\r" + askToEnter());
 	    }
 	    return false;
     }
