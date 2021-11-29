@@ -1,34 +1,25 @@
 room
 0
 Player
-26
-41
+16
+58
 @
-26
+33
 sa
-Bard
+Assassin
 4
 Enemy
-4
-9
+7
+15
 *
-28
-Skeleton Horseman
-4
-28
-Skeleton Horseman charges toward you full speed!                   
+50
+Goblin
+2
+25
+Goblin tied your shoe laces together making you to trip!                        
 Enemy
 8
-15
-*
-4
-Hell Hound
-3
-25
-Hell Hound takes a bite of your arm!                                      
-Enemy
-15
-42
+19
 *
 50
 Ogre
@@ -36,34 +27,43 @@ Ogre
 30
 Ogre clubbed you in the head!                                                     
 Enemy
-24
 18
+38
+*
+37
+Hell Hound
+3
+25
+Hell Hound takes a bite of your arm!                                      
+Enemy
+24
+6
 *
 50
-Skeleton Horseman
-4
-28
-Skeleton Horseman charges toward you full speed!                   
-
-2
-Weapon
-Skyward Harp
-20
-500
-26
-Bard
-Armor
-Virtuoso's Trench Coat
-36
-90
-18
-Bard
-
-6
+Ogre
 3
+30
+Ogre clubbed you in the head!                                                     
+
+4
+Weapon
+Poison Darts
+9
+64
+16
+Assassin
+Armor
+Rubber Slippers
+16
+72
+8
+Assassin
+Other
+Star Fragment
+32
+650
 5
-i
-Box
+null
 Weapon
 Master Sword
 30
@@ -71,30 +71,9 @@ Master Sword
 40
 Paladin
 
-7
-39
-i
-Box
-Weapon
-Mighty Fish Lord
-45
-29
-32
-Archer
-
+4
 18
 29
-i
-Box
-Other
-Inconspicuous Walnut
-12
-55
-2
-null
-
-25
-38
 i
 Box
 Other
@@ -105,15 +84,26 @@ Star Fragment
 null
 
 25
+38
+i
+Box
+Other
+Peculiar Beehive
+8
+43
+3
+null
+
+25
 41
 i
 Box
-Weapon
-Master Sword
-30
-780
-40
-Paladin
+Armor
+Royal Guard's Cloak
+22
+140
+11
+Assassin
 
 25
 44
