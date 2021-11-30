@@ -245,11 +245,12 @@ public class Inventory
 		if (aid.size() != 0)
 		{
 			System.out.print("Which item would you like to use?\n\r");
+			System.out.print("Aid name and strength:\n\r");
 			int count = 0;
 			for (int i = 0; i < aid.size(); i++)
 			{
 				count++;
-				System.out.print(count + ". " + aid.get(i) + "\n\r");
+				System.out.print(count + ". " + aid.get(i).getName() + " (" + aid.get(i).getStrength() + ")" + "\n\r");
 			}
 			int answer = input.nextInt();
 

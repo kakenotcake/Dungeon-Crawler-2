@@ -141,6 +141,9 @@ public class Player extends Character {
 	    {
 		    System.out.print("Strength from aid is: " + aid.getStrength() + "\n\r");
 	    	    setHealth(aid.getStrength());
+		    if (getHealth() > 50) {
+			    System.out.print("Extra health obtained!\n\r");
+		    }
 	    	    System.out.print("Player's health increased to " + getHealth() + "\n\r");
 	            inventory.removeUsedAid(aid);
 	    }
