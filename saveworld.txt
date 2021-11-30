@@ -1,0 +1,64 @@
+0
+3
+Enemy
+6
+8
+*
+50
+Hell Hound
+3
+25
+Hell Hound takes a bite of your arm!                                      
+Enemy
+19
+40
+*
+50
+Mechanical Spider
+2
+20
+Mechanical Spider hits you with its poisonous silk!                
+Enemy
+24
+8
+*
+50
+Skeleton Horseman
+4
+28
+Skeleton Horseman charges toward you full speed!                   
+3
+25
+38
+i
+Box
+Other
+Star Fragment
+32
+650
+12
+null
+
+25
+41
+i
+Box
+Weapon
+Dragonspine Spear
+24
+113
+20
+Assassin
+
+25
+44
+i
+Box
+Weapon
+Ebony axe
+28
+200
+37
+Assassin
+
+stop
