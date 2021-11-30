@@ -580,7 +580,7 @@ public class Game {
 		   //saveGame();
 		    currentRoom = 1;
 		    redrawMapAndHelp();
-		    player.setPosition(rooms.get(currentRoom).getPlayerStart().getRow(), rooms.get(currentRoom).getPlayerStart().getCol()-1);
+		    player.setPosition(rooms.get(currentRoom).getPlayerStart().getRow(), rooms.get(currentRoom).getPlayerStart().getCol());
 		    if (room1Times > 1)
 		    {
 			    try {
@@ -601,25 +601,53 @@ public class Game {
 	    } else if (x == 2) {
 		    setStatus("You hear a terrible scraping noise from the next room. . .\n\rWould you like to explore it? 1. yes / 2. no\n\r");
 		    if (askToEnter() == true) {
+	            room2Times++;
 	            saveRoom(world);
 		    //saveGame();
 		    currentRoom = 2;
 		    redrawMapAndHelp();
 		    player.setPosition(rooms.get(currentRoom).getPlayerStart().getRow(), rooms.get(currentRoom).getPlayerStart().getCol());
-                    boxes = rooms.get(currentRoom).getBoxes();
-                    enemies = rooms.get(currentRoom).getEnemies();
+		    if (room2Times > 1)
+		    {
+			    try {
+				    loadRoom(room2);
+			    }
+			    catch (FileNotFoundException e)
+			    {
+				    e.printStackTrace();
+			    }
+		    }
+		    else
+		    {
+			    boxes = rooms.get(currentRoom).getBoxes();
+                    	    enemies = rooms.get(currentRoom).getEnemies();
+		    }
 		    return true;
 		    }
             } else if (x == 3) {
 		   setStatus("You're getting a bad feeling . . .\n\rWould you like to explore it? 1. yes / 2. no\n\r");
 		   if (askToEnter() == true) {
+	           room3Times++;
 		   //saveGame();
 	           saveRoom(world);
 		   currentRoom = 3;
 		   redrawMapAndHelp();
 		   player.setPosition(rooms.get(currentRoom).getPlayerStart().getRow(), rooms.get(currentRoom).getPlayerStart().getCol());
-                   boxes = rooms.get(currentRoom).getBoxes();
-                   enemies = rooms.get(currentRoom).getEnemies();
+		   if (room3Times > 1)
+		   {
+			   try {
+				   loadRoom(room3);
+			   }
+			   catch (FileNotFoundException e)
+			   {
+				   e.printStackTrace();
+			   }
+		   }
+		   else
+		   {
+			   boxes = rooms.get(currentRoom).getBoxes();
+                           enemies = rooms.get(currentRoom).getEnemies();
+		   }
 		   return true;
 		   }
 	    } else if (x == 4) {
@@ -628,14 +656,17 @@ public class Game {
 		    try {
 			    if (currentRoom==1)
 			    {
+				    player.setPosition(16, 58);
 				    saveRoom(room1);
 			    }
 			    else if (currentRoom==2)
 			    {
+				    player.setPosition(26, 41);
 				    saveRoom(room2);
 			    }
 			    else
 			    {
+				    player.setPosition(24, 7);
 				    saveRoom(room3);
 			    }
 			    loadRoom(world);
@@ -663,6 +694,16 @@ public class Game {
 		    setStatus("Please enter a valid input.\n\r" + askToEnter());
 	    }
 	    return false;
+    }
+    public void checkForWinner()
+    {
+	    for (int i = 0; i < 4; i++)
+	    {
+		    if (rooms.get(i).getEnemies()==null)
+		    {
+			    System.out.print("enemy list " + i + " is null\n\r");
+		    }
+	    }
     }
 
 
@@ -710,6 +751,7 @@ public class Game {
 	    
 
 	    checkRoom();
+	    checkForWinner();
         }
     }
 }

@@ -2,33 +2,15 @@ room
 0
 Player
 16
-58
+53
 @
-18
+24
 Kate
 Mage
-4
-Enemy
-5
-14
-*
-50
-Skeleton
-1
-20
-Skeleton poked you really hard with its boney finger!                         
-Enemy
-8
-16
-*
 2
-Skeleton Horseman
-4
-28
-Skeleton Horseman charges toward you full speed!                   
 Enemy
-19
-49
+6
+12
 *
 50
 Skeleton Horseman
@@ -36,14 +18,14 @@ Skeleton Horseman
 28
 Skeleton Horseman charges toward you full speed!                   
 Enemy
+1
+10
+*
+50
+Goblin
+2
 25
-18
-*
-50
-Skeleton Horseman
-4
-28
-Skeleton Horseman charges toward you full speed!                   
+Goblin tied your shoe laces together making you to trip!                        
 
 2
 Weapon
@@ -59,17 +41,17 @@ Holy Prayer
 12
 Mage
 
-6
+5
 3
 5
 i
 Box
-Other
-Peculiar Beehive
-8
-43
-9
-null
+Weapon
+Master Sword
+30
+780
+40
+Paladin
 
 7
 39
@@ -82,48 +64,37 @@ Royal Guard's Cloak
 11
 Assassin
 
-18
-29
-i
-Box
-Weapon
-Ebony axe
-28
-200
-37
-Assassin
-
 25
 38
 i
 Box
-Other
-Apple Pie
-2
-18
-8
-null
+Armor
+Royal Guard's Cloak
+22
+140
+11
+Assassin
 
 25
 41
 i
 Box
+Armor
+Hylian Shield
+50
+380
+10
+None
+
+25
+44
+i
+Box
 Weapon
 Ebony axe
 28
 200
 37
 Assassin
-
-25
-44
-i
-Box
-Other
-Apple Pie
-2
-18
-8
-null
 
 stop
