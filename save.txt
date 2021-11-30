@@ -1,31 +1,13 @@
 room
 0
 Player
-16
-53
+25
+13
 @
-24
+0
 Kate
 Mage
-2
-Enemy
-6
-12
-*
-50
-Skeleton Horseman
-4
-28
-Skeleton Horseman charges toward you full speed!                   
-Enemy
-1
-10
-*
-50
-Goblin
-2
-25
-Goblin tied your shoe laces together making you to trip!                        
+0
 
 2
 Weapon
@@ -35,11 +17,11 @@ Wabbajack
 28
 Mage
 Armor
-Holy Prayer
-33
-777
-12
-Mage
+Hylian Shield
+50
+380
+10
+Archer
 
 5
 3
@@ -47,36 +29,25 @@ Mage
 i
 Box
 Weapon
-Master Sword
-30
-780
-40
-Paladin
+Dragonspine Spear
+24
+113
+20
+Assassin
 
-7
-39
+18
+29
 i
 Box
-Armor
-Royal Guard's Cloak
-22
-140
-11
-Assassin
+Weapon
+Mighty Fish Lord
+45
+29
+32
+None
 
 25
 38
-i
-Box
-Armor
-Royal Guard's Cloak
-22
-140
-11
-Assassin
-
-25
-41
 i
 Box
 Armor
@@ -87,14 +58,25 @@ Hylian Shield
 None
 
 25
-44
+41
 i
 Box
-Weapon
-Ebony axe
-28
-200
-37
+Armor
+Royal Guard's Cloak
+22
+140
+11
 Assassin
+
+18
+31
+i
+Box
+Armor
+Holy Prayer
+33
+777
+12
+Mage
 
 stop

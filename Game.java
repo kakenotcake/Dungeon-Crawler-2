@@ -695,15 +695,22 @@ public class Game {
 	    }
 	    return false;
     }
-    public void checkForWinner()
+    public boolean checkForWinner()
     {
+	    boolean winner = false;
+	    int count = 0;
 	    for (int i = 0; i < 4; i++)
 	    {
-		    if (rooms.get(i).getEnemies()==null)
+		    if (rooms.get(i).getEnemies().size()==0)
 		    {
-			    System.out.print("enemy list " + i + " is null\n\r");
+			    count++;
 		    }
 	    }
+	    if (count==4)
+	    {
+		    winner = true;
+	    }
+	    return winner;
     }
 
 
@@ -748,10 +755,11 @@ public class Game {
             if (thingHere != null) {
                 setStatus("Here you find: " + thingHere.getItem().getName());
             }
-	    
-
+	    if (checkForWinner()==true)
+	    {
+		    playing = false;
+	    }
 	    checkRoom();
-	    checkForWinner();
         }
     }
 }
