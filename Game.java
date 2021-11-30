@@ -14,8 +14,14 @@ public class Game {
     private ArrayList<Enemy> enemies;
     private int currentRoom;
     private File file;
+    private File world;
     private File room1;
+    private File room2;
+    private File room3;
     private Enemy enemy;
+    private int room1Times;
+    private int room2Times;
+    private int room3Times;
 
     public Game() 
     {  
@@ -35,7 +41,10 @@ public class Game {
 	setClass();
 	player.setCommentary();
 	file = new File("save.txt");
+	world = new File("saveworld.txt");
 	room1 =  new File("saveroom1.txt");
+	room2 = new File("saveroom2.txt");
+	room3 = new File("saveroom3.txt");
     }
     public void setClass()
     {
@@ -400,11 +409,11 @@ public class Game {
 	    boxes = tempBoxes;
 	    run();
     }
-    private void saveRoom()
+    private void saveRoom(File file)
     {
 	    PrintWriter pw = null;
 	    try {
-		    pw = new PrintWriter(room1);
+		    pw = new PrintWriter(file);
 		    pw.println(currentRoom);
 		    pw.println(enemies.size());
 		    for (int i = 0; i < enemies.size(); i++)
@@ -424,13 +433,13 @@ public class Game {
 		    e.printStackTrace();
 	    }
     }
-    private void loadRoom() throws FileNotFoundException
+    private void loadRoom(File file) throws FileNotFoundException
     {
 	    ArrayList<Enemy> tempEnemies = new ArrayList<Enemy>();
 	    ArrayList<Box> tempBoxes = new ArrayList<Box>();
 	    ItemType itemType;
 	    PlayerClass playerClass;
-	    Scanner in = new Scanner(room1);
+	    Scanner in = new Scanner(file);
 	    while (in.hasNextLine())
 	    {
 		    currentRoom = in.nextInt();
@@ -563,23 +572,37 @@ public class Game {
 	    int x = 0;
 	    x = rooms.get(currentRoom).enterRoom(player.getRow(), player.getCol());
 
-
 	    if (x == 1) {
 		    setStatus("Would you like to enter a new room? 1. yes, 2. no\n\r");
 		    if (askToEnter() == true) {
-	            saveRoom();
-		    //saveGame();
+	            room1Times++;
+	            saveRoom(world);
+		   //saveGame();
 		    currentRoom = 1;
 		    redrawMapAndHelp();
 		    player.setPosition(rooms.get(currentRoom).getPlayerStart().getRow(), rooms.get(currentRoom).getPlayerStart().getCol()-1);
-		    boxes = rooms.get(currentRoom).getBoxes();
-		    enemies = rooms.get(currentRoom).getEnemies();
+		    if (room1Times > 1)
+		    {
+			    try {
+			    	loadRoom(room1);
+			    }
+			    catch (FileNotFoundException e)
+			    {
+				    e.printStackTrace();
+			    }
+		    }
+		    else
+		    {
+		    	boxes = rooms.get(currentRoom).getBoxes();
+		    	enemies = rooms.get(currentRoom).getEnemies();
+		    }
 		    return true;
 		    }
 	    } else if (x == 2) {
 		    setStatus("You hear a terrible scraping noise from the next room. . .\n\rWould you like to explore it? 1. yes / 2. no\n\r");
 		    if (askToEnter() == true) {
-		    saveGame();
+	            saveRoom(world);
+		    //saveGame();
 		    currentRoom = 2;
 		    redrawMapAndHelp();
 		    player.setPosition(rooms.get(currentRoom).getPlayerStart().getRow(), rooms.get(currentRoom).getPlayerStart().getCol());
@@ -590,7 +613,8 @@ public class Game {
             } else if (x == 3) {
 		   setStatus("You're getting a bad feeling . . .\n\rWould you like to explore it? 1. yes / 2. no\n\r");
 		   if (askToEnter() == true) {
-		   saveGame();
+		   //saveGame();
+	           saveRoom(world);
 		   currentRoom = 3;
 		   redrawMapAndHelp();
 		   player.setPosition(rooms.get(currentRoom).getPlayerStart().getRow(), rooms.get(currentRoom).getPlayerStart().getCol());
@@ -601,8 +625,20 @@ public class Game {
 	    } else if (x == 4) {
 		    setStatus("Return to the overworld? 1. yes / 2. no\n\r");
 		    if (askToEnter() == true) {
-		    try { 
-			    loadRoom();
+		    try {
+			    if (currentRoom==1)
+			    {
+				    saveRoom(room1);
+			    }
+			    else if (currentRoom==2)
+			    {
+				    saveRoom(room2);
+			    }
+			    else
+			    {
+				    saveRoom(room3);
+			    }
+			    loadRoom(world);
 			   // loadGame(); 
 		    } catch(FileNotFoundException r) {
                         System.out.println("File was not found");
