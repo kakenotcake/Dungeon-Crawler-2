@@ -18,10 +18,10 @@ public class Game {
     private File room1;
     private File room2;
     private File room3;
-    private Enemy enemy;
     private int room1Times;
     private int room2Times;
     private int room3Times;
+    private int enemiesDead;
 
     public Game() 
     {  
@@ -237,9 +237,9 @@ public class Game {
 			    boxes.get(i).save(pw);
 
 		    }
+		    pw.println(player.getEnemiesDead());
 		    pw.println("stop");
 		    pw.close();
-		    //System.out.print("Game saved successfully.\n\r");
 		    Terminal.pause(1.5);
 	    }
 	    catch (FileNotFoundException e)
@@ -249,7 +249,6 @@ public class Game {
     }
     void loadGame() throws FileNotFoundException
     {
-	    //System.out.print("Loading your previous save...\n\r");
 	    Terminal.pause(1.5);
 	    ArrayList<Enemy> tempEnemies = new ArrayList<Enemy>();
 	    ArrayList<Item> tempInventory = new ArrayList<Item>();
@@ -294,7 +293,6 @@ public class Game {
 		in.nextLine();
 		for (int i = 0; i < numItems; i++)
 		{
-			System.out.print("In the items for loop\n\r");
 			String type = in.nextLine();
 			System.out.print("item type is: " + type + "\n\r");
 			if (type.equals("Weapon"))
@@ -309,7 +307,6 @@ public class Game {
 			{
 				itemType = ItemType.Other;
 			}
-			System.out.print("item type is: " + itemType + "\n\r");
 			String name = in.nextLine();
 			int weight = in.nextInt();
 			int value = in.nextInt();
@@ -340,16 +337,13 @@ public class Game {
 			{
 				playerClass = PlayerClass.None;
 			}
-			System.out.print("player class is: " + pclass + "\n\r");
 			tempInventory.add(new Item(itemType, name, weight, value, strength, playerClass));
-			System.out.print("made it to the bottom of the loop\n\r");
 		}
 
 		in.nextLine();
 		int itemCount = in.nextInt();
 		for (int i = 0; i < itemCount; i++)
 		{
-			System.out.print("In the items for loop\n\r");
 			int row = in.nextInt();
 			int col = in.nextInt();
 			in.nextLine();
@@ -400,11 +394,11 @@ public class Game {
 			}
 			tempBoxes.add(new Box(row, col, new Item(itemType, name, weight, value, strength, playerClass)));
 		}
+		player.setEnemiesDead(in.nextInt());
 		in.nextLine();
 		in.nextLine();
 	    }
 	    enemies = tempEnemies;
-	   // enemies = enemy.getEnemies();
 	    player.getInventory().setInventory(tempInventory);
 	    boxes = tempBoxes;
 	    run();
@@ -443,13 +437,10 @@ public class Game {
 	    while (in.hasNextLine())
 	    {
 		    currentRoom = in.nextInt();
-		    System.out.print("current room is: " + currentRoom + "\n\r");
 		    int enemyCount = in.nextInt();
-		    System.out.print("Enemy count is: " + enemyCount + "\n\r");
 		    in.nextLine();
 		    for (int i = 0; i < enemyCount; i++)
 		    {
-			    System.out.print("I am in the loop\n\r");
 			    in.nextLine();
 			    int row = in.nextInt();
 			    int col = in.nextInt();
@@ -520,18 +511,12 @@ public class Game {
 	    boxes = tempBoxes;
 	    run();
     }
-
-
-  
-
-
     // this is called when we need to redraw the room and help menu
     // this happens after going into a menu like for choosing items
     private void redrawMapAndHelp() {
         rooms.get(currentRoom).draw();
         showHelp();
     }
-
     // returns a Box if the player is on it -- otherwise null
     private Box checkForBox() {
         Position playerLocation = player.getPosition();
@@ -544,9 +529,6 @@ public class Game {
 
         return null;
     }
-
-
-
     // check for battles and return false if player has died
     private boolean checkBattles() {
         Position playerLocation = player.getPosition();
@@ -678,10 +660,7 @@ public class Game {
 	         }
 	    }
 	    return false;
-	   
-	  
     }
-
     public boolean askToEnter() {
 	    Scanner input = new Scanner(System.in);
 	    int choice = input.nextInt();
@@ -695,25 +674,6 @@ public class Game {
 	    }
 	    return false;
     }
-    public boolean checkForWinner()
-    {
-	    boolean winner = false;
-	    int count = 0;
-	    for (int i = 0; i < 4; i++)
-	    {
-		    if (rooms.get(i).getEnemies().size()==0)
-		    {
-			    count++;
-		    }
-	    }
-	    if (count==4)
-	    {
-		    winner = true;
-	    }
-	    return winner;
-    }
-
-
     public void run() {
         // draw these for the first time now
         redrawMapAndHelp();
@@ -755,8 +715,10 @@ public class Game {
             if (thingHere != null) {
                 setStatus("Here you find: " + thingHere.getItem().getName());
             }
-	    if (checkForWinner()==true)
+	    if (player.getEnemiesDead()==9)
 	    {
+		    System.out.print("WINNER WINNER CHICKEN DINNER!\n\r");
+		    Terminal.pause(1.5);
 		    playing = false;
 	    }
 	    checkRoom();

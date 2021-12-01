@@ -1,64 +1,48 @@
 0
-3
-Enemy
-6
-8
-*
-50
-Hell Hound
-3
-25
-Hell Hound takes a bite of your arm!                                      
-Enemy
-19
-40
-*
-50
-Mechanical Spider
-2
-20
-Mechanical Spider hits you with its poisonous silk!                
-Enemy
-24
-8
-*
-50
-Skeleton Horseman
+0
 4
-28
-Skeleton Horseman charges toward you full speed!                   
-3
 25
 38
 i
 Box
-Other
-Star Fragment
+Weapon
+Mighty Fish Lord
+45
+29
 32
-650
-12
-null
+None
 
 25
 41
 i
 Box
 Weapon
-Dragonspine Spear
-24
-113
-20
-Assassin
+Mighty Fish Lord
+45
+29
+32
+None
 
 25
 44
 i
 Box
+Armor
+Hylian Shield
+50
+380
+10
+None
+
+3
+5
+i
+Box
 Weapon
-Ebony axe
-28
-200
-37
-Assassin
+Goddess Blade
+22
+320
+30
+Paladin
 
 stop

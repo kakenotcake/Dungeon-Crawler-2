@@ -70,7 +70,8 @@ public class Room {
 
     // returns a set of enemies from this map, similarly to the boxes above
     public ArrayList<Enemy> getEnemies() {
-        ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+	ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+       // ArrayList<Enemy> enemies = new ArrayList<Enemy>();
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
                 if (grid[row].charAt(col) == '*') {
@@ -78,10 +79,8 @@ public class Room {
                 }
             }
         }
-
-        return enemies;
+	return enemies;
     }
-
     public int getRows() {
         return rows;
     }
@@ -128,7 +127,6 @@ public class Room {
 	    }
 		    return 0;
     }
-    //}
 }
 
 

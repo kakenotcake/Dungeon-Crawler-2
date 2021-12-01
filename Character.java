@@ -9,11 +9,13 @@ public abstract class Character extends Entity {
     // the characters health points
     protected int hp;
     protected String commentary;
+    private int enemiesDead;
 
     public Character(int row, int col, char display, Color color, int hp, String commentary) {
         super(row, col, display, color);
         this.hp = hp;
 	this.commentary = commentary;
+	enemiesDead = 0;
     }
 
     // get the hp, damage, protection and name of character
@@ -23,6 +25,14 @@ public abstract class Character extends Entity {
     public String getCommentary()
     {
 	    return commentary;
+    }
+    public int getEnemiesDead()
+    {
+	    return enemiesDead;
+    }
+    public void setEnemiesDead(int newEnemiesDead)
+    {
+	    enemiesDead = newEnemiesDead;
     }
     public abstract void setHealth(int hp);
     public abstract int getDamage();
@@ -92,6 +102,8 @@ public abstract class Character extends Entity {
         boolean killed = dealDamage(other, room);
         if (killed) {
             enemies.remove(other);
+	    enemiesDead++;
+	    System.out.print("Enemies dead is: " + enemiesDead + "\n\r");
         }
         System.out.printf("Press any key to return...\n\r");
         Terminal.getKey();
