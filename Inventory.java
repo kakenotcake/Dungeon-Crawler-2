@@ -147,13 +147,14 @@ public class Inventory
 			ArrayList<Item> weapons = new ArrayList<Item>(); //array just to store weapons
 			int count = 0;
 			System.out.print("Which weapon would you like to equip?\n\r");
+			System.out.print("Weapon name and strength:\n\r");
 			for (int i = 0; i < inventory.size(); i++) //check to see if there are weapons in inventory and print them
 			{
 				if (inventory.get(i).getType()==ItemType.Weapon)
 				{
 					count++;
 					weapons.add(inventory.get(i));
-					System.out.print(count + ". " + inventory.get(i) + "\n\r");
+					System.out.print(count + ". " + inventory.get(i).getName() + " (" + inventory.get(i).getStrength() + ")\n\r");
 				}
 			}
 			if (weapons.size()!=0) //if there weapons in inventory
@@ -163,7 +164,7 @@ public class Inventory
 				if (selection != (count+1))
 				{
 					equippedWeapon = weapons.get(selection-1); //assign equipped weapon
-					System.out.print("You have equipped " + equippedWeapon + "\n\r");
+					System.out.print("You have equipped the " + equippedWeapon.getName() + "\n\r");
 				
 				}
 			}
@@ -195,13 +196,14 @@ public class Inventory
 			ArrayList<Item> armor = new ArrayList<Item>(); //arraylist just for armor
 			int count = 0;
 			System.out.print("Which armor would you like to equip?\n\r");
+			System.out.print("Armor name and strength:\n\r");
 			for (int i = 0; i < inventory.size(); i++) //check for armor in inventory and print them
 			{
 				if (inventory.get(i).getType()==ItemType.Armor)
 				{
 					count++;
 					armor.add(inventory.get(i));
-					System.out.print(count + ". " + inventory.get(i)+ "\n\r");
+					System.out.print(count + ". " + inventory.get(i).getName() + " (" +  inventory.get(i).getStrength() + ")\n\r");
 				}
 			}
 			if (armor.size()!=0) //if armor is in inventory
@@ -211,7 +213,7 @@ public class Inventory
 				if (selection != (count+1))
 				{
 					equippedArmor = armor.get(selection-1); //assign equipped armor
-					System.out.print("You have equipped " + equippedArmor + "\n\r");
+					System.out.print("You have equipped the " + equippedArmor.getName() + "\n\r");
 				}
 			}
 			else //no armor in inventory
@@ -250,7 +252,7 @@ public class Inventory
 			for (int i = 0; i < aid.size(); i++)
 			{
 				count++;
-				System.out.print(count + ". " + aid.get(i).getName() + " (" + aid.get(i).getStrength() + ")" + "\n\r");
+				System.out.print(count + ". " + aid.get(i).getName() + " (" + aid.get(i).getStrength() + ")\n\r");
 			}
 			int answer = input.nextInt();
 

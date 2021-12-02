@@ -1,21 +1,71 @@
 room
 0
 Player
-17
-14
+7
+8
 @
-35
-Kate
-Paladin
-0
+56
+sa
+Bard
+3
+Enemy
+8
+27
+*
+50
+Mechanical Spider
+2
+20
+Mechanical Spider hits you with its poisonous silk!                
+Enemy
+17
+44
+*
+50
+Hell Hound
+3
+25
+Hell Hound takes a bite of your arm!                                      
+Enemy
+24
+16
+*
+50
+Skeleton Horseman
+4
+28
+Skeleton Horseman charges toward you full speed!                   
 
 2
+Weapon
+Skyward Harp
+20
+500
+26
+Bard
 Armor
-Guardian Graves
-42
-185
-10
-Paladin
+Virtuoso's Trench Coat
+36
+90
+18
+Bard
+
+5
+7
+39
+i
+Box
+Other
+Royal Ocarina
+6
+120
+13
+null
+
+18
+29
+i
+Box
 Weapon
 Master Sword
 30
@@ -23,31 +73,19 @@ Master Sword
 40
 Paladin
 
-4
 25
 38
 i
 Box
 Weapon
-Mighty Fish Lord
-45
-29
-32
-None
+Ebony axe
+28
+200
+37
+Assassin
 
 25
 41
-i
-Box
-Weapon
-Mighty Fish Lord
-45
-29
-32
-None
-
-25
-44
 i
 Box
 Armor
@@ -55,18 +93,18 @@ Hylian Shield
 50
 380
 10
-None
+Archer
 
-3
-5
+25
+44
 i
 Box
 Weapon
-Goddess Blade
-22
-320
-30
-Paladin
+Dragonspine Spear
+24
+113
+20
+Assassin
 
-8
+1
 stop

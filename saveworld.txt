@@ -1,30 +1,39 @@
 0
-0
-4
+1
+Enemy
+25
+12
+*
+50
+Hell Hound
+3
+25
+Hell Hound takes a bite of your arm!                                      
+3
+18
+29
+i
+Box
+Weapon
+Mighty Fish Lord
+45
+29
+32
+Archer
+
 25
 38
 i
 Box
-Weapon
-Mighty Fish Lord
-45
-29
-32
-None
+Armor
+Royal Guard's Cloak
+22
+140
+11
+Assassin
 
 25
 41
-i
-Box
-Weapon
-Mighty Fish Lord
-45
-29
-32
-None
-
-25
-44
 i
 Box
 Armor
@@ -32,17 +41,6 @@ Hylian Shield
 50
 380
 10
-None
-
-3
-5
-i
-Box
-Weapon
-Goddess Blade
-22
-320
-30
-Paladin
+Archer
 
 stop

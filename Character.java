@@ -66,6 +66,7 @@ public abstract class Character extends Entity {
         Terminal.warpCursor(room.getRows(), 0);
         if (other.hp > 0) {
 	    System.out.print(getCommentary() + "\n\r");
+	    //System.out.print(" \n\r");
             System.out.print(getName() + " does " + damageDone + " damage to " + other.getName()
                 + ", leaving " + other.hp + " health.\n\r");
             return false;
@@ -73,6 +74,7 @@ public abstract class Character extends Entity {
 	    System.out.print(getCommentary() + "\n\r");
             System.out.print(getName() + " does " + damageDone + " damage to " + other.getName()
                 + ", killing them.\n\r");
+	    //System.out.print(" \n\r");
             return true;
         }
     }
@@ -103,9 +105,9 @@ public abstract class Character extends Entity {
         if (killed) {
             enemies.remove(other);
 	    enemiesDead++;
-	    System.out.print("Enemies dead is: " + enemiesDead + "\n\r");
+	    System.out.print("Enemies killed so far: " + enemiesDead + "\n\r");
         }
-        System.out.printf("Press any key to return...\n\r");
+        //System.out.printf("Press any key to return...\n\r");
         Terminal.getKey();
 
         // don't allow dead enemies to fight back
