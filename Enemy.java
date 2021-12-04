@@ -50,6 +50,13 @@ public class Enemy extends Character {
     public void setBattleActive() {
         battleActive = true;
     }
+    /**
+     *This method saves all the information revelant to the class which in this case ia
+     *the protection of the enemy, the damage the enemy does 
+     *and a commentary that appears everytime an enemy attacks and does damage
+     *@param the parameter is a printwriter where all the revelant information is stored
+     *
+     */
     @Override
     void save(PrintWriter q){
 	    q.println("Enemy");
