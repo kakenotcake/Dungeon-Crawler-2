@@ -149,6 +149,12 @@ public class Player extends Character {
 	    }
 
     }
+    /**
+     *This method stores information revelant to the class which in this case is
+     *the name the player decided on at the start of the game and the
+     *class the player chose at the start of the game
+     *@param the parameter is the printwriter where all the revelant information is stored
+     */
     @Override
     void save(PrintWriter p){
 	    p.println("Player");
