@@ -79,6 +79,11 @@ public abstract class Character extends Entity {
         }
     }
     //save method goes here
+    /**
+     *This method stores information revelant to this class which in this case is character health
+     *@param the parameter is the printwriter that the information is stored into
+     *
+     */
     @Override
     void save(PrintWriter s){
 	    super.save(s);
