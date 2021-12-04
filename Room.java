@@ -1,11 +1,13 @@
-// Room.java
-// provides code for the drawing of a room
-// also provides starting locations for the player, boxes, and enemies
-
 import java.util.ArrayList;
 import ansi_terminal.*;
 import java.io.*;
 import java.util.Scanner;
+/** This class provides code for the drawing of a room, and it also provides starting locations for the player, boxes, and enemies
+* This class also handles baseline code for entering/exiting multiple rooms.
+*
+* @Author Kelsey Payne and Ian Finlayson
+* @version 2021
+*/
 
 public class Room {
     // the grid holds the room geometry
@@ -21,8 +23,7 @@ public class Room {
         this.cols = cols;
 
         // the actual room geometry
-        // the i cells refer to where an item should be placed at
-
+        // print out a Room from a file using BufferedReader
 	grid = new String[rows];
 		try {
                         BufferedReader br = new BufferedReader(new FileReader(fileName));
@@ -81,10 +82,13 @@ public class Room {
         }
 	return enemies;
     }
+
+    // returns the number of rows from a given Room
     public int getRows() {
         return rows;
     }
-
+    
+    // returns the number of cols from a given Room
     public int getCols() {
         return cols;
     }
@@ -113,7 +117,13 @@ public class Room {
         return grid[row].charAt(col) != '#';
     }
 
-    
+    /**This method moniters where the Player is stepping and returns an int if the Player steps on a special tile with x, y, z, or w
+     * This int represents a new Room that can be accessed dependning on the tile the Player is on.
+     *
+     * @param row the row where the Player is currently at
+     * @param col the col where the Player is currently at
+     * @return an int between 4 if the Player steps on a tile marked with x, y, z, or w, or 0 if not
+     */
     public int enterRoom(int row, int col) {
 	    Scanner input = new Scanner(System.in);
 	    if (grid[row].charAt(col) == 'x') {
