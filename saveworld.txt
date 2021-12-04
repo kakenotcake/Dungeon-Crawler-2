@@ -1,46 +1,77 @@
 0
-1
+2
 Enemy
-25
-12
+24
+47
 *
 50
-Hell Hound
-3
+Goblin
+2
 25
-Hell Hound takes a bite of your arm!                                      
+Goblin tied your shoe laces together making you to trip!                        
+Enemy
+19
+7
+*
+50
+Ogre
 3
-18
-29
+30
+Ogre clubbed you in the head!                                                     
+5
+3
+5
+i
+Box
+Armor
+Glass Chestplate
+35
+250
+22
+Paladin
+
+7
+39
 i
 Box
 Weapon
-Mighty Fish Lord
-45
-29
-32
-Archer
+Ebony axe
+28
+200
+37
+Assassin
 
 25
 38
 i
 Box
-Armor
-Royal Guard's Cloak
-22
-140
-11
+Weapon
+Dragonspine Spear
+24
+113
+20
 Assassin
 
 25
 41
 i
 Box
-Armor
-Hylian Shield
-50
-380
-10
-Archer
+Other
+Apple Pie
+2
+18
+8
+null
+
+25
+44
+i
+Box
+Other
+Inconspicuous Walnut
+12
+55
+15
+null
 
 stop

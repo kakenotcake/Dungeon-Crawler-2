@@ -264,6 +264,8 @@ public class Inventory
 				System.out.print("You pop the walnut in your mouth, then spit it back out as it dissolves into a thick powder in your mouth. It tastes like how a firework looks.\n\r");
 			} else if (aid.get(answer-1).getName().equals("Peculiar Beehive")) {
 				System.out.print("You nibble a piece of honeycomb from the Peculiar Beehive. It has a strangely dry texture to it. The honey leaves a sharp, spicy sensation on your tongue.\n\r");
+			} else if (aid.get(answer-1).getName().equals("Mysterious Soup")) {
+				System.out.print("You take a tentaive sip of the bottled soup. It has a distinctly milky flavor. It's slightly unnerving.");
 			}
 			return aid.get(answer-1);
 		}

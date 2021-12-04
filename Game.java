@@ -148,7 +148,7 @@ public class Game {
 
             case i:
                 player.getInventory().print();
-		Terminal.pause(2);
+		Terminal.pause(3);
                 redrawMapAndHelp();
                 break;
 
@@ -171,13 +171,13 @@ public class Game {
             
 	    case v: 
 		player.printStats();
-		Terminal.pause(2);
+		Terminal.pause(3);
 		redrawMapAndHelp();		
 		break;
 
             case u:
 		player.useAid();
-		Terminal.pause(2);
+		Terminal.pause(4);
 		redrawMapAndHelp();
 		break;
 

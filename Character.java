@@ -125,7 +125,7 @@ public abstract class Character extends Entity {
 	{
             return false;
         }
-        System.out.printf("Press any key to return...\n\r");
+        //System.out.printf("Press any key to return...\n\r");
         Terminal.getKey();
         return true;
     }
