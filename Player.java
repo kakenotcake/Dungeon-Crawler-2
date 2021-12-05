@@ -137,6 +137,10 @@ public class Player extends Character {
 	    System.out.print("Equipped weapon: " + inventory.getEquippedWeapon() + "\n\r");
 	    System.out.print("Equipped armor: " + inventory.getEquippedArmor() + "\n\r");
     }
+    /**
+     *This method allows the player  to use items that restore health like health potions
+     *The player can only use it if they have one in the inventory
+     */
     public void useAid()
     {
 	    Item aid = inventory.getAid();
