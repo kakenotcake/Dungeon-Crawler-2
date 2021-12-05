@@ -77,10 +77,18 @@ public class Item {
 	{
 		return this.strength;
 	}
+	/**This method gets the class that the player chose at the begining of the game
+	 *@return the class of the player 
+	 *
+	 */
 	public PlayerClass getPlayerClass()
 	{
 		return this.playerClass;
 	}
+	/**This method get the commentary that occurs when an action occurs
+	 *@return the string containing the commentary based on an action occuring
+	 *
+	 */
 	public String getCommentary()
 	{
 		return this.commentary;
