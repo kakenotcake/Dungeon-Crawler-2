@@ -88,6 +88,9 @@ public class Player extends Character {
 	    }
 
     }
+    /**This method retreives information on what class the player chose to be used later
+     *@return the class that the player chose at the begining of the game  
+     */
     public PlayerClass getPlayerClass()
     {
 	    return playerClass;
