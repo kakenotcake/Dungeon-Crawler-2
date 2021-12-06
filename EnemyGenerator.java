@@ -10,8 +10,8 @@ public class EnemyGenerator {
      */
     /**
      *This method generatates a random enemy dependent on random number chosen
-     *@param the row that the enemy will be generated
-     *@param the col that the enemy will be generated
+     *@param  row that the enemy will be generated
+     *@param  col that the enemy will be generated
      *@return the enemy that is generated on the map
      *
      */
