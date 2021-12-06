@@ -40,7 +40,7 @@ public class Entity {
     /**
      *This method stores all the revelant to the class which are the entity's position (row,colm)
      *and the character value they are stored at
-     *@param the printwriter is the parameter where the information is stored for the save
+     *@param  printwriter is the parameter where the information is stored for the save
      *
      */
     void save(PrintWriter o){
