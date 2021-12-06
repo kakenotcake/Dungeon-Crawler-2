@@ -17,7 +17,7 @@ public class Box extends Entity {
 /**
  *This is a method that store/saves all revelant information concerning this class
  *in this case it stores items
- *@param a printwriter which stores/saves the information
+ *@param x  printwriter which stores/saves the information
  *
  */    
     @Override
@@ -28,7 +28,7 @@ public class Box extends Entity {
     }
     /**This is a method that loads in the information that was stored from the 
      *the save method
-     *@param a scanner object that reads in the information
+     *@param in  scanner object that reads in the information
      *
      *
      */
