@@ -44,6 +44,11 @@ public class Enemy extends Character {
         return name;
     }
     @Override
+    /**This method sets the extra  health from the previous implementation in from the super class
+     *@param extraHP  extra health points from the previous implementation from the super class
+     *
+     *
+     */
     public void setHealth(int extraHp)
     {
     }
@@ -54,7 +59,7 @@ public class Enemy extends Character {
      *This method saves all the information revelant to the class which in this case ia
      *the protection of the enemy, the damage the enemy does 
      *and a commentary that appears everytime an enemy attacks and does damage
-     *@param the parameter is a printwriter where all the revelant information is stored
+     *@param printwriter the  parameter is a printwriter where all the revelant information is stored
      *
      */
     @Override
