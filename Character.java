@@ -26,10 +26,20 @@ public abstract class Character extends Entity {
     {
 	    return commentary;
     }
+    /**This a method that reports the enemies that died  so that later in conjuction with another method
+     *the enenies that are dead can be removed
+     *@return the number of enemies that have been killed by the player
+     *
+     */
     public int getEnemiesDead()
     {
 	    return enemiesDead;
     }
+    /**This is a method that sets the number of enemies that are dead to be zero
+     *as a baseline/start
+     *@param the enemies who are dead at the beinging of the game which is always starts as zero
+     *
+     */
     public void setEnemiesDead(int newEnemiesDead)
     {
 	    enemiesDead = newEnemiesDead;
