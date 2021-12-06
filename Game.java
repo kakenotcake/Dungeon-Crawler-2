@@ -45,7 +45,14 @@ public class Game {
 	room1 =  new File("saveroom1.txt");
 	room2 = new File("saveroom2.txt");
 	room3 = new File("saveroom3.txt");
+    
     }
+/**This method asks what class the player wants which is determined
+ *by the number that they enter if the number is invalid it asks the player to enter a valid number
+ *from there the method sets the starting weapon and armor based on the class they chose
+ *
+ *
+ */
     public void setClass()
     {
 	System.out.print("What is your class??\n\n\r");
@@ -69,6 +76,12 @@ public class Game {
     }
 
     // prints a help menu to the left of the map
+    /**This is a method that pulls up a help menu that displays commands
+     *that the player can input to get certain actions
+     *
+     *
+     *
+     */
     private void showHelp() {
         String[] cmds = {"Commands:",
                          "---------",
@@ -661,6 +674,9 @@ public class Game {
 	    }
 	    return false;
     }
+    /**This is method whose purpose is to ask whether or not a player wants to enter a room
+     *@return a boolean of true if the player response was the 1 and false if the response was 2
+     */
     public boolean askToEnter() {
 	    Scanner input = new Scanner(System.in);
 	    int choice = input.nextInt();
