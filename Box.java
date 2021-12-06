@@ -14,12 +14,24 @@ public class Box extends Entity {
         super(row, col, 'i', Color.MAGENTA);
         this.item = item;
     }
+/**
+ *This is a method that store/saves all revelant information concerning this class
+ *in this case it stores items
+ *@param a printwriter which stores/saves the information
+ *
+ */    
     @Override
     void save(PrintWriter x){
 	    super.save(x);
 	    x.println("Box");
 	    x.println(getItem().toStringForSave());
     }
+    /**This is a method that loads in the information that was stored from the 
+     *the save method
+     *@param a scanner object that reads in the information
+     *
+     *
+     */
     public void loadGame(Scanner in){
 	    super.loadGame(in);
 	    in.nextLine();
