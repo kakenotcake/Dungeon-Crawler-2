@@ -59,8 +59,8 @@ public abstract class Character extends Entity {
     public abstract int getProtection();
     public abstract String getName();
 /**This method sets the hp of a character dependent on the interger values you passed in 
- *@param hp the health points of the character 
- *@param t 
+ *@param hp the health points of the character. 
+ *@param t a place holder variable that is passed 0.
  *
  */
     public void setHealth(int hp, int t)
@@ -108,11 +108,19 @@ public abstract class Character extends Entity {
      *@param S  parameter is the printwriter that the information is stored into
      *
      */
+    /**
+    *Method to print character's health to text file.
+    *@param s PrintWrite object.
+    */
     @Override
     void save(PrintWriter s){
 	    super.save(s);
 	    s.println(getHealth());
     }
+    /**
+    *Method to pass scanner to super class and save health stat.
+    *@param in Scanner object.
+    */
     public void loadGame(Scanner in){
 	   // System.out.print("I am in the character constructor\n\r");
 	    //super(in);

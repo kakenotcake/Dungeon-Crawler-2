@@ -200,6 +200,10 @@ public class Player extends Character {
 	    //p.println(getProtection());
 	   // p.println(getInventory());
     }
+    /**
+    *Method that reads data from text file, passes scanner to super class,  and saves data to variables.
+    *@param in Scanner object.
+    */
     public void loadGame(Scanner in){
 	   // System.out.print("I am in the player constructor\n\r");
 	  //  Character tempNewChar  = super(in);
@@ -228,21 +232,11 @@ public class Player extends Character {
 	    {
 		    System.out.print("Error\n\r"); 
 	    }
-	  //  super.setHealth(tempNewChar.GetHealth(),0);
 
 	    System.out.print("In the playaer constructor\n\r");
 	    System.out.print(name + "\n\r" + pc + "\n\r");
     }
 }
-
-
-
-	   /* in.nextLine();
-	    String type=getPlayerClass().name();
-	    String storage=getInventory().toString();
-	    name=in.nextLine();
-	    type=in.nextLine();
-	    storage=in.nextLine();*/
 	    
 
 	

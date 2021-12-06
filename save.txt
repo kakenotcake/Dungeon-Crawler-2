@@ -1,16 +1,16 @@
 room
 0
 Player
-7
-8
+6
+5
 @
-56
-sa
-Bard
-3
+50
+Kat
+Mage
+4
 Enemy
-8
-27
+5
+10
 *
 50
 Mechanical Spider
@@ -18,74 +18,67 @@ Mechanical Spider
 20
 Mechanical Spider hits you with its poisonous silk!                
 Enemy
-17
-44
+7
+29
+*
+50
+Goblin
+2
+25
+Goblin tied your shoe laces together making you to trip!                        
+Enemy
+15
+41
+*
+50
+Mechanical Spider
+2
+20
+Mechanical Spider hits you with its poisonous silk!                
+Enemy
+25
+14
 *
 50
 Hell Hound
 3
 25
 Hell Hound takes a bite of your arm!                                      
-Enemy
-24
-16
-*
-50
-Skeleton Horseman
-4
-28
-Skeleton Horseman charges toward you full speed!                   
 
-2
+3
 Weapon
-Skyward Harp
-20
-500
-26
-Bard
+Wabbajack
+17
+350
+28
+Mage
 Armor
-Virtuoso's Trench Coat
-36
-90
-18
-Bard
+Holy Prayer
+33
+777
+12
+Mage
+Armor
+Hylian Shield
+50
+380
+10
+Archer
 
 5
 7
 39
 i
 Box
-Other
-Royal Ocarina
-6
-120
-13
-null
+Armor
+Hylian Shield
+50
+380
+10
+Archer
 
 18
 29
-i
-Box
-Weapon
-Master Sword
-30
-780
-40
-Paladin
-
-25
-38
-i
-Box
-Weapon
-Ebony axe
-28
-200
-37
-Assassin
-
-25
-41
 i
 Box
 Armor
@@ -96,7 +89,7 @@ Hylian Shield
 Archer
 
 25
-44
+38
 i
 Box
 Weapon
@@ -106,5 +99,27 @@ Dragonspine Spear
 20
 Assassin
 
-1
+25
+41
+i
+Box
+Weapon
+Ebony axe
+28
+200
+37
+Assassin
+
+25
+44
+i
+Box
+Other
+Peculiar Beehive
+8
+43
+9
+null
+
+0
 stop

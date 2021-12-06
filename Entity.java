@@ -43,12 +43,20 @@ public class Entity {
      *@param  printwriter is the parameter where the information is stored for the save
      *
      */
+    /**
+    *Method to print entity data to text file: row and column
+    *@param o PrintWriter object.
+    */
     void save(PrintWriter o){
 	    o.println(position.getRow());
 	    o.println(position.getCol());
 	    o.println(display);
 
     }
+    /**
+    *Method to read in and set data from file: row, column, and char.
+    *@param in Scanner object.
+    */
     public void loadGame(Scanner in){
 	    System.out.print("I am in the entity constructor.\n\r");
 	    int row = in.nextInt();

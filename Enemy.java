@@ -62,6 +62,10 @@ public class Enemy extends Character {
      *@param printwriter the  parameter is a printwriter where all the revelant information is stored
      *
      */
+    /**
+    *Method to print stats of enemy to file: name, protection, damage, and commentary.
+    *@param q PrintWriter object.
+    */
     @Override
     void save(PrintWriter q){
 	    q.println("Enemy");

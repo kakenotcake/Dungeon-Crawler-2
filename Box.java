@@ -32,12 +32,13 @@ public class Box extends Entity {
      *
      *
      */
-    public void loadGame(Scanner in){
+    
+   /* public void loadGame(Scanner in){
 	    super.loadGame(in);
 	    in.nextLine();
 	    String i = getItem().toString();
 	    i=in.nextLine();
-    }
+    }*/
 
 
 

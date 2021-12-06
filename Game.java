@@ -228,6 +228,9 @@ public class Game {
 
         return true;
     }
+    /**
+    *Method that prints data to text file and passes scanner to relevant classes to be loaded later.
+    */
     private void saveGame() 
     {
 	    PrintWriter pw = null;
@@ -260,6 +263,10 @@ public class Game {
 		    e.printStackTrace();
 	    }
     }
+    /**
+    *Method that reads data from text file and sets data to parameters.
+    *@throws FileNotFoundException if file is not found
+    */
     void loadGame() throws FileNotFoundException
     {
 	    Terminal.pause(1.5);
@@ -416,6 +423,10 @@ public class Game {
 	    boxes = tempBoxes;
 	    run();
     }
+    /**
+    *Method to save the data for room when you exit.
+    *@param file File object.
+    */
     private void saveRoom(File file)
     {
 	    PrintWriter pw = null;
@@ -440,6 +451,11 @@ public class Game {
 		    e.printStackTrace();
 	    }
     }
+    /**
+    *Method to read data from text file and save data to parameters when entering a room.
+    *@param file File object.
+    *@throws FileNotFoundException if file is not found.
+    */
     private void loadRoom(File file) throws FileNotFoundException
     {
 	    ArrayList<Enemy> tempEnemies = new ArrayList<Enemy>();

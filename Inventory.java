@@ -187,7 +187,7 @@ public class Inventory
 		}
 	}
 /**This method sets the Starter Weapon based on the class chosen at the beginning
- *@param Weapon the weapon that is equipped
+ *@param weapon the weapon that is equipped
  *
  *
  *
@@ -198,7 +198,7 @@ public class Inventory
 		System.out.print("Starter weapon " + weapon + " has been equipped.\n\r");
 	}
 	/**This is method sets the Starter armor based on the class chosen at the beginning
-	 *@param Armor the armor that is equipped
+	 *@param armor the armor that is equipped
 	 *
 	 */
 	public void equipStarterArmor(Item armor)
