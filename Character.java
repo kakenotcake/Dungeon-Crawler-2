@@ -17,11 +17,21 @@ public abstract class Character extends Entity {
 	this.commentary = commentary;
 	enemiesDead = 0;
     }
-
+/**This is method gets the current hp of a character
+ *@return the integer value of the hp of a character
+ *
+ *
+ *
+ */
     // get the hp, damage, protection and name of character
     public int getHealth() {
         return hp;
     }
+  /**This method gets a commentary when a character does battle
+   *@return String value of whatever commentary you wrote in for battle
+   *
+   *
+   */
     public String getCommentary()
     {
 	    return commentary;
@@ -37,7 +47,7 @@ public abstract class Character extends Entity {
     }
     /**This is a method that sets the number of enemies that are dead to be zero
      *as a baseline/start
-     *@param the enemies who are dead at the beinging of the game which is always starts as zero
+     *@param newEnemiesDead the  enemies who are dead at the beinging of the game which is always starts as zero
      *
      */
     public void setEnemiesDead(int newEnemiesDead)
@@ -48,7 +58,11 @@ public abstract class Character extends Entity {
     public abstract int getDamage();
     public abstract int getProtection();
     public abstract String getName();
-
+/**This method sets the hp of a character dependent on the interger values you passed in 
+ *@param hp the health points of the character 
+ *@param t 
+ *
+ */
     public void setHealth(int hp, int t)
     {
 	    this.hp = hp;
@@ -91,7 +105,7 @@ public abstract class Character extends Entity {
     //save method goes here
     /**
      *This method stores information revelant to this class which in this case is character health
-     *@param the parameter is the printwriter that the information is stored into
+     *@param S  parameter is the printwriter that the information is stored into
      *
      */
     @Override
