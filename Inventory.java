@@ -136,10 +136,18 @@ public class Inventory
 			System.out.print("Your inventory is empty.\n\r");
 		}
 	}
+	/**This method tells you what item has been dropped
+	 *@return item dropped
+	 */
+
 	public Item getDropped()
 	{
 		return dropped;
 	}
+	/**This method looks at the whole inventory and asks what weapon that they want to equip
+	 *
+	 *
+	 */
 	public void equipWeapon() //method to assign weapon to equipped weapon variable
 	{
 		if (inventory.size() != 0) //if inventory is not empty
@@ -178,11 +186,21 @@ public class Inventory
 			System.out.print("Your inventory is empty.\n\r");
 		}
 	}
+/**This method sets the Starter Weapon based on the class chosen at the beginning
+ *@param Weapon the weapon that is equipped
+ *
+ *
+ *
+ */
 	public void equipStarterWeapon(Item weapon)
 	{
 		equippedWeapon = weapon;
 		System.out.print("Starter weapon " + weapon + " has been equipped.\n\r");
 	}
+	/**This is method sets the Starter armor based on the class chosen at the beginning
+	 *@param Armor the armor that is equipped
+	 *
+	 */
 	public void equipStarterArmor(Item armor)
 	{
 		equippedArmor = armor;
@@ -234,6 +252,12 @@ public class Inventory
 	{
 		return equippedArmor;
 	}
+	/**This method looks thorough the inventory and ask if the player wants to use consumeable items like hp potions
+	 *that are labeled by the other enumeration
+	 *@return aid
+	 *
+	 *
+	 */
 	public Item getAid()
 	{
 		ArrayList<Item> aid = new ArrayList<Item>();
@@ -275,10 +299,18 @@ public class Inventory
 		}
 		return null;
 	}
+	/**This is a method that looks thorough the inventory and removes the consumable aid item that was used
+	 *
+	 */
 	public void removeUsedAid(Item usedAid)
 	{
 		inventory.remove(usedAid);
 	}
+	/**This is a method that converts the type of the inventory into a readable form
+	 *string
+	 *@return String 
+	 *
+	 */
 	public String toString()
 	{
 		String inv = "";
@@ -288,10 +320,18 @@ public class Inventory
 		}
 		return inv;
 	}
+	/**This is a method gets the amount of items inside the inventory
+	 *@return integer
+	 *
+	 *
+	 */
 	public int getSize()
 	{
 		return inventory.size();
 	}
+	/**This method sets the the items inside the inventory
+	 *
+	 */
 	public void setInventory(ArrayList<Item> inv)
 	{
 		inventory = inv;
