@@ -116,8 +116,8 @@ public class Room {
     /**
      *This method moniters where a character on the screen moves
      *and determines whether or not they can advance in that direction (Hash means no go)
-     *@param the row the character is trying to move to
-     *@param the col the character is trying to move to
+     *@param row row the character is trying to move to
+     *@param col col the character is trying to move to
      *@return true or false that determines whether or not the character can advance in that direction (false the area is not walkable)
      */
     public boolean canGo(int row, int col) {
