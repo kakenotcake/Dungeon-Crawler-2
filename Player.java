@@ -37,6 +37,11 @@ public class Player extends Character {
     public String getName() {
         return name;
     }
+
+   /**This is a method that sets the name of the Player to the String value they passed in
+    *@param name the string value of name
+    *
+    */
     public void setName(String name)
     {
 	    this.name = name;
@@ -53,10 +58,18 @@ public class Player extends Character {
         }
     }
     @Override
+    /**This method sets the hp of the player by taking in the existing hp and adding extra hp when aid is used
+     *@param extraHp the additional hp from using aid
+     *
+     *
+     */
     public void setHealth(int extraHp)
     {
 	    this.hp = extraHp + this.hp;
     }
+    /**This method sets the commentary that occurs when the player attacks with a equipped weapon
+     *
+     */
     public void setCommentary()
     {
 	    this.commentary = inventory.getEquippedWeapon().getCommentary();
@@ -64,6 +77,10 @@ public class Player extends Character {
     public Inventory getInventory() {
         return inventory;
     }
+    /**This method sets the class of the Player based the numerical value that the player picks
+     *@param num interger value of number inputted
+     *
+     */
     public void setPlayerType(int num)
     {
 	    if (num==1)
@@ -95,6 +112,9 @@ public class Player extends Character {
     {
 	    return playerClass;
     }
+    /**This method sets the starter weapon based on the class that the player chose
+     *
+     */
     public void setStarterWeapon()
     {
 	    Item weapon = null;
@@ -111,6 +131,11 @@ public class Player extends Character {
 	    inventory.add(weapon);
 	    inventory.equipStarterWeapon(weapon);
     }
+
+
+    /**This method sets the starter aromor based on the class that the player chose
+     *
+     */
     public void setStarterArmor()
     {
 	    Item armor = null;
@@ -127,6 +152,10 @@ public class Player extends Character {
 	    inventory.add(armor);
 	    inventory.equipStarterArmor(armor);
     }
+    /**This method prints out the health of the player, the damage they delt, their protection value, their class
+     *their equiped weapon and armor
+     *
+     */
     public void printStats()
     {
 	    System.out.print(name+"\n\r");
@@ -160,7 +189,7 @@ public class Player extends Character {
      *This method stores information revelant to the class which in this case is
      *the name the player decided on at the start of the game and the
      *class the player chose at the start of the game
-     *@param the parameter is the printwriter where all the revelant information is stored
+     *@param p  parameter is the printwriter where all the revelant information is stored
      */
     @Override
     void save(PrintWriter p){
