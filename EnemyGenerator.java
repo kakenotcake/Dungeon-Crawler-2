@@ -26,7 +26,7 @@ public class EnemyGenerator {
                 enemy=new Enemy("Skeleton", row, col, 50, 20, 1, "Skeleton poked you really hard with its boney finger!                         ");
                 break;
             case 2:
-                enemy=new Enemy("Goblin", row, col, 50, 25, 2, "Goblin tied your shoe laces together making you to trip!                        ");
+                enemy=new Enemy("Goblin", row, col, 50, 25, 2, "Goblin tied your shoe laces together making you trip!                        ");
                 break;
 	    case 3:
 		enemy = new Enemy("Skeleton Horseman", row, col, 50, 28, 4, "Skeleton Horseman charges toward you full speed!                   ");

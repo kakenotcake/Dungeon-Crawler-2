@@ -257,10 +257,14 @@ public class Inventory
 	{
 		return equippedArmor;
 	}
+<<<<<<< HEAD
 	public void setEquippedArmor(Item armor)
 	{
 		equippedArmor = armor;
 	}
+=======
+
+>>>>>>> 67601467d043cae3a2823edcfabb005dde89dee7
 	/**This method looks through the inventory and asks if the player wants to use consumeable items like hp potions
 	 *that are labeled by the Other enumeration.
 	 *@return aid to be used
@@ -293,11 +297,11 @@ public class Inventory
 			} else if (aid.get(answer-1).getName().equals("Royal Ocarina")) {
 				System.out.print("You play a sweet, energetic  melody on the Royal Ocarina. A youthful vigor fills your veins.\n\r");
 			} else if (aid.get(answer-1).getName().equals("Inconspicuous Walnut")) {
-				System.out.print("You pop the walnut in your mouth, then spit it back out as it dissolves into a thick powder in your mouth. It tastes like how a firework looks.\n\r");
+				System.out.print("You pop the walnut in your mouth. It tastes like how a firework looks.\n\r");
 			} else if (aid.get(answer-1).getName().equals("Peculiar Beehive")) {
-				System.out.print("You nibble a piece of honeycomb from the Peculiar Beehive. It has a strangely dry texture to it. The honey leaves a sharp, spicy sensation on your tongue.\n\r");
+				System.out.print("You nibble a piece of honeycomb from the Peculiar Beehive. The honey leaves a sharp, spicy sensation on your tongue.\n\r");
 			} else if (aid.get(answer-1).getName().equals("Mysterious Soup")) {
-				System.out.print("You take a tentaive sip of the bottled soup. It has a distinctly milky flavor. It's slightly unnerving.");
+				System.out.print("You take a tentaive sip of the bottled soup. It has a distinctly milky flavor. It's slightly unnerving.\n\r");
 			}
 			return aid.get(answer-1);
 		}

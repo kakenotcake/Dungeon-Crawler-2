@@ -191,8 +191,11 @@ public class Game {
 		break;
 
 	    case s:
+		System.out.print("Saving . . .\n\r");
 		saveGame();
 		System.out.print("Game saved sucessfully.\n\r");
+		Terminal.pause(2);
+		redrawMapAndHelp();
 	    	break;
 	    case l:
 		//loading method

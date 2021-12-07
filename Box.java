@@ -1,6 +1,5 @@
 // Box.java
 // represents a pickup-able item
-
 import ansi_terminal.*;
 import java.util.Scanner;
 import java.io.PrintWriter;

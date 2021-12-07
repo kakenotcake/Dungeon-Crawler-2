@@ -118,7 +118,7 @@ public class Item {
          */
 	public String toString()
 	{
-		return this.type + " " + this.name + " " + this.weight + " " +  this.value + " " + this.strength + " " + this.playerClass;
+		return this.type + " | " + this.name + " | " + this.weight + " | " +  this.value + " | " + this.strength;
 	}
 
 	/**This method is responsible for returning all of the properties of an Item object when the game is saved.
@@ -127,7 +127,7 @@ public class Item {
 	 */
         public String toStringForSave()
         {
-                return this.type + "\n" + this.name + "\n" + this.weight + "\n" + this.value + "\n" + this.strength + "\n" + this.playerClass + "\n";
+                return this.type + " | \n" + this.name + " | \n" + this.weight + " | \n" + this.value + " | \n" + this.strength + "\n";
 
         }
 }
