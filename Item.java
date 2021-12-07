@@ -127,7 +127,8 @@ public class Item {
 	 */
         public String toStringForSave()
         {
-                return this.type + " | \n" + this.name + " | \n" + this.weight + " | \n" + this.value + " | \n" + this.strength + "\n";
+                return this.type + "\n" + this.name + "\n" + this.weight + "\n" + this.value + "\n" + this.strength + "\n" + this.playerClass + "\n";
+
 
         }
 }
