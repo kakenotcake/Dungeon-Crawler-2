@@ -1,8 +1,8 @@
 0
-2
+3
 Enemy
-24
-47
+1
+15
 *
 50
 Goblin
@@ -10,68 +10,77 @@ Goblin
 25
 Goblin tied your shoe laces together making you to trip!                        
 Enemy
-19
-7
+17
+41
 *
 50
-Ogre
+Hell Hound
 3
-30
-Ogre clubbed you in the head!                                                     
-5
+25
+Hell Hound takes a bite of your arm!                                      
+Enemy
+25
+16
+*
+50
+Hell Hound
 3
+25
+Hell Hound takes a bite of your arm!                                      
 5
-i
-Box
-Armor
-Glass Chestplate
-35
-250
-22
-Paladin
-
 7
 39
 i
 Box
 Weapon
-Ebony axe
-28
-200
-37
-Assassin
+Master Sword
+30
+780
+40
+Paladin
+
+18
+29
+i
+Box
+Armor
+Hylian Shield
+50
+380
+10
+Archer
 
 25
 38
 i
 Box
-Weapon
-Dragonspine Spear
-24
-113
-20
-Assassin
+Other
+Royal Ocarina
+6
+120
+13
+None
 
 25
 41
 i
 Box
-Other
-Apple Pie
-2
-18
-8
-null
+Armor
+Hylian Shield
+50
+380
+10
+Archer
 
 25
 44
 i
 Box
 Other
-Inconspicuous Walnut
-12
-55
-15
-null
+Peculiar Beehive
+8
+43
+9
+None
 
 stop

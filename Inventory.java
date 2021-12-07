@@ -136,16 +136,16 @@ public class Inventory
 			System.out.print("Your inventory is empty.\n\r");
 		}
 	}
-	/**This method tells you what item has been dropped
-	 *@return item dropped
-	 */
 
+	/**This method tells you what item has been dropped
+	 *@return Item dropped
+	 */
 	public Item getDropped()
 	{
 		return dropped;
 	}
-	/**This method looks at the whole inventory and asks what weapon that they want to equip
-	 *
+
+	/**This method looks at the whole inventory and asks what weapon the user wants to equip.
 	 *
 	 */
 	public void equipWeapon() //method to assign weapon to equipped weapon variable
@@ -186,17 +186,16 @@ public class Inventory
 			System.out.print("Your inventory is empty.\n\r");
 		}
 	}
-/**This method sets the Starter Weapon based on the class chosen at the beginning
- *@param weapon the weapon that is equipped
- *
- *
- *
- */
+
+        /**This method sets the Starter Weapon based on the class chosen at the beginning
+        *@param weapon the weapon that is equipped
+        */
 	public void equipStarterWeapon(Item weapon)
 	{
 		equippedWeapon = weapon;
-		System.out.print("Starter weapon " + weapon + " has been equipped.\n\r");
+		System.out.print("Starter weapon " + weapon.getName() + " has been equipped.\n\r");
 	}
+
 	/**This is method sets the Starter armor based on the class chosen at the beginning
 	 *@param armor the armor that is equipped
 	 *
@@ -204,7 +203,7 @@ public class Inventory
 	public void equipStarterArmor(Item armor)
 	{
 		equippedArmor = armor;
-		System.out.print("Starter armor " + armor + " has been equipped.\n\r");
+		System.out.print("Starter armor " + armor.getName() + " has been equipped.\n\r");
 	}
 
 	public void equipArmor() //method to equip armor
@@ -244,18 +243,19 @@ public class Inventory
 			System.out.print("Your inventory is empty.\n\r");
 		}
 	}
+
 	public Item getEquippedWeapon()
 	{
 		return equippedWeapon;
 	}
+
 	public Item getEquippedArmor()
 	{
 		return equippedArmor;
 	}
-	/**This method looks thorough the inventory and ask if the player wants to use consumeable items like hp potions
-	 *that are labeled by the other enumeration
-	 *@return aid
-	 *
+	/**This method looks through the inventory and asks if the player wants to use consumeable items like hp potions
+	 *that are labeled by the Other enumeration.
+	 *@return aid to be used
 	 *
 	 */
 	public Item getAid()
@@ -299,16 +299,18 @@ public class Inventory
 		}
 		return null;
 	}
-	/**This is a method that looks thorough the inventory and removes the consumable aid item that was used
+
+	/**This method looks through the inventory and removes the consumable aid item that was used.
 	 *
 	 */
 	public void removeUsedAid(Item usedAid)
 	{
 		inventory.remove(usedAid);
 	}
-	/**This is a method that converts the type of the inventory into a readable form
-	 *string
-	 *@return String 
+
+	/**This method converts the type of the inventory into a readable form.
+	 *
+	 *@return String of Inventory
 	 *
 	 */
 	public String toString()
@@ -320,16 +322,16 @@ public class Inventory
 		}
 		return inv;
 	}
-	/**This is a method gets the amount of items inside the inventory
-	 *@return integer
-	 *
+	/**This is a method gets the amount of items inside the inventory.
+	 *@return integer representing the current size of the Inventory
 	 *
 	 */
 	public int getSize()
 	{
 		return inventory.size();
 	}
-	/**This method sets the the items inside the inventory
+
+	/**This method sets the the items inside the inventory.
 	 *
 	 */
 	public void setInventory(ArrayList<Item> inv)

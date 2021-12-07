@@ -1,25 +1,16 @@
 room
 0
 Player
-6
 5
+9
 @
-50
-Kat
-Mage
-4
-Enemy
-5
-10
-*
-50
-Mechanical Spider
-2
-20
-Mechanical Spider hits you with its poisonous silk!                
+40
+sa
+Paladin
+3
 Enemy
 7
-29
+25
 *
 50
 Goblin
@@ -27,17 +18,17 @@ Goblin
 25
 Goblin tied your shoe laces together making you to trip!                        
 Enemy
-15
-41
+16
+46
 *
 50
-Mechanical Spider
-2
-20
-Mechanical Spider hits you with its poisonous silk!                
-Enemy
+Hell Hound
+3
 25
-14
+Hell Hound takes a bite of your arm!                                      
+Enemy
+24
+11
 *
 50
 Hell Hound
@@ -47,35 +38,35 @@ Hell Hound takes a bite of your arm!
 
 3
 Weapon
-Wabbajack
-17
-350
-28
-Mage
+Goddess Blade
+22
+320
+30
+Paladin
 Armor
-Holy Prayer
-33
-777
-12
-Mage
-Armor
-Hylian Shield
-50
-380
+Guardian Graves
+42
+185
 10
-Archer
+Paladin
+Weapon
+Ebony axe
+28
+200
+37
+Assassin
 
 5
 7
 39
 i
 Box
-Armor
-Hylian Shield
-50
-380
-10
-Archer
+Weapon
+Master Sword
+30
+780
+40
+Paladin
 
 18
 29
@@ -92,23 +83,23 @@ Archer
 38
 i
 Box
-Weapon
-Dragonspine Spear
-24
-113
-20
-Assassin
+Other
+Royal Ocarina
+6
+120
+13
+null
 
 25
 41
 i
 Box
-Weapon
-Ebony axe
-28
-200
-37
-Assassin
+Armor
+Hylian Shield
+50
+380
+10
+Archer
 
 25
 44
@@ -121,5 +112,5 @@ Peculiar Beehive
 9
 null
 
-0
+1
 stop

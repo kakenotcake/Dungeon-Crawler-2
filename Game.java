@@ -47,12 +47,11 @@ public class Game {
 	room3 = new File("saveroom3.txt");
     
     }
-/**This method asks what class the player wants which is determined
- *by the number that they enter if the number is invalid it asks the player to enter a valid number
- *from there the method sets the starting weapon and armor based on the class they chose
- *
- *
- */
+
+    /**This method asks what class the player wants which is determined
+     *by the number that they enter if the number is invalid it asks the player to enter a valid number
+     *from there the method sets the starting weapon and armor based on the class they chose.
+     */
     public void setClass()
     {
 	System.out.print("What is your class??\n\n\r");
@@ -77,10 +76,7 @@ public class Game {
 
     // prints a help menu to the left of the map
     /**This is a method that pulls up a help menu that displays commands
-     *that the player can input to get certain actions
-     *
-     *
-     *
+     *that the player can input to get certain actions.
      */
     private void showHelp() {
         String[] cmds = {"Commands:",
@@ -228,6 +224,7 @@ public class Game {
 
         return true;
     }
+
     /**
     *Method that prints data to text file and passes scanner to relevant classes to be loaded later.
     */
@@ -540,6 +537,7 @@ public class Game {
 	    boxes = tempBoxes;
 	    run();
     }
+
     // this is called when we need to redraw the room and help menu
     // this happens after going into a menu like for choosing items
     private void redrawMapAndHelp() {
@@ -579,6 +577,11 @@ public class Game {
         return true;
     }
 
+    /**This method is responsible for sending the user into a new room in the map- depending on where the user is currently standing,
+     * they will be sent to a different room.
+     *
+     * @return a boolean true or false if the user is able to enter a new room or not
+     */
     private boolean checkRoom() {
 	    int x = 0;
 	    x = rooms.get(currentRoom).enterRoom(player.getRow(), player.getCol());
@@ -588,7 +591,6 @@ public class Game {
 		    if (askToEnter() == true) {
 	            room1Times++;
 	            saveRoom(world);
-		   //saveGame();
 		    currentRoom = 1;
 		    redrawMapAndHelp();
 		    player.setPosition(rooms.get(currentRoom).getPlayerStart().getRow(), rooms.get(currentRoom).getPlayerStart().getCol());
@@ -614,7 +616,6 @@ public class Game {
 		    if (askToEnter() == true) {
 	            room2Times++;
 	            saveRoom(world);
-		    //saveGame();
 		    currentRoom = 2;
 		    redrawMapAndHelp();
 		    player.setPosition(rooms.get(currentRoom).getPlayerStart().getRow(), rooms.get(currentRoom).getPlayerStart().getCol());
@@ -636,10 +637,9 @@ public class Game {
 		    return true;
 		    }
             } else if (x == 3) {
-		   setStatus("You're getting a bad feeling . . .\n\rWould you like to explore it? 1. yes / 2. no\n\r");
+		   setStatus("You're getting a bad feeling from this room . . .\n\rWould you like to explore it? 1. yes / 2. no\n\r");
 		   if (askToEnter() == true) {
 	           room3Times++;
-		   //saveGame();
 	           saveRoom(world);
 		   currentRoom = 3;
 		   redrawMapAndHelp();
@@ -681,7 +681,6 @@ public class Game {
 				    saveRoom(room3);
 			    }
 			    loadRoom(world);
-			   // loadGame(); 
 		    } catch(FileNotFoundException r) {
                         System.out.println("File was not found");
 		    }
@@ -753,6 +752,7 @@ public class Game {
 		    Terminal.pause(1.5);
 		    playing = false;
 	    }
+
 	    checkRoom();
         }
     }

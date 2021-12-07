@@ -127,7 +127,7 @@ public class Player extends Character {
 			    stop = true;
 		    }
 	    }
-	    System.out.print("Your starting weapon is: " + weapon + "\n\r");
+	    System.out.print("Your starting weapon is: " + weapon.getName() + "\n\r");
 	    inventory.add(weapon);
 	    inventory.equipStarterWeapon(weapon);
     }
@@ -148,7 +148,7 @@ public class Player extends Character {
 			    stop = true;
 		    }
 	    }
-	    System.out.print("Your starting armor is: " + armor + "\n\r");
+	    System.out.print("Your starting armor is: " + armor.getName() + "\n\r");
 	    inventory.add(armor);
 	    inventory.equipStarterArmor(armor);
     }
@@ -163,8 +163,8 @@ public class Player extends Character {
 	    System.out.print("Player's damage: " + getDamage() + "\n\r");
 	    System.out.print("Player's protection: " + getProtection() + "\n\r");
 	    System.out.print("Player's class: " + getPlayerClass() + "\n\r");
-	    System.out.print("Equipped weapon: " + inventory.getEquippedWeapon() + "\n\r");
-	    System.out.print("Equipped armor: " + inventory.getEquippedArmor() + "\n\r");
+	    System.out.print("Equipped weapon: " + inventory.getEquippedWeapon().toString() + "\n\r");
+	    System.out.print("Equipped armor: " + inventory.getEquippedArmor().toString() + "\n\r");
     }
     /**
      *This method allows the player  to use items that restore health like health potions
