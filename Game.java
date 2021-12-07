@@ -228,7 +228,7 @@ public class Game {
         return true;
     }
 
-    /**
+   /**
     *Method that prints data to text file and passes scanner to relevant classes to be loaded later.
     */
     private void saveGame() 
@@ -656,7 +656,6 @@ public class Game {
 
     /**This method is responsible for sending the user into a new room in the map- depending on where the user is currently standing,
      * they will be sent to a different room.
-     *
      * @return a boolean true or false if the user is able to enter a new room or not
      */
     private boolean checkRoom() {
