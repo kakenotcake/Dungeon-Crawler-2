@@ -38,12 +38,6 @@ public class Entity {
         return position.getCol();
     }
     /**
-     *This method stores all the revelant to the class which are the entity's position (row,colm)
-     *and the character value they are stored at
-     *@param  printwriter is the parameter where the information is stored for the save
-     *
-     */
-    /**
     *Method to print entity data to text file: row and column
     *@param o PrintWriter object.
     */
