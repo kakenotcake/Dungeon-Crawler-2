@@ -193,7 +193,7 @@ public class Game {
 	    case s:
 		System.out.print("Saving . . .\n\r");
 		saveGame();
-		System.out.print("Game saved sucessfully.\n\r");
+		System.out.print("Game has been saved sucessfully.\n\r");
 		Terminal.pause(2);
 		redrawMapAndHelp();
 	    	break;
