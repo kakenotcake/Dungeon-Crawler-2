@@ -127,14 +127,7 @@ public class Item {
 	 */
         public String toStringForSave()
         {
-<<<<<<< HEAD
                 return this.type + "\n" + this.name + "\n" + this.weight + "\n" + this.value + "\n" + this.strength + "\n";
-||||||| 0d44023
-                return this.type + " | \n" + this.name + " | \n" + this.weight + " | \n" + this.value + " | \n" + this.strength + "\n";
-=======
-                return this.type + "\n" + this.name + "\n" + this.weight + "\n" + this.value + "\n" + this.strength + "\n" + this.playerClass + "\n";
-
->>>>>>> af55d7f428dff90fb1510344d2cc93bb917290db
 
         }
 }
