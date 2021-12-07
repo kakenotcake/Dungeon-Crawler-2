@@ -248,10 +248,18 @@ public class Inventory
 	{
 		return equippedWeapon;
 	}
+	public void setEquippedWeapon(Item weapon)
+	{
+		equippedWeapon = weapon;
+	}
 
 	public Item getEquippedArmor()
 	{
 		return equippedArmor;
+	}
+	public void setEquippedArmor(Item armor)
+	{
+		equippedArmor = armor;
 	}
 	/**This method looks through the inventory and asks if the player wants to use consumeable items like hp potions
 	 *that are labeled by the Other enumeration.

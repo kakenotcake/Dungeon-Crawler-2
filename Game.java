@@ -250,6 +250,9 @@ public class Game {
 			    boxes.get(i).save(pw);
 
 		    }
+		    pw.println(player.getInventory().getEquippedWeapon().toStringForSave());
+		    pw.println(player.getInventory().getEquippedArmor().toStringForSave());
+		    
 		    pw.println(player.getEnemiesDead());
 		    pw.println("stop");
 		    pw.close();
@@ -311,7 +314,6 @@ public class Game {
 		for (int i = 0; i < numItems; i++)
 		{
 			String type = in.nextLine();
-			System.out.print("item type is: " + type + "\n\r");
 			if (type.equals("Weapon"))
 			{
 				itemType = ItemType.Weapon;
@@ -411,6 +413,78 @@ public class Game {
 			}
 			tempBoxes.add(new Box(row, col, new Item(itemType, name, weight, value, strength, playerClass)));
 		}
+		itemType = ItemType.Weapon;
+		in.nextLine();
+		in.nextLine();
+		String weaponName = in.nextLine();
+		int weaponWeight = in.nextInt();
+		int weaponValue = in.nextInt();
+		int weaponStrength = in.nextInt();
+		in.nextLine();
+		String starterWeaponClass = in.nextLine();
+		if (starterWeaponClass.equals("Mage"))
+		{
+			playerClass = PlayerClass.Mage;
+		}
+		else if(starterWeaponClass.equals("Bard"))
+		{
+			playerClass = PlayerClass.Bard;
+		}
+		else if(starterWeaponClass.equals("Paladin"))
+		{
+			playerClass = PlayerClass.Paladin;
+		}
+		else if(starterWeaponClass.equals("Assassin"))
+		{
+			playerClass = PlayerClass.Assassin;
+		}
+		else if(starterWeaponClass.equals("Archer"))
+		{
+			playerClass = PlayerClass.Archer;
+		}
+		else
+		{
+			playerClass = PlayerClass.None;
+		}
+		player.getInventory().setEquippedWeapon(new Item(itemType, weaponName, weaponWeight, weaponValue, weaponStrength, playerClass));
+		in.nextLine();
+		itemType = ItemType.Armor;
+		in.nextLine();
+		String armorName = in.nextLine();
+		int armorWeight = in.nextInt();
+		int armorValue = in.nextInt();
+		int armorStrength = in.nextInt();
+		in.nextLine();
+		String armorClass = in.nextLine();
+		if (armorClass.equals("Mage"))
+		{
+			playerClass = PlayerClass.Mage;
+		}
+		else if(armorClass.equals("Bard"))
+		{
+			playerClass = PlayerClass.Bard;
+		}
+		else if(armorClass.equals("Paladin"))
+		{
+			playerClass = PlayerClass.Bard;
+		}
+		else if(armorClass.equals("Paladin"))
+		{
+			playerClass = PlayerClass.Paladin;
+		}
+		else if (armorClass.equals("Assassin"))
+		{
+			playerClass = PlayerClass.Assassin;
+		}
+		else if(armorClass.equals("Archer"))
+		{
+			playerClass = PlayerClass.Archer;
+		}
+		else
+		{
+			playerClass = PlayerClass.None;
+		}
+		player.getInventory().setEquippedArmor(new Item(itemType, armorName, armorWeight, armorValue, armorStrength, playerClass));
 		player.setEnemiesDead(in.nextInt());
 		in.nextLine();
 		in.nextLine();
