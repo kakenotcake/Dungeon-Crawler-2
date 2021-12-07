@@ -25,12 +25,7 @@ public class Box extends Entity {
 	    x.println("Box");
 	    x.println(getItem().toStringForSave());
     }
-    /**This is a method that loads in the information that was stored from the 
-     *the save method
-     *@param in  scanner object that reads in the information
-     *
-     *
-     */
+
     
    /* public void loadGame(Scanner in){
 	    super.loadGame(in);

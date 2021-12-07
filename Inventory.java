@@ -257,14 +257,10 @@ public class Inventory
 	{
 		return equippedArmor;
 	}
-<<<<<<< HEAD
 	public void setEquippedArmor(Item armor)
 	{
 		equippedArmor = armor;
 	}
-=======
-
->>>>>>> 67601467d043cae3a2823edcfabb005dde89dee7
 	/**This method looks through the inventory and asks if the player wants to use consumeable items like hp potions
 	 *that are labeled by the Other enumeration.
 	 *@return aid to be used
