@@ -289,7 +289,7 @@ public class Inventory
 			} else if (aid.get(answer-1).getName().equals("Peculiar Beehive")) {
 				System.out.print("You nibble a piece of honeycomb from the Peculiar Beehive. It has a strangely dry texture to it. The honey leaves a sharp, spicy sensation on your tongue.\n\r");
 			} else if (aid.get(answer-1).getName().equals("Mysterious Soup")) {
-				System.out.print("You take a tentaive sip of the bottled soup. It has a distinctly milky flavor. It's slightly unnerving.");
+				System.out.print("You take a tentaive sip of the bottled soup. It has a distinctly milky flavor. It's slightly unnerving.\n\r");
 			}
 			return aid.get(answer-1);
 		}
